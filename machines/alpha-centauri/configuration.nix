@@ -11,6 +11,11 @@
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
 
+  environment.shellAliases= {
+    "rebuild-switch" = "nixos-rebuild switch --flake /etc/nixos#alpha-centauri";
+    "rebuild-test" = "nixos-rebuild test --flake /etc/nixos#alpha-centauri";
+  };
+
   # Home Manager config
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

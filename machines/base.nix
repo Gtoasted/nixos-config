@@ -7,6 +7,8 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  environment.shellAliases.sudo = "sudo ";
+
   # Set up Sops for secret management
   sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
