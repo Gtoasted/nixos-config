@@ -10,11 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -23,12 +18,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./machines/alpha-centauri/configuration.nix
-          ./modules/nixos
         ];
       };
     };
-
-    homeManagerModules.default = ./modules/home-manager;
-
   };
 }
