@@ -13,6 +13,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./machines/alpha-centauri/configuration.nix
+          ./nixosModules/default.nix
         ];
       };
     };

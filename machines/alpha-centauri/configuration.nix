@@ -6,8 +6,8 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
     ../base.nix
-    ../../nixosModules/default.nix
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
