@@ -7,21 +7,13 @@
 {
   imports = [
     ../base.nix
+    ../../nixosModules/default.nix
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    keepassxc
-    vim
-    kitty
-  ];
 
   system.stateVersion = "23.11"; # Did you read the comment?
 }
