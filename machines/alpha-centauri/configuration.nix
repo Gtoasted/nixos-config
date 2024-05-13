@@ -15,5 +15,14 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  # Home Manager config
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users."arne" = {
+      imports = [
+        ./home.nix
+        inputs.self.outputs.homeManagerModules.default
+      ];
+    };
+  };
 }
