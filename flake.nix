@@ -18,6 +18,7 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
+    homeManagerModules.default = ./homeManagerModules;
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -27,8 +28,5 @@
         ];
       };
     };
-
-    homeManagerModules.default = ./homeManagerModules;
-
   };
 }
