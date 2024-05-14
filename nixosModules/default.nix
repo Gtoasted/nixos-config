@@ -3,7 +3,7 @@
 
 {
   imports = [
-    ./general.nix
     ./system.nix
+    ./gui.nix
   ];
 }
