@@ -1,4 +1,4 @@
-# system.nix: Home Manager packages relevant for the system config
+# homeManagerModules/system.nix: Home Manager packages relevant for the system config
 
 { pkgs, lib, config, ... }: {
   programs.git = {

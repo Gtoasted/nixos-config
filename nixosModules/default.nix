@@ -1,4 +1,4 @@
-# default.nix
+# nixosModules/default.nix: Default nixos modules
 { config, ... }:
 
 {

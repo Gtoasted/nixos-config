@@ -1,4 +1,4 @@
-# default.nix: default modules
+# homeManagerModules/default.nix: default modules
 
 { ... }:
 
