@@ -1,0 +1,57 @@
+[
+    {
+        "_vimft": "# vim:set filetype=json:",
+        "output": "eDP-1",
+        "layer": "top",
+        "position": "bottom",
+        "mode": "dock",
+        "exclusive": true,
+        "passtrough": false,
+        "height": 32,
+        "modules-left": [
+            "hyprland/workspaces",
+            "memory",
+            "cpu",
+            "network",
+            "bluetooth"
+        ],
+        "modules-right": [
+            "hyprland/submap",
+            "custom/wlinhibit",
+            "battery",
+            "backlight",
+            "custom/mako",
+            "wireplumber",
+            "user",
+            "clock"
+        ],
+        "include": [
+            "~/.config/waybar/shared-modules.json"
+        ],
+        "user": {
+            "format": "🦆 up {work_H}:{work_M}"
+        }
+    },
+    {
+        "output": "!eDP-1",
+        "layer": "top",
+        "position": "bottom",
+        "mode": "dock",
+        "exclusive": true,
+        "passtrough": false,
+        "height": 32,
+        "modules-right": [
+            "hyprland/submap",
+            "hyprland/workspaces",
+            "custom/wlinhibit",
+            "memory",
+            "cpu",
+            "clock"
+        ],
+        "modules-left": [
+        ],
+        "include": [
+            "~/.config/waybar/shared-modules.json"
+        ]
+    }
+]
