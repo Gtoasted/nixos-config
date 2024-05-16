@@ -10,4 +10,8 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    waybar
+  ];
 }
