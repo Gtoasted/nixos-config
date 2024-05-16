@@ -13,6 +13,6 @@
     enable = true;
     package = pkgs.waybar;
     settings = lib.fileContents ../dotfiles/waybar/config;
-  }
+  };
 }
 
