@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ../base.nix
     inputs.home-manager.nixosModules.home-manager
+    ../../nixosModules/hypr.nix
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
