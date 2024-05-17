@@ -1,4 +1,4 @@
-# nixosModules/hypr.nix: Nixo configuration for Hyprland
+# nixosModules/hypr.nix: Nixos configuration for Hyprland
 
 { pkgs, ... }: {
   services.greetd = {
