@@ -9,12 +9,12 @@
     extraConfig = lib.fileContents ../dotfiles/hypr/hyprland.conf;
   };
 
-  services.mako.enable = true;
+#  services.mako.enable = true;
 
   home.file = {
-    ".config/waybar/colors.css".source = ../dotfiles/waybar/colors.css;
-    ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
-    ".config/waybar/scripts".source = ../dotfiles/waybar/scripts;
+#    ".config/waybar/colors.css".source = ../dotfiles/waybar/colors.css;
+#    ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
+#    ".config/waybar/scripts".source = ../dotfiles/waybar/scripts;
     ".config/waybar/shared-modules.json".source = ../dotfiles/waybar/shared-modules.json;
   };
 

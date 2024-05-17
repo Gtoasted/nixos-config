@@ -25,9 +25,9 @@
             "user",
             "clock"
         ],
-	"import": [
-		"./shared-modules.json"
-	],
+        "include": [
+            "shared-modules.json"
+        ],
         "user": {
             "format": "🦆 up {work_H}:{work_M}"
         }
@@ -49,6 +49,9 @@
             "clock"
         ],
         "modules-left": [
+        ],
+        "include": [
+            "shared-modules.json"
         ]
     }
 ]
