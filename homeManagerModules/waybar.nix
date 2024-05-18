@@ -16,10 +16,9 @@ in {
       mainBar = {
         output = "eDP-1";
         layer = "top";
-        position = "top";
+        position = "bottom";
         height = 32;
         modules-left = [
-          "clock"
           "hyprland/workspaces"
           "memory"
           "cpu"
@@ -34,6 +33,7 @@ in {
           "custom/mako"
           "wireplumber"
           "user"
+          "clock"
         ];
       }
 
@@ -42,7 +42,7 @@ in {
       fallback = {
           layer = "top";
           output = "!eDP-1";
-          position = "top";
+          position = "bottom";
           height = 32;
           modules-left = [
             "clock"
@@ -51,6 +51,7 @@ in {
             "hyprland/submap"
             "custom/wlinhibit"
             "battery#standalone"
+            "clock"
           ];
       }
       // sharedModules;
