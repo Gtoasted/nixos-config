@@ -17,7 +17,7 @@
     };  
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
     homeManagerModules.default = ./homeManagerModules;
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
@@ -25,6 +25,7 @@
         modules = [
           ./machines/alpha-centauri/configuration.nix
           ./nixosModules/default.nix
+          inputs.sops-nix.nixosModules.sops
         ];
       };
     };
