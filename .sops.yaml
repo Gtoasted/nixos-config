@@ -1,0 +1,7 @@
+keys:
+  - &alpha-centauri age146wwvsgwvfkyr5jm9pc55jrm6v3chkm3cgj00c7u5p6wvnmngc0sak7mfe
+creation_rules:
+  - path_regex: secrets/.*
+    key_groups:
+      - age:
+        - *alpha-centauri
