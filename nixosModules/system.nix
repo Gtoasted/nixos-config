@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     sops
     wget
+    jetbrains-mono
   ];
 }
