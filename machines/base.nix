@@ -22,6 +22,7 @@
     };
   };
 
+  # sops
   sops.age.keyFile = "/home/arne/.config/sops/age/keys.txt";
 
   # Enable flakes
