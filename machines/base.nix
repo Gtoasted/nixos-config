@@ -1,6 +1,6 @@
 # machines/base.nix: Module for config shared between all machines
 
-{ config, inputs, ... }:
+{ config, inputs, sops, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -10,7 +10,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  # Bootloader.
+  # Bootloader
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -21,6 +21,8 @@
       device = "nodev";
     };
   };
+
+  sops.age.keyFile = "/home/arne/.config/sops/age/keys.txt";
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
