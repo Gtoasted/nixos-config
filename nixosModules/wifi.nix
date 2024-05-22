@@ -1,3 +1,5 @@
+# nixosModules/wifi.nix: Wifi config
+
 { config, sops, ... }: {
   sops.secrets.wifi = {
     format = "binary";
