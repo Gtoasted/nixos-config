@@ -1,6 +1,10 @@
 # nixosModules/hypr.nix: Nixos configuration for Hyprland
 
 { pkgs, ... }: {
+  imports = [
+    ./system/x.nix
+  ];
+
   services.greetd = {
     enable = true;
     settings = {

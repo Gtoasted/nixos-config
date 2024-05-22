@@ -3,7 +3,7 @@
 { config, sops, ... }: {
   sops.secrets.wifi = {
     format = "binary";
-    sopsFile = ../secrets/wifi;
+    sopsFile = ../../secrets/wifi;
   };
 
   networking.wireless = {

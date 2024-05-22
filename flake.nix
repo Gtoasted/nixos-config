@@ -18,13 +18,13 @@
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
-    homeManagerModules.default = ./homeManagerModules;
+    homeManagerModules.default = ./home-manager;
+
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./machines/alpha-centauri/configuration.nix
-          ./nixosModules/default.nix
+          ./alpha-centauri/configuration.nix
           inputs.sops-nix.nixosModules.sops
         ];
       };
