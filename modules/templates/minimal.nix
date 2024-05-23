@@ -1,8 +1,10 @@
 { pkgs, sops, ... }: {
   imports = [
-    ./fonts.nix
-    ./locale.nix
+    ../system/fonts.nix
+    ../system/locale.nix
   ];
+
+  home-manager.users."arne".imports = [ ../system/git.nix ];
 
   #environment.systemPackages = pkgs.sops;
   services.openssh.enable = true;

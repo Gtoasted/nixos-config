@@ -5,9 +5,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../modules/system/laptop.nix
+    ../modules/templates/laptop.nix
     ../modules/hypr.nix
-    ../modules/samba.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 

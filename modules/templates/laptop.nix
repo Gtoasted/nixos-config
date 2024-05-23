@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
     ./desktop.nix
-    ./wifi.nix
+    ../system/wifi.nix
   ];
 }
