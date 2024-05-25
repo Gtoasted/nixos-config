@@ -18,7 +18,7 @@
     users."arne" = {
       imports = [
         ./home.nix
-        inputs.self.outputs.homeManagerModules.default
+#        inputs.self.outputs.homeManagerModules.default
       ];
     };
   };

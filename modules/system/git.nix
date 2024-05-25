@@ -4,7 +4,8 @@
       enable = true;
       userName = "Gtoasted";
       userEmail = "arne@vonlaguna.de";
-      extraConfig.safe.directory = "/etc/nixos";
     };
   };
+
+  services.openssh.enable = true;
 }

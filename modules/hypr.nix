@@ -28,6 +28,4 @@
   environment.systemPackages = with pkgs; [
     wofi
   ];
-
-  home-manager.users."arne".imports = [ ../home-manager/hypr.nix ];
 }
