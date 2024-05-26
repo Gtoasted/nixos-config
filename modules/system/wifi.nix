@@ -15,6 +15,10 @@
         psk = "@sagittarius@";
       };
 
+      Gommemode = {
+        psk = "@gommemode@";
+      };
+
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
 MIIDwzCCAqugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBgjELMAkGA1UEBhMCREUx
