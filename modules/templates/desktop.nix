@@ -5,6 +5,7 @@
     ../system/sound.nix
 
     ../gui.nix
+    ../cli.nix
     ../samba.nix
   ];
 }
