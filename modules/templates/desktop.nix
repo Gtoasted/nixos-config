@@ -7,5 +7,8 @@
     ../gui.nix
     ../cli.nix
     ../samba.nix
+
+    ../latex.nix
+    ../zathura.nix
   ];
 }
