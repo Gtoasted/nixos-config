@@ -52,10 +52,27 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715003933,
+        "narHash": "sha256-LfRQ3ySgaa1A0Gu+JVv9Vd8enEfeSDUjO0xziKBC+aw=",
+        "owner": "Gtoasted",
+        "repo": "neovim-config",
+        "rev": "3fc9b1de86d9c79f792b1c596abdc42bf01f85aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gtoasted",
+        "repo": "neovim-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nvim-config": "nvim-config",
         "sops-nix": "sops-nix"
       }
     },

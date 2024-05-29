@@ -15,6 +15,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };  
+
+    nvim-config = {
+      url = "github:Gtoasted/neovim-config";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
