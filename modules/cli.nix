@@ -10,5 +10,8 @@
     home.file = {
       ".config/nvim".source = "${inputs.nvim-config}";
     };
+    home.sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 }

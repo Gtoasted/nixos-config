@@ -1,5 +1,3 @@
-# nixosModules/hypr.nix: Nixos configuration for Hyprland
-
 { pkgs, lib, ... }: {
   imports = [
     ./system/x.nix

@@ -1,5 +1,3 @@
-# nixosModules/wifi.nix: Wifi config
-
 { config, sops, ... }: {
   sops.secrets.wifi = {
     format = "binary";
@@ -56,36 +54,7 @@ BSeOE6Fuwg==
         anonymous_identity="eduroam@hhu.de"
         group=CCMP TKIP
       '';
-    };
-
-#      eduroam = {
-#      auth = ''
-#        key_mgmt=WPA-EAP
-#        pairwise=CCMP
-#        eap=TTLS
-#        password="@eduroam_pass@"
-#        ca_cert="./cacert"
-#        altsubject_match="DNS:radius.hhu.de"
-#        phase2="auth=PAP"
-#        identity="@eduroam_id@"
-#        anonymous_identity="eduroam@hhu.de"
-#        group=CCMP TKIP
-#      '';
-#        auth=''
-#          key_mgmt=WPA-EAP
-#          eap=PEAP
-#          identity="@eduroam_id@"
-#          password="@eduroam_pass@"
-#          domain_suffix_match="radius.hhu.de"
-#          proto=RSN
-#          anonymous_identity="eduroam@hhu.de"
-#          phase1="peaplabel=0"
-#          phase2="auth=MSCHAPV2"
-#          altsubject_match="DNS:radius.hhu.de"
-#	  group=CCMP TKIP
-#          ca_cert="./cacert"
-#        '';
-#      };
+      };
     };
   };
 }

@@ -1,5 +1,3 @@
-# nixosModules/samba.nix: Mount cloud via samba
-
 { config, pkgs, sops, ... }: {
   environment.systemPackages = with pkgs; [
     cifs-utils

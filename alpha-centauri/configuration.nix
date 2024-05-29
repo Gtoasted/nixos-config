@@ -1,8 +1,4 @@
-# machines/alpha-centauri/configuration.nix: config specific to my laptop
-
-{ pkgs, inputs, ... }:
-
-{
+{ pkgs, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../modules/templates/laptop.nix
@@ -17,8 +13,7 @@
     extraSpecialArgs = { inherit inputs; };
     users."arne" = {
       imports = [
-        ./home.nix
-#        inputs.self.outputs.homeManagerModules.default
+        ../modules/home.nix
       ];
     };
   };
