@@ -6,6 +6,4 @@
       userEmail = "arne@vonlaguna.de";
     };
   };
-
-  services.openssh.enable = true;
 }
