@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     kitty
+    dolphin
   ];
 
   home-manager.users."arne" = {
