@@ -16,7 +16,7 @@
       package = pkgs.hyprland;
       xwayland.enable = true;
       systemd.enable = true;
-      extraConfig = lib.fileContents ../dotfiles/hyprland/hyprland.conf;
+      extraConfig = lib.fileContents ../dotfiles/hypr/hyprland.conf;
     };
 
     home.file = {
