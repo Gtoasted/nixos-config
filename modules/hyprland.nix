@@ -18,6 +18,10 @@
       systemd.enable = true;
       extraConfig = lib.fileContents ../dotfiles/hyprland/hyprland.conf;
     };
+
+    home.file = {
+      ".config/swayidle/config".source = ../dotfiles/swayidle/config;
+    };
   };
 
   services.greetd = {
