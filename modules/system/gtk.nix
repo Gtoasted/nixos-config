@@ -8,6 +8,10 @@
         package = pkgs.dracula-theme;
         name = "Dracula";
       };
+      iconTheme = {
+        package = pkgs.kora-icon-theme;
+        name = "Kora";
+      };
     };
   };
 }
