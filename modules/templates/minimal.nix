@@ -7,6 +7,7 @@
     ../system/sops.nix
     ../system/boot.nix
     ../system/user.nix
+    ../system/gtk.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
