@@ -7,5 +7,6 @@
     kitty
     dolphin
     xournalpp
+    zathura
   ];
 }

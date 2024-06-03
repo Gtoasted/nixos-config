@@ -9,6 +9,5 @@
     ../samba.nix
 
     ../latex.nix
-    ../zathura.nix
   ];
 }
