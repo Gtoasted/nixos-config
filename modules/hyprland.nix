@@ -6,8 +6,6 @@
 
   environment.systemPackages = with pkgs; [
     wofi
-    swayidle
-    swaylock-effects
     hyprlock
   ];
 
@@ -21,9 +19,7 @@
     };
 
     home.file = {
-      ".config/swayidle/config".source = ../dotfiles/swayidle/config;
       ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
-      # ".config/hypr/hyprlock".source = ../dotfiles/hypr/hyprlock;
       ".config/hypr/m87.png".source = ../dotfiles/hypr/m87.png;
     };
   };
