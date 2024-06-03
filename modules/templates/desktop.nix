@@ -10,4 +10,6 @@
 
     ../latex.nix
   ];
+
+   services.logind.powerKey = "suspend";
 }
