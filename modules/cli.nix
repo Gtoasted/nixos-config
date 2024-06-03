@@ -7,11 +7,9 @@
       defaultEditor = true;
     };
 
-    home.file = {
-      ".config/nvim".source = "${inputs.nvim-config}";
-    };
-    home.sessionVariables = {
-      EDITOR = "nvim";
+    home = {
+      file = { ".config/nvim".source = "${inputs.nvim-config}"; };
+      sessionVariables.EDITOR = "nvim";
     };
   };
 }

@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../modules/templates/laptop.nix
-    ../modules/hypr.nix
+    ../modules/hyprland.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
