@@ -8,5 +8,6 @@
     dolphin
     xournalpp
     zathura
+    thunderbird
   ];
 }
