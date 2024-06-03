@@ -1,4 +1,4 @@
-{ sops, ... }: {
+{ config, sops, ... }: {
   sops.secrets = {
     ssh_secret = {
       format = "binary";
@@ -19,8 +19,8 @@
 
   home-manager.users."arne" = {
     home.file = {
-      ".ssh/id_ed25519".source = /run/secrets/ssh_secret;
-      ".ssh/id_ed25519.pub".source = /run/secrets/ssh_public;
+      ".ssh/id_ed25519".source = config.sops.secrets.ssh_secret.sopsFile;
+      ".ssh/id_ed25519.pub".source = config.sops.secrets.ssh_public.sopsFile;
     };
   };
 }
