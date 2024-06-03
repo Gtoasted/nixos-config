@@ -6,6 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     wofi
+    hypridle
     hyprlock
   ];
 
@@ -20,6 +21,7 @@
 
     home.file = {
       ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
+      ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
       ".config/hypr/m87.png".source = ../dotfiles/hypr/m87.png;
     };
   };
