@@ -3,6 +3,13 @@
     ./system/x.nix
     ./waybar.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    wofi
+    swayidle
+    swaylock-effects
+  ];
+
   home-manager.users."arne" = {
     wayland.windowManager.hyprland = {
       enable = true;
@@ -18,12 +25,15 @@
     settings = {
       default_session = {
         command = "${pkgs.hyprland}/bin/Hyprland";
-	user = "arne";
+        user = "arne";
       };
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    wofi
-  ];
+  security.pam.services.swaylock = {
+    text = ''
+      auth sufficient pam_fprintd.so
+      auth include login
+    '';
+  };
 }
