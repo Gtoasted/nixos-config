@@ -20,6 +20,7 @@
           height = 32;
           modules-left = [
             "hyprland/workspaces"
+            "backlight"
             # "memory"
             # "cpu"
             "network"
@@ -28,7 +29,6 @@
           modules-right = [
             "hyprland/submap"
             "custom/wlinhibit"
-            # "backlight"
             "custom/mako"
             "wireplumber"
             "battery#standalone"
