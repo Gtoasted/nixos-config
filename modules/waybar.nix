@@ -20,20 +20,20 @@
           height = 32;
           modules-left = [
             "hyprland/workspaces"
-            "memory"
-            "cpu"
+            # "memory"
+            # "cpu"
             "network"
             "bluetooth"
           ];
           modules-right = [
             "hyprland/submap"
             "custom/wlinhibit"
-            "battery"
-            "backlight"
+            # "backlight"
             "custom/mako"
             "wireplumber"
-            "user"
+            "battery#standalone"
             "clock"
+            "user"
           ];
         }
 
