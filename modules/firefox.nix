@@ -162,7 +162,7 @@
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = false;
-          "privacy.sanitize.sanitizeOnShutdown" = true;
+          "privacy.sanitize.sanitizeOnShutdown" = false;
           # "privacy.sanitize.pending" = [
           #   {
           #     "id" = "shutdown";
