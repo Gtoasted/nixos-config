@@ -8,6 +8,7 @@
     wofi
     hypridle
     hyprlock
+    xdg-desktop-portal-hyprland
   ];
 
   home-manager.users."arne" = {
