@@ -1,8 +1,9 @@
 { ... }: {
   imports = [
     ./minimal.nix
-    ../system/printing.nix
+    ../system/graphics.nix
     ../system/sound.nix
+    ../system/printing.nix
 
     ../gui.nix
     ../cli.nix
