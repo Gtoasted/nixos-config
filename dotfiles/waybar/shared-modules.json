@@ -84,7 +84,7 @@
     "tooltip": false,
     "device": "intel_backlight",
     "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
+    "format-icons": ["󰃜", "󰃛", "󰃚"]
   },
   "custom/wlinhibit": {
     "tooltip": false,

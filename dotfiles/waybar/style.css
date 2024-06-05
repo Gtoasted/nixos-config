@@ -33,6 +33,7 @@
 #bluetooth,
 #battery.standalone,
 #custom-wlinhibit,
+#backlight,
 #submap {
   border: 1px solid #181825;
   border-radius: 10px;
@@ -53,7 +54,6 @@
 
 /* right rounded */
 #wireplumber,
-#backlight,
 #cpu {
   border-right: 1px solid #181825;
   border-top: 1px solid #181825;
