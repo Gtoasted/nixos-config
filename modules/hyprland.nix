@@ -19,6 +19,11 @@
       extraConfig = lib.fileContents ../dotfiles/hypr/hyprland.conf;
     };
 
+    services.mako = {
+      enable = true;
+      extraConfig = lib.fileContents ../dotfiles/mako/config;
+    };
+
     home.file = {
       ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
       ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
