@@ -1,6 +1,5 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./system/x.nix
     ./waybar.nix
   ];
 
