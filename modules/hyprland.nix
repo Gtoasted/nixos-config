@@ -16,18 +16,18 @@
       package = pkgs.hyprland;
       xwayland.enable = true;
       systemd.enable = true;
-      extraConfig = lib.fileContents ../dotfiles/hypr/hyprland.conf;
+      extraConfig = lib.fileContents ../config/hypr/hyprland.conf;
     };
 
     services.mako = {
       enable = true;
-      extraConfig = lib.fileContents ../dotfiles/mako/config;
+      extraConfig = lib.fileContents ../config/mako/config;
     };
 
     home.file = {
-      ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
-      ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
-      ".config/hypr/m87.png".source = ../dotfiles/hypr/m87.png;
+      ".config/hypr/hyprlock.conf".source = ../config/hypr/hyprlock.conf;
+      ".config/hypr/hypridle.conf".source = ../config/hypr/hypridle.conf;
+      ".config/hypr/m87.png".source = ../config/hypr/m87.png;
     };
   };
 

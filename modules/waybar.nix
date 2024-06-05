@@ -1,12 +1,12 @@
 { pkgs, ... }: {
   home-manager.users."arne" = let
-      sharedModules = builtins.fromJSON (builtins.readFile ../dotfiles/waybar/shared-modules.json);
+      sharedModules = builtins.fromJSON (builtins.readFile ../config/waybar/shared-modules.json);
     in {
       home.file = {
-      ".config/waybar/colors.css".source = ../dotfiles/waybar/colors.css;
-      ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
-      ".config/waybar/scripts".source = ../dotfiles/waybar/scripts;
-      ".config/waybar/shared-modules.json".source = ../dotfiles/waybar/shared-modules.json;
+      ".config/waybar/colors.css".source = ../config/waybar/colors.css;
+      ".config/waybar/style.css".source = ../config/waybar/style.css;
+      ".config/waybar/scripts".source = ../config/waybar/scripts;
+      ".config/waybar/shared-modules.json".source = ../config/waybar/shared-modules.json;
     };
 
     programs.waybar = {
