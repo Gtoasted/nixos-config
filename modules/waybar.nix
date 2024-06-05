@@ -26,6 +26,9 @@
             "network"
             "bluetooth"
           ];
+          modules-center = [
+            "hyprland/window"
+          ];
           modules-right = [
             "hyprland/submap"
             "custom/wlinhibit"
