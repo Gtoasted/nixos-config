@@ -9,5 +9,6 @@
     xournalpp
     zathura
     thunderbird
+    inkscape
   ];
 }
