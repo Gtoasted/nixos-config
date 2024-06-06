@@ -23,21 +23,21 @@ local modifiers = {
   ["ddo"] = [[\ddot{%s}]],
   dv = [[\dot{\vec{%s}}]],
   ddv = [[\ddot{\vec{%s}}]],
-  t = [[\tilde{%s}]],
-  h = [[\hat{%s}]],
-  o = [[\overline{%s}]],
+  -- h = [[\hat{%s}]],
+  -- o = [[\overline{%s}]],
+  -- t = [[\tilde{%s}]],
 }
 
 for k,v in pairs(modifiers) do
   table.insert(cfg,
-    s({trig="(.)%."..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
+    s({trig=[[(.)%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
       {f(function (_, snip)
         return string.format(v, snip.captures[1])
       end)}
     )
   )
   table.insert(cfg,
-    s({trig=[[(\.*)%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
+    s({trig=[[(\.[^\])%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
       {f(function (_, snip)
         return string.format(v, snip.captures[1])
       end)}
@@ -65,13 +65,13 @@ local other = {
     )
   ),
 
-  s({trig="braket", snippetType="autosnippet", dscr="Ket", condition=math},
+  s({trig="braket", snippetType="autosnippet", dscr="Braket", condition=math},
     fmta([[\braket{<>}{<>} <>]],
     {i(1), i(2), i(0)}
     )
   ),
 
-  s({trig="ketbra", snippetType="autosnippet", dscr="Ket", condition=math},
+  s({trig="ketbra", snippetType="autosnippet", dscr="Ketbra", condition=math},
     fmta([[\ketbra{<>}{<>} <>]],
     {i(1), i(2), i(0)}
     )
