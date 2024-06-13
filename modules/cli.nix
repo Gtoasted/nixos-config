@@ -1,4 +1,8 @@
 { pkgs, inputs, ... }: {
+  environment.systemPackages = with pkgs; [
+    gradle
+  ];
+
   home-manager.users."arne" = {
     programs.vim.enable = true;
     
