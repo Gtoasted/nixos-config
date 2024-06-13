@@ -10,5 +10,6 @@
     zathura
     thunderbird
     inkscape
+    discord
   ];
 }
