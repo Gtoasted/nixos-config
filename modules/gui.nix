@@ -11,5 +11,6 @@
     thunderbird
     inkscape
     discord
+    jetbrains-toolbox
   ];
 }
