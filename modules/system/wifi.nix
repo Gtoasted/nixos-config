@@ -9,13 +9,9 @@
     userControlled.enable = true;
     environmentFile = /run/secrets/wifi;
     networks = {
-      Sagittarius = {
-        psk = "@sagittarius@";
-      };
-
-      Gommemode = {
-        psk = "@gommemode@";
-      };
+      Sagittarius.psk = "@sagittarius@";
+      Gommemode.psk = "@gommemode@";
+      G96.psk = "@g96@";
 
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
