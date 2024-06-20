@@ -12,6 +12,7 @@
       Sagittarius.psk = "@sagittarius@";
       Gommemode.psk = "@gommemode@";
       G96.psk = "@g96@";
+      LambdaAufDemEFeld.psk = "@lambdaaufdemefeld@";
 
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
