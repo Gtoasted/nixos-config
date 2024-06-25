@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ inputs, pkgs, lib, ... }: {
   imports = [
     ./waybar.nix
   ];
@@ -15,6 +15,9 @@
     wayland.windowManager.hyprland = {
       enable = true;
       package = pkgs.hyprland;
+      plugins = [
+        inputs.hyprgrass.packages.${pkgs.system}.default
+      ];
       xwayland.enable = true;
       systemd.enable = true;
       extraConfig = lib.fileContents ../config/hypr/hyprland.conf;
