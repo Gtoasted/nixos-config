@@ -4,6 +4,7 @@
     sopsFile = ../../secrets/wifi;
   };
 
+  networking.networkmanager.enable = true;
   networking.wireless = {
     enable = true;
     userControlled.enable = true;
