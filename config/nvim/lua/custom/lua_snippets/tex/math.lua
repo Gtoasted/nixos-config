@@ -124,4 +124,10 @@ return {
       }
     )
   ),
+
+  s({trig="txt", snippetType="autosnippet", dscr="text mode inside math mode", condition=math},
+    fmta([[\text{<>}]],
+    {i(1)}
+    )
+  ),
 }
