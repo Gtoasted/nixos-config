@@ -20,15 +20,15 @@
     };
 
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    hyprgrass = {
-       url = "github:horriblename/hyprgrass";
+    # hyprgrass = {
+       # url = "github:horriblename/hyprgrass";
        # inputs.hyprland.follows = "hyprland"; # IMPORTANT
-    };
+    # };
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
