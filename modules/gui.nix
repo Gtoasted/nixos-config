@@ -12,5 +12,6 @@
     inkscape
     discord
     jetbrains-toolbox
+    signal-desktop
   ];
 }
