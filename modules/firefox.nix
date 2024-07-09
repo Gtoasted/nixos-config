@@ -153,9 +153,9 @@
           "toolkit.telemetry.unified" = false;
           "toolkit.telemetry.unifiedIsOptIn" = false;
           "toolkit.telemetry.updatePing.enabled" = false;
-          "webgl.disabled" = true;
-          "webgl.renderer-string-override" = " ";
-          "webgl.vendor-string-override" = " ";
+          "webgl.disabled" = false;
+          # "webgl.renderer-string-override" = " ";
+          # "webgl.vendor-string-override" = " ";
           "browser.bookmarks.addedImportButton" = true;
           "browser.places.importBookmarksHTML" = false;
           "browser.newtabpage.activity-stream.section.feeds.topsites" = false;
