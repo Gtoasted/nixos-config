@@ -4,7 +4,6 @@
     sopsFile = ../../secrets/wifi;
   };
 
-  networking.networkmanager.enable = true;
   networking.wireless = {
     enable = true;
     userControlled.enable = true;
@@ -14,6 +13,7 @@
       Gommemode.psk = "@gommemode@";
       G96.psk = "@g96@";
       LambdaAufDemEFeld.psk = "@lambdaaufdemefeld@";
+      "The promised LAN".psk = "@thepromisedlan@";
 
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
