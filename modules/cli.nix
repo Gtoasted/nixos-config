@@ -1,6 +1,8 @@
 { pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [
     gradle
+    wl-clipboard
+    hyprshot
   ];
 
   home-manager.users."arne" = {
