@@ -13,5 +13,6 @@
     discord
     jetbrains-toolbox
     signal-desktop
+    davinci-resolve
   ];
 }
