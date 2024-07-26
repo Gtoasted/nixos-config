@@ -7,7 +7,7 @@
 
     ../gui.nix
     ../cli.nix
-    ../samba.nix
+    # ../samba.nix
 
     ../latex.nix
   ];
