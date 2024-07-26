@@ -2,6 +2,7 @@
   imports = [
     ./desktop.nix
     ../system/wifi.nix
+    ../system/bluetooth.nix
   ];
 
   environment.systemPackages = with pkgs; [
