@@ -15,5 +15,6 @@
     signal-desktop
     davinci-resolve
     vlc
+    prismlauncher
   ];
 }
