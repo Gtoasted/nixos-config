@@ -9,6 +9,7 @@
     hyprlock
     xdg-desktop-portal-hyprland
     cliphist
+    wlinhibit
   ];
 
   home-manager.users."arne" = {
