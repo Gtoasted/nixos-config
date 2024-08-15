@@ -1,4 +1,8 @@
-{ ... }: {
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    killall
+  ];
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
