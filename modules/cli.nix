@@ -5,6 +5,11 @@
     hyprshot
   ];
 
+  programs.nh = {
+    enable = true;
+    flake = "/home/arne/.config/nixos/";
+  };
+
   home-manager.users."arne" = {
     programs.vim.enable = true;
     
