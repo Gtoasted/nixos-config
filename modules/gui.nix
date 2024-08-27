@@ -16,5 +16,7 @@
     davinci-resolve
     vlc
     prismlauncher
+    nwg-displays
+    pavucontrol
   ];
 }
