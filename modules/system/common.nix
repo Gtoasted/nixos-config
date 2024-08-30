@@ -17,7 +17,7 @@
   users.users.arne = {
     isNormalUser = true;
     description = "Arne von Laguna";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
   };
 
   # locale

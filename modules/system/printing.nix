@@ -7,4 +7,7 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  # Network Scanning
+  hardware.sane.enable = true;
 }
