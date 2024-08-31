@@ -3,6 +3,8 @@
     gradle
     wl-clipboard
     hyprshot
+    zip
+    unzip
   ];
 
   programs.nh = {
