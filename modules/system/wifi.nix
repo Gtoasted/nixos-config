@@ -15,6 +15,7 @@
       LambdaAufDemEFeld.psk = "@lambdaaufdemefeld@";
       "The promised LAN".psk = "@thepromisedlan@";
       "Vodafone-5AE1".psk = "@vodafone5ae1@";
+      "Gastzugang Marienhof".psk = "@gastzugangmarienhof@";
 
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
