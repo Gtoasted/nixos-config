@@ -19,4 +19,6 @@
     nwg-displays
     pavucontrol
   ];
+
+  fonts.fontDir.enable = true;
 }
