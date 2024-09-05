@@ -44,5 +44,8 @@
   };
   console.keyMap = "de";
 
+  # External storage support
+  services.devmon.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 }
