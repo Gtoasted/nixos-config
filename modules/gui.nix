@@ -18,6 +18,10 @@
     prismlauncher
     nwg-displays
     pavucontrol
+    libreoffice-qt
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US
   ];
 
   fonts.fontDir.enable = true;
