@@ -34,6 +34,7 @@
   outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./alpha-centauri/configuration.nix
