@@ -22,6 +22,7 @@
     hunspell
     hunspellDicts.de_DE
     hunspellDicts.en_US
+    obsidian
   ];
 
   fonts.fontDir.enable = true;
