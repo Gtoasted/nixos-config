@@ -24,6 +24,10 @@
         package = pkgs.kora-icon-theme;
         name = "Kora";
       };
+      cursorTheme = {
+        name = "Catppuccin-Mocha-Light-Cursors";
+        package = pkgs.catppuccin-cursors.mochaLight;
+      };
     };
 
     home.pointerCursor = {
