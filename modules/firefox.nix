@@ -4,10 +4,10 @@
       enable = true;
 
       policies = {
-        "DisableFormHistory" = true;
-        "DisableFirefoxAccounts" = false;
-        "NetworkPrediction" = false;
-        "CaptivePortal" = false;
+        # "DisableFormHistory" = true;
+        # "DisableFirefoxAccounts" = false;
+        # "NetworkPrediction" = false;
+        # "CaptivePortal" = false;
         "DNSOverHTTPS" = {
           "Enabled" = false;
         };
@@ -50,8 +50,8 @@
         };
 
         settings = {
-          "app.normandy.api_url" = "";
-          "app.normandy.enabled" = false;
+          # "app.normandy.api_url" = "";
+          # "app.normandy.enabled" = false;
           "app.shield.optoutstudies.enabled" = false;
           "app.update.auto" = false;
           "beacon.enabled" = false;
@@ -77,7 +77,7 @@
           # "browser.safebrowsing.phishing.enabled" = false;
           "browser.selfsupport.url" = "";
           "browser.send_pings" = false;
-          "browser.sessionstore.privacy_level" = 0;
+          # "browser.sessionstore.privacy_level" = 0;
           "browser.shell.checkDefaultBrowser" = false;
           "browser.startup.homepage_override.mstone" = "ignore";
           "browser.tabs.crashReporting.sendReport" = false;
@@ -102,11 +102,11 @@
           "experiments.enabled" = false;
           "experiments.manifest.uri" = "";
           "experiments.supported" = false;
-          "extensions.getAddons.cache.enabled" = false;
-          "extensions.getAddons.showPane" = false;
+          # "extensions.getAddons.cache.enabled" = false;
+          # "extensions.getAddons.showPane" = false;
           "extensions.pocket.enabled" = false;
-          "extensions.shield-recipe-client.api_url" = "";
-          "extensions.shield-recipe-client.enabled" = false;
+          # "extensions.shield-recipe-client.api_url" = "";
+          # "extensions.shield-recipe-client.enabled" = false;
           "extensions.webservice.discoverURL" = "";
           "media.autoplay.default" = 1;
           "media.autoplay.enabled" = false;
@@ -118,18 +118,18 @@
           "network.allow-experiments" = false;
           "network.captive-portal-service.enabled" = false;
           "network.cookie.cookieBehavior" = 1;
-          "network.dns.disablePrefetch" = true;
-          "network.dns.disablePrefetchFromHTTPS" = true;
+          # "network.dns.disablePrefetch" = true;
+          # "network.dns.disablePrefetchFromHTTPS" = true;
           "network.http.referer.spoofSource" = true;
           "network.http.speculative-parallel-limit" = 0;
           "network.predictor.enable-prefetch" = false;
           "network.predictor.enabled" = false;
           "network.prefetch-next" = false;
-          "network.trr.mode" = 5;
+          # "network.trr.mode" = 5;
           "privacy.donottrackheader.enabled" = true;
           "privacy.donottrackheader.value" = 1;
           "privacy.query_stripping" = true;
-          "privacy.resistFingerprinting" = true;
+          # "privacy.resistFingerprinting" = true;
           "privacy.trackingprotection.cryptomining.enabled" = true;
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.fingerprinting.enabled" = true;
