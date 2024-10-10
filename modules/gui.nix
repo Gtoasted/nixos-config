@@ -10,6 +10,7 @@
     zathura
     thunderbird
     inkscape
+    gimp
     discord
     jetbrains-toolbox
     signal-desktop
