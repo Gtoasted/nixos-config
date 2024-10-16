@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../modules/templates/laptop.nix
     ../modules/hyprland.nix
+    ../modules/notex.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
