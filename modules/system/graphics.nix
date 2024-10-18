@@ -32,8 +32,9 @@
 
     home.pointerCursor = {
       gtk.enable = true;
-      name = "Catppuccin-Mocha-Light-Cursors";
+      x11.enable = true;
       package = pkgs.catppuccin-cursors.mochaLight;
+      name = "Catppuccin-Mocha-Light-Cursors";
       size = 16;
     };
   };
