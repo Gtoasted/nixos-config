@@ -28,4 +28,17 @@
 
   fonts.fontDir.enable = true;
   programs.steam.enable = true;
+
+  home-manager.users."arne".xdg = {
+    desktopEntries.zathura = {
+      name = "Zathura";
+      exec = "${pkgs.zathura}/bin/zathura";
+    };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "zathura.desktop";
+      };
+    };
+  };
 }
