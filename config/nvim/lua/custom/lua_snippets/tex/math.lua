@@ -19,12 +19,12 @@ return {
   -- Enter Math Mode
   s({trig="mk", snippetType="autosnippet", dscr="Inline math mode"},
     fmta("$<>$",
-    {i(1)}
+      {i(1)}
     )
   ),
 
   s({trig="dm", snippetType="autosnippet", dscr="Multiline math mode"},
-    fmta("$$ <> $$",
+    fmta("\\[ <> \\]",
       {i(1)}
     )
   ),
