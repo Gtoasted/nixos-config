@@ -120,10 +120,10 @@
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
 
-          "SUPER SHIFT, left, movewindow, l"
-          "SUPER SHIFT, right, movewindow, r"
-          "SUPER SHIFT, up, movewindow, u"
-          "SUPER SHIFT, down, movewindow, d "
+          "$mainMod SHIFT, left, movewindow, l"
+          "$mainMod SHIFT, right, movewindow, r"
+          "$mainMod SHIFT, up, movewindow, u"
+          "$mainMod SHIFT, down, movewindow, d "
 
           "$mainMod, 1, workspace, 1"
           "$mainMod, 2, workspace, 2"
@@ -155,10 +155,14 @@
 
           "$mainMod, T, togglegroup"
           "$mainMod, TAB, changegroupactive, f"
-          "$mainMod SHIFT, TAB, changegroupactive, b"
-          "$mainMod Control_L, left, movegroupwindow, b"
-          "$mainMod Control_L, right, movegroupwindow"
-          "$mainMod Control_L, up, moveoutofgroup"
+          "$mainMod Shift, TAB, changegroupactive, b"
+          "$mainMod , d, movegroupwindow"
+          "$mainMod , a, movegroupwindow, b"
+
+          "$mainMod Control_L, left, movewindoworgroup, l"
+          "$mainMod Control_L, right, movewindoworgroup, r"
+          "$mainMod Control_L, up, movewindoworgroup, u"
+          "$mainMod Control_l, down, movewindoworgroup, d "
 
           ", XF86AudioMute, exec, amixer sset 'Master' togglemute # F1"
           ", XF86AudioLowerVolume, exec, amixer sset 'Master' 5%- # F2"
