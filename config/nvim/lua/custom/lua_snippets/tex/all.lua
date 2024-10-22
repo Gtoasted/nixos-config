@@ -70,6 +70,18 @@ return {
     )
   ),
 
+  s({trig="bold", snippetType="snippet", dscr="bold"},
+    fmta([[\textbf{<>}]],
+    {i(1)}
+    )
+  ),
+
+  s({trig="uline", snippetType="snippet", dscr="underlined", condition=math},
+    fmta([[\underline{<>}]],
+    {i(1)}
+    )
+  ),
+
   s({trig="lst", snippetType="snippet", dscr="Java Code Block"},
     fmta([[
     \begin{lstlisting}[language=Java]
