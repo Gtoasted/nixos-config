@@ -153,9 +153,12 @@
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
 
-          "$mainMod, t, togglegroup"
-          "$mainMod, tab, changegroupactive, f"
-          "$mainMod SHIFT, tab, changegroupactive, b"
+          "$mainMod, T, togglegroup"
+          "$mainMod, TAB, changegroupactive, f"
+          "$mainMod SHIFT, TAB, changegroupactive, b"
+          "$mainMod Control_L, left, movegroupwindow, b"
+          "$mainMod Control_L, right, movegroupwindow"
+          "$mainMod Control_L, up, moveoutofgroup"
 
           ", XF86AudioMute, exec, amixer sset 'Master' togglemute # F1"
           ", XF86AudioLowerVolume, exec, amixer sset 'Master' 5%- # F2"
@@ -177,7 +180,6 @@
           "$mainMod, mouse:273, resizewindow"
         ];
       };
-      # extraConfig = lib.fileContents ../config/hypr/hyprland.conf;
     };
 
     services.mako = {
