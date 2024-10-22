@@ -168,7 +168,7 @@
           ", XF86PowerOff, exec, systemctl suspend"
           "$mainMod, L, exec, loginctl lock-session"
           "$mainMod, M, exec, pkill .nwg-displays-w || nwg-displays"
-          "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+          # "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         ];
 
         bindm = [
