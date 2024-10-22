@@ -23,6 +23,9 @@ return {
       vim.g.vimtex_syntax_custom_cmds = {
         {name = 'vec', mathmode = true , conceal = true, argstyle = 'bold'}
       }
+      vim.g.vimtex_syntax_custom_cmds_with_concealed_delims = {
+      {name = 'frac', nargs=2, mathmode = true, cchar_open='(', cchar_mid='/', cchar_close=')'}
+      }
     end
   },{'L3MON4D3/LuaSnip',
     opts = {
