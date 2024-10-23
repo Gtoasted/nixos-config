@@ -1,1 +1,1 @@
-nixos-rebuild switch --flake ..#alpha-centauri --impure
+nixos-rebuild switch --flake .#alpha-centauri --impure
