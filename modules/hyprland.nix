@@ -46,10 +46,8 @@
           gaps_in = 2;
           gaps_out = 5;
           border_size = 1;
-          "col.active_border" = "rgba(e5b9c6ff) rgba(c293a3ff) 45deg";
-          "col.inactive_border" = "rgba(ff382d2e)";
-          # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          # "col.inactive_border" = "rgba(595959aa)";
+          "col.active_border" = "rgba(522258ff)";
+          "col.inactive_border" = "rgba(8C30612e)";
           layout = "dwindle";
           allow_tearing = "false";
         };
@@ -95,7 +93,20 @@
             workspace_swipe = true;
             workspace_swipe_fingers = 4;
         };
+        
+        group = {
+          "col.border_active" = "rgba(522258ff)";
+          "col.border_inactive" = "rgba(8C30612e)";
+
+          groupbar = {
+            height = 20;
+            "col.active" = "rgba(522258ff)";
+            "col.inactive" = "rgba(8C3061c0)";
+          };
+        };
+
         misc.force_default_wallpaper = -1;
+
         device = {
             name = "epic-mouse-v1";
             sensitivity = -0.5;
