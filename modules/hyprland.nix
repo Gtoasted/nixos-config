@@ -4,7 +4,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    wofi
+    rofi
     hypridle
     hyprlock
     xdg-desktop-portal-hyprland
@@ -22,7 +22,7 @@
         exec-once = "waybar & hyprlock & hypridle";
         "$terminal" = "kitty";
         "$fileManager" = "dolphin";
-        "$menu" = "wofi --show drun";
+        "$menu" = "rofi -show drun";
 
         env = [
           "XCURSOR_SIZE,24"
@@ -188,7 +188,7 @@
           ", XF86PowerOff, exec, systemctl suspend"
           "$mainMod, L, exec, loginctl lock-session"
           "$mainMod, M, exec, pkill .nwg-displays-w || nwg-displays"
-          # "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+          # "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         ];
 
         bindm = [
