@@ -4,13 +4,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    rofi
     hypridle
     hyprlock
     xdg-desktop-portal-hyprland
     cliphist
     wlinhibit
   ];
+
 
   home-manager.users."arne" = {
     wayland.windowManager.hyprland = {
@@ -114,6 +114,7 @@
         windowrulev2 = [
           "suppressevent maximize, class:.*"
           "float, class:(nwg-displays)"
+          "float, initialTitle:(rofi - drun)"
         ];
 
         "$mainMod" = "SUPER";
@@ -199,6 +200,8 @@
       };
     };
 
+    programs.rofi.enable = true;
+
     services.mako = {
       enable = true;
       extraConfig = lib.fileContents ../config/mako/config;
@@ -208,6 +211,7 @@
       ".config/hypr/hyprlock.conf".source = ../config/hypr/hyprlock.conf;
       ".config/hypr/hypridle.conf".source = ../config/hypr/hypridle.conf;
       ".config/hypr/m87.png".source = ../config/hypr/m87.png;
+      ".config/rofi".source = ../config/rofi;
     };
   };
 
