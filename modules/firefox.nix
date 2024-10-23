@@ -43,6 +43,8 @@
 
         settings = {
           "app.update.auto" = false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+          "browser.newtabpage.activity-stream.showSponsored" = false;
         };
 
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
