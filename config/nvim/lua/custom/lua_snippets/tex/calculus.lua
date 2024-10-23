@@ -16,8 +16,18 @@ end
 
 return {
   -- Differentiation
-  s({trig="df", snippetType="autosnippet", dscr="Differential d", condition=math},
-    {t("\\d")}
+  s({trig="dd", snippetType="autosnippet", dscr="Differential d", condition=math},
+    fmta([[\dd{<>}]],
+    {i(1)}
+    )
+  ),
+
+  s({trig="da", snippetType="autosnippet", dscr="Area differential", condition=math},
+    {t([[\dd{\vec{A}}]])}
+  ),
+
+  s({trig="dv", snippetType="autosnippet", dscr="Volume differential", condition=math},
+    {t([[\dd{\vec{V}}]])}
   ),
 
   s({trig="dl", snippetType="autosnippet", dscr="Partial differential", condition=math},
@@ -54,58 +64,42 @@ return {
 
   -- Integration
   s({trig="int ", snippetType="autosnippet", dscr="Integral without bounds", condition=math},
+    {t([[\int ]])}
+  ),
+
+  s({trig="int1", snippetType="autosnippet", dscr="Integral with bounds", condition=math},
     fmta([[
-    \int <> \; \dd{<>}
+    \int_{<>}^{<>} 
     ]],
     {i(1), i(2)}
     )
   ),
 
-  s({trig="int1", snippetType="autosnippet", dscr="Integral with bounds", condition=math},
-    fmta([[
-    \int_{<>}^{<>} <> \; \dd{<>}
-    ]],
-    {i(1), i(2), i(3), i(4)}
-    )
-  ),
-
   s({trig="int2", snippetType="autosnippet", dscr="Double Integral with bounds", condition=math},
     fmta([[
-    \int_{<>}^{<>}\;\dd<> \;\int_{<>}^{<>}\;\dd{<>} \; <> 
+    \int_{<>}^{<>} <> \;\int_{<>}^{<>} <> 
     ]],
     {i(1), i(2), i(3), i(4), i(5), i(6), i(7)}
     )
   ),
 
   s({trig="intf", snippetType="autosnippet", dscr="Area Integral", condition=math},
-    fmta([[
-    \int_{F} <> \;\dd{\vec{F}}
-    ]],
-    {i(1)}
-    )
+    {t([[\int_F ]])}
   ),
 
-  s({trig="intv", snippetType="autosnippet", dscr="Volume Integral", conditon=math},
-    fmta([[
-    \int_{V} <> \;\dd{V}
-    ]],
-    {i(1)}
-    )
+  s({trig="intv", snippetType="autosnippet", dscr="Area Integral", condition=math},
+    {t([[\int_V ]])}
   ),
 
-  s({trig="inti", snippetType="autosnippet", dscr="Interal over the Real numbers", condition=math},
-    fmta([[
-    \int_{-\infty}^{\infty} <> \;\dd{<>}
-    ]],
-    {i(1), i(2)}
-    )
+  s({trig="inti", snippetType="autosnippet", dscr="Integral over the Real numbers", condition=math},
+    t([[\int_{-\infty}^{\infty} ]])
   ),
 
   s({trig="int_", snippetType="autosnippet", dscr="n-d Integral with custom bound", condition=math},
-    fmta([[
-    \int_{<>} <> \;\dd{<>}
-    ]],
-    {i(1), i(2), i(3)}
-    )
+    t([[\int_{<>} ]])
+  ),
+
+  s({trig="intr", snippetType="autosnippet", dscr="Integral over all of space", condition=math},
+    {t([[\int_{\R^3} ]])}
   ),
 }
