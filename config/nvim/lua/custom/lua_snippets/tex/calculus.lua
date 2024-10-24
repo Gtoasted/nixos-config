@@ -79,7 +79,7 @@ return {
     fmta([[
     \int_{<>}^{<>} <> \;\int_{<>}^{<>} <> 
     ]],
-    {i(1), i(2), i(3), i(4), i(5), i(6), i(7)}
+    {i(1), i(2), i(3), i(4), i(5), i(6)}
     )
   ),
 
@@ -96,7 +96,9 @@ return {
   ),
 
   s({trig="int_", snippetType="autosnippet", dscr="n-d Integral with custom bound", condition=math},
-    t([[\int_{<>} ]])
+    fmta([[\int_{<>} ]],
+      {i(1)}
+    )
   ),
 
   s({trig="intr", snippetType="autosnippet", dscr="Integral over all of space", condition=math},
