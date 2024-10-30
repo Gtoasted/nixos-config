@@ -7,15 +7,15 @@
   networking.wireless = {
     enable = true;
     userControlled.enable = true;
-    environmentFile = /run/secrets/wifi;
+    secretsFile = /run/secrets/wifi;
     networks = {
-      Sagittarius.psk = "@sagittarius@";
-      Gommemode.psk = "@gommemode@";
-      "G96".psk = "@g96@";
-      LambdaAufDemEFeld.psk = "@lambdaaufdemefeld@";
-      "The promised LAN".psk = "@thepromisedlan@";
-      "Vodafone-5AE1".psk = "@vodafone5ae1@";
-      "Gastzugang Marienhof".psk = "@gastzugangmarienhof@";
+      Sagittarius.pskRaw = "ext:sagittarius";
+      Gommemode.pskRaw = "ext:gommemode";
+      G96.pskRaw = "ext:g96";
+      LambdaAufDemEFeld.pskRaw = "ext:lambdaaufdemefeld";
+      "The promised LAN".pskRaw = "ext:thepromisedlan";
+      "Vodafone-5AE1".pskRaw = "ext:vodafone5ae1";
+      "Gastzugang Marienhof".pskRaw = "ext:gastzugangmarienhof";
 
       eduroam = let
       cacert = builtins.toFile "ca_cert.pam" "-----BEGIN CERTIFICATE-----
