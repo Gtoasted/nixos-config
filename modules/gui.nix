@@ -13,7 +13,7 @@
     gimp
     discord
     jetbrains-toolbox
-    signal-desktop
+    # signal-desktop
     davinci-resolve
     vlc
     prismlauncher
