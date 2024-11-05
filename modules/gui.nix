@@ -14,7 +14,7 @@
     discord
     jetbrains-toolbox
     # signal-desktop
-    davinci-resolve
+    # davinci-resolve
     vlc
     prismlauncher
     nwg-displays
