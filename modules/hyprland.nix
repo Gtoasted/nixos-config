@@ -29,11 +29,6 @@
           "QT_QPA_PLATFORMTHEME,qt5ct"
         ];
 
-        monitor = [
-          "eDP-1,1920x1080@60,0x0,1"
-          ",preferred,auto,1"
-        ];
-
         input = {
             kb_layout = "de";
             kb_variant = "nodeadkeys";
@@ -198,6 +193,11 @@
           "$mainMod, mouse:273, resizewindow"
         ];
       };
+      
+      extraConfig = ''
+        source = ~/.config/hypr/monitors.conf
+        source = ~/.config/hypr/workspaces.conf
+      '';
     };
 
     programs.rofi.enable = true;
