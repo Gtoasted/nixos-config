@@ -46,14 +46,20 @@ BSeOE6Fuwg==
         key_mgmt=WPA-EAP
         pairwise=CCMP
         eap=TTLS
-        password="@eduroam_pass@"
+        password=ext:eduroam_pass
         ca_cert="${cacert}"
         altsubject_match="DNS:radius.hhu.de"
         phase2="auth=PAP"
-        identity="@eduroam_id@"
+        identity="wav66jaq"
         anonymous_identity="eduroam@hhu.de"
         group=CCMP TKIP
       '';
+      # auth = ''
+      #   key_mgmt=WPA-EAP
+      #   eap=TTLS
+      #   identity="ext:eduroam_id"
+      #   password="ext:eduroam_pass"
+      # '';
       };
     };
   };
