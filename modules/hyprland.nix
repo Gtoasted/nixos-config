@@ -9,6 +9,7 @@
     xdg-desktop-portal-hyprland
     cliphist
     wlinhibit
+    alsa-utils
   ];
 
 
