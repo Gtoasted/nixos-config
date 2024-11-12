@@ -10,6 +10,10 @@
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
 
+  nixpkgs.overlays = [
+    ( import ../overlays.nix { } ).additions
+  ];
+
   # Home Manager config
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

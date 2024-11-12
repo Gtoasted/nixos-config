@@ -1,8 +1,12 @@
-{ config, sops, ... }: {
+{ config, sops, pkgs, ... }: {
   sops.secrets.wifi = {
     format = "binary";
     sopsFile = ../../secrets/wifi;
   };
+
+  environment.systemPackages = [
+    pkgs.easyroam
+  ];
 
   networking.wireless = {
     enable = true;
