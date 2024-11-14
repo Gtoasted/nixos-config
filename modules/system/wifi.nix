@@ -21,10 +21,6 @@
     };
   };
 
-  environment.systemPackages = [
-    pkgs.easyroam
-  ];
-
   networking.wireless = {
     enable = true;
     userControlled.enable = true;
