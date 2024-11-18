@@ -25,6 +25,7 @@
     hunspellDicts.en_US
     obsidian
     element-desktop-wayland
+    jdk21
   ];
 
   fonts.fontDir.enable = true;
