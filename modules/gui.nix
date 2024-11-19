@@ -7,7 +7,6 @@
     kitty
     dolphin
     xournalpp
-    zathura
     thunderbird
     inkscape
     gimp
@@ -31,15 +30,24 @@
   fonts.fontDir.enable = true;
   programs.steam.enable = true;
 
-  home-manager.users."arne".xdg = {
-    desktopEntries.zathura = {
-      name = "Zathura";
-      exec = "${pkgs.zathura}/bin/zathura";
-    };
-    mimeApps = {
+  home-manager.users."arne" = {
+    programs.zathura = {
       enable = true;
-      defaultApplications = {
-        "application/pdf" = "zathura.desktop";
+      options = {
+        window-title-basename = true;
+      };
+    };
+
+    xdg = {
+      desktopEntries.zathura = {
+        name = "Zathura";
+        exec = "${pkgs.zathura}/bin/zathura";
+      };
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = "zathura.desktop";
+        };
       };
     };
   };
