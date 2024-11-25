@@ -1,15 +1,7 @@
-{ inputs, pkgs, lib, ... }: {
-  imports = [
-    ./waybar.nix
-  ];
-
+{ pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
-    hypridle
-    hyprlock
     xdg-desktop-portal-hyprland
     cliphist
-    wlinhibit
-    alsa-utils
   ];
 
 
@@ -203,18 +195,15 @@
       '';
     };
 
-    programs.rofi.enable = true;
-
     services.mako = {
       enable = true;
-      extraConfig = lib.fileContents ../config/mako/config;
+      extraConfig = lib.fileContents ../../config/mako/config;
     };
 
+    programs.rofi.enable = true;
+
     home.file = {
-      ".config/hypr/hyprlock.conf".source = ../config/hypr/hyprlock.conf;
-      ".config/hypr/hypridle.conf".source = ../config/hypr/hypridle.conf;
-      ".config/hypr/m87.png".source = ../config/hypr/m87.png;
-      ".config/rofi".source = ../config/rofi;
+      ".config/rofi".source = ../../config/rofi;
     };
   };
 
@@ -226,12 +215,5 @@
         user = "arne";
       };
     };
-  };
-
-  security.pam.services.hyprlock = {
-    text = ''
-      auth sufficient pam_fprintd.so
-      auth include login
-    '';
   };
 }
