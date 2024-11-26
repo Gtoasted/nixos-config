@@ -25,32 +25,61 @@ local letters = {
 
   aa = [[\alpha]],
   bb = [[\beta]],
-  gam = [[\gamma]],
-  del = [[\delta]],
-  Del = [[\Delta]],
-  ee = [[\varepsilon]],
-  tht = [[\theta]],
-  kk = [[\kappa]],
-  lam = [[\lambda]],
-  pi = [[\pi]],
-  rho = [[\rho]],
-  ss = [[\sigma]],
-  SS = [[\Sigma]],
-  tau = [[\tau]],
-  phi = [[\phi]],
-  vphi = [[\varphi]],
-  psi = [[\psi]],
-  mu = [[\mu]],
-  nu = [[\nu]],
-  om = [[\omega]],
-  chi = [[\mathcal{X}]]
+
+  epsilon = [[\varepsilon]],
+  vepsilon = [[\epsilon]],
+  vtheta = [[\vartheta]],
+  vrho = [[\varrho]],
+  phi = [[\varphi]],
+  vphi = [[\phi]],
+  Phi = [[\Phi]],
+}
+local greek = {
+  -- "alpha",
+  -- "beta",
+  "gamma",
+  "delta",
+  -- "epsilon",
+  "zeta",
+  "eta",
+  "theta",
+  "iota",
+  "kappa",
+  "lambda",
+  "mu",
+  "nu",
+  "xi",
+  "pi",
+  "rho",
+  "tau",
+  -- "phi",
+  "psi",
+  "omega",
 }
 
 for k,v in pairs(letters) do
   table.insert(cfg,
     s({trig="(%d*)" .. k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
       {f(function(_, snip) return snip.captures[1] .. v end)}
-  ))
+    )
+  )
 end
+
+for k,v in pairs(greek) do
+  table.insert(cfg,
+    s({trig=v, snippetType="autosnippet", dscr="", condition=math},
+      {t("\\" .. v)}
+    )
+  )
+
+  capital = v:gsub("^%l", string.upper)
+
+  table.insert(cfg,
+    s({trig=capital, snippetType="autosnippet", dscr="", condition=math},
+      {t("\\" .. capital)}
+    )
+  )
+end
+
 
 return cfg
