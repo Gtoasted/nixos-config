@@ -117,7 +117,8 @@
           "$mainMod, Q, exec, $terminal"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, R, exec, $menu"
-          "$mainMod, F, exec, firefox"
+          "$mainMod, B, exec, firefox"
+          "$mainMod, F, fullscreen"
 
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
