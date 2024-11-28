@@ -19,30 +19,28 @@ local cfg = {}
 -- Snippets that wrap a single character
 local modifiers = {
   v = [[\vec{%s}]],
-  ["do"] = [[\dot{%s}]],
-  ["ddo"] = [[\ddot{%s}]],
+  ["1d"] = [[\dot{%s}]],
+  ["2d"] = [[\ddot{%s}]],
   dv = [[\dot{\vec{%s}}]],
-  ddv = [[\ddot{\vec{%s}}]],
-  -- h = [[\hat{%s}]],
-  -- o = [[\overline{%s}]],
-  -- t = [[\tilde{%s}]],
+  h = [[\hat{%s}]],
+  o = [[\overline{%s}]],
+  t = [[\tilde{%s}]],
 }
 
 for k,v in pairs(modifiers) do
   table.insert(cfg,
-    s({trig=[[(.)%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
-      {f(function (_, snip)
-        return string.format(v, snip.captures[1])
-      end)}
+    s({trig=[[(.)%.]] .. k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
+      {f(function(_, snip) return string.format(v, snip.captures[1]) end)}
     )
   )
-  table.insert(cfg,
-    s({trig=[[(\.[^\])%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
-      {f(function (_, snip)
-        return string.format(v, snip.captures[1])
-      end)}
-    )
-  )
+  --
+  -- table.insert(cfg,
+  --   s({trig=[[(\.[^\])%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
+  --     {f(function (_, snip)
+  --       return string.format(v, snip.captures[1])
+  --     end)}
+  --   )
+  -- )
 end
 
 -- More physics snippets
@@ -86,7 +84,7 @@ local other = {
 
 -- merge tables
 for k, v in pairs(other) do
-  cfg[k] = v
+  table.insert(cfg, v)
 end
 
 return cfg
