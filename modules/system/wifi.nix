@@ -33,6 +33,7 @@
       "The promised LAN".pskRaw = "ext:thepromisedlan";
       "Vodafone-5AE1".pskRaw = "ext:vodafone5ae1";
       "Gastzugang Marienhof".pskRaw = "ext:gastzugangmarienhof";
+      PilogLisa.pskRaw = "ext:piloglisa";
       eduroam.auth = ''
         key_mgmt=WPA-EAP
         proto=WPA2
