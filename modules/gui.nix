@@ -32,6 +32,13 @@
   programs.steam.enable = true;
 
   home-manager.users."arne" = {
+    programs.bash.enable = true;
+
+    programs.starship = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
     programs.zathura = {
       enable = true;
       options = {
