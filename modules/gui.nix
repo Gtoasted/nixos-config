@@ -23,7 +23,7 @@
     hunspellDicts.de_DE
     hunspellDicts.en_US
     obsidian
-    element-desktop-wayland
+    element-desktop
     jdk21
   ];
 
