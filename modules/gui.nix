@@ -25,6 +25,7 @@
     obsidian
     element-desktop
     jdk21
+    pdfpc
   ];
 
   fonts.fontDir.enable = true;
