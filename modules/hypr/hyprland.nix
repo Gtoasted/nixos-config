@@ -196,11 +196,6 @@
       '';
     };
 
-    services.mako = {
-      enable = true;
-      extraConfig = lib.fileContents ../../config/mako/config;
-    };
-
     programs.rofi.enable = true;
 
     home.file = {
