@@ -38,8 +38,6 @@ return {
     opts = {
       completion = {keyword_length = 3},
       mapping = {
-        ["Up"] = cmp.mapping.select_prev_item(),
-        ["Down"] = cmp.mapping.select_next_item(),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if require("luasnip").expand_or_jumpable() then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
