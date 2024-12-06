@@ -27,7 +27,7 @@ return {
   ),
 
   s({trig="dV", snippetType="autosnippet", dscr="Volume differential", condition=math},
-    {t([[\dd{V]])}
+    {t([[\dd{V}]])}
   ),
 
   s({trig="dl", snippetType="autosnippet", dscr="Partial differential", condition=math},
