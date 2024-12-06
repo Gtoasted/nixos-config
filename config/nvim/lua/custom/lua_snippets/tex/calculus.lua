@@ -22,12 +22,12 @@ return {
     )
   ),
 
-  s({trig="da", snippetType="autosnippet", dscr="Area differential", condition=math},
+  s({trig="dA", snippetType="autosnippet", dscr="Area differential", condition=math},
     {t([[\dd{\vec{A}}]])}
   ),
 
-  s({trig="dv", snippetType="autosnippet", dscr="Volume differential", condition=math},
-    {t([[\dd{\vec{V}}]])}
+  s({trig="dV", snippetType="autosnippet", dscr="Volume differential", condition=math},
+    {t([[\dd{V]])}
   ),
 
   s({trig="dl", snippetType="autosnippet", dscr="Partial differential", condition=math},
