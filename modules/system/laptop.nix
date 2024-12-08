@@ -1,12 +1,11 @@
 { pkgs, ... }: {
   imports = [
     ./desktop.nix
-    ../system/wifi.nix
-    ../system/bluetooth.nix
+    ./wifi.nix
+    ./bluetooth.nix
   ];
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    wpa_supplicant_gui
   ];
 }

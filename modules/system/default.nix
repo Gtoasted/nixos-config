@@ -1,6 +1,7 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    killall
+  imports = [
+    ./sops.nix
+    ./ssh.nix
   ];
 
   boot.loader = {
@@ -48,4 +49,9 @@
   services.devmon.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Do not change
+  system.stateVersion = "23.11";
 }

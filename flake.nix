@@ -26,7 +26,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./alpha-centauri/configuration.nix
+          ./hosts/alpha-centauri/configuration.nix
           inputs.sops-nix.nixosModules.sops
         ];
       };

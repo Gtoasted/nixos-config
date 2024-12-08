@@ -1,4 +1,8 @@
 { config, sops, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+
   sops.secrets = {
     wifi = {
       format = "binary";

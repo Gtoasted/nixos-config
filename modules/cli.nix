@@ -1,28 +1,12 @@
-{ pkgs, inputs, ... }: {
-  environment.systemPackages = with pkgs; [
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
     gradle
+    jdk21
     wl-clipboard
     hyprshot
     zip
     unzip
   ];
 
-  programs.nh = {
-    enable = true;
-    flake = "/home/arne/.config/nixos/";
-  };
-
-  home-manager.users."arne" = {
-    programs.vim.enable = true;
-    
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-
-    home = {
-      file = { ".config/nvim".source = ../config/nvim; };
-      sessionVariables.EDITOR = "nvim";
-    };
-  };
+  programs.vim.enable = true;
 }

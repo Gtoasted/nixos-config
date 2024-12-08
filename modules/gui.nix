@@ -1,9 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./firefox.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     kitty
     dolphin
     xournalpp
@@ -13,7 +9,6 @@
     discord
     jetbrains-toolbox
     signal-desktop
-    # davinci-resolve
     vlc
     prismlauncher
     nwg-displays
@@ -24,38 +19,32 @@
     hunspellDicts.en_US
     obsidian
     element-desktop
-    jdk21
     pdfpc
   ];
 
-  fonts.fontDir.enable = true;
-  programs.steam.enable = true;
+  programs.bash.enable = true;
 
-  home-manager.users."arne" = {
-    programs.bash.enable = true;
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
-    programs.starship = {
-      enable = true;
-      enableBashIntegration = true;
+  programs.zathura = {
+    enable = true;
+    options = {
+      window-title-basename = true;
     };
+  };
 
-    programs.zathura = {
-      enable = true;
-      options = {
-        window-title-basename = true;
-      };
+  xdg = {
+    desktopEntries.zathura = {
+      name = "Zathura";
+      exec = "${pkgs.zathura}/bin/zathura";
     };
-
-    xdg = {
-      desktopEntries.zathura = {
-        name = "Zathura";
-        exec = "${pkgs.zathura}/bin/zathura";
-      };
-      mimeApps = {
-        enable = true;
-        defaultApplications = {
-          "application/pdf" = "zathura.desktop";
-        };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "zathura.desktop";
       };
     };
   };

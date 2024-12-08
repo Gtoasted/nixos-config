@@ -4,6 +4,7 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./dunst.nix
-    ./waybar.nix
+    ../waybar
+    ../rofi
   ];
 }
