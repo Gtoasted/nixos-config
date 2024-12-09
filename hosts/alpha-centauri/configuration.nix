@@ -28,6 +28,7 @@
       imports = [
         ./home.nix
         ../../modules/hypr
+        ../../modules/java.nix
       ];
     };
   };

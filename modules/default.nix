@@ -1,14 +1,14 @@
 { ... }: {
   imports = [
-    ./cli.nix
     ./neovim
     ./git.nix
 
-    ./gui.nix
+    ./media.nix
     ./firefox.nix
 
-    ./latex.nix
     ./notex.nix
     ./style.nix
+
+    ./other.nix
   ];
 }

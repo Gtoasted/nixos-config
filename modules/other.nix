@@ -1,26 +1,36 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    kitty
-    dolphin
-    xournalpp
-    thunderbird
+    # Media
+    vlc
     inkscape
     gimp
-    discord
-    jetbrains-toolbox
-    signal-desktop
-    vlc
-    prismlauncher
-    nwg-displays
-    pavucontrol
+    # Documents
     libreoffice-qt
+    texliveFull
+    xournalpp
+    pdfpc
+    obsidian
+    # Spelling
     hunspell
     hunspellDicts.de_DE
     hunspellDicts.en_US
-    obsidian
+    # Tools
+    nwg-displays
+    pavucontrol
+    wpa_supplicant_gui 
+    wl-clipboard
+    zip
+    unzip
+    # Communication
+    discord
     element-desktop
-    pdfpc
-    wpa_supplicant_gui
+    signal-desktop
+    thunderbird
+    # Misc
+    kitty
+    dolphin
+    jetbrains-toolbox
+    prismlauncher
   ];
 
   programs.bash.enable = true;
