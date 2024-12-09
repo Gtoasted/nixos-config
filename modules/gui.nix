@@ -20,6 +20,7 @@
     obsidian
     element-desktop
     pdfpc
+    wpa_supplicant_gui
   ];
 
   programs.bash.enable = true;
