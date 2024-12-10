@@ -6,22 +6,22 @@
   sops.secrets = {
     wifi = {
       format = "binary";
-      sopsFile = ../../secrets/wifi;
+      sopsFile = ../secrets/wifi;
     };
 
     easyroam_root_ca = {
       format = "binary";
-      sopsFile = ../../secrets/easyroam_root_ca.pem;
+      sopsFile = ../secrets/easyroam_root_ca.pem;
     };
 
     easyroam_client_cert = {
       format = "binary";
-      sopsFile = ../../secrets/easyroam_client_cert.pem;
+      sopsFile = ../secrets/easyroam_client_cert.pem;
     };
 
     easyroam_client_key = {
       format = "binary";
-      sopsFile = ../../secrets/easyroam_client_key.pem;
+      sopsFile = ../secrets/easyroam_client_key.pem;
     };
   };
 
