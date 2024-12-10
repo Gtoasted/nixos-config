@@ -1,17 +1,17 @@
 { pkgs, ... }: {
-  fonts = {
-    enableDefaultPackages = true;
-    fontconfig.enable = true;
-
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    ];
-
-    fontconfig.defaultFonts = {
-      monospace = [ "JetBrainsMono" ];
-    };
-  };
-  fonts.fontDir.enable = true;
+  # fonts = {
+  #   enableDefaultPackages = true;
+  #   fontconfig.enable = true;
+  #
+  #   packages = with pkgs; [
+  #     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  #   ];
+  #
+  #   fontconfig.defaultFonts = {
+  #     monospace = [ "JetBrainsMono" ];
+  #   };
+  # };
+  # fonts.fontDir.enable = true;
 
   programs.dconf.enable = true;
 

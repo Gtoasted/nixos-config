@@ -6,7 +6,7 @@
   nixpkgs.config.allowUnfreePredicate = _: true;
 
   imports = [
-    ../../modules
+    ../../homeModules
   ];
 
   programs.home-manager.enable = true;
