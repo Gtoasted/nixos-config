@@ -1,7 +1,6 @@
 { pkgs, stylix }: {
   stylix = {
     enable = true;
-    autoEnable = false;
     base16Scheme = ''
       scheme: "Catppuccin Mocha"
       author: "https://github.com/catppuccin/catppuccin"
@@ -35,7 +34,5 @@
         name = "JetBrainsMono";
       };
     };
-
-    targets.kubecolor.enable = false;
   };
 
