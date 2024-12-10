@@ -2,13 +2,13 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ../../modules/system/default.nix
-    ../../modules/system/laptop.nix
+    ../../nixosModules/default.nix
+    ../../nixosModules/laptop.nix
 
-    ../../modules/system/virtualisation.nix
+    ../../nixosModules/virtualisation.nix
 
-    ../../modules/system/greetd.nix
-    ../../modules/system/pam.nix
+    ../../nixosModules/greetd.nix
+    ../../nixosModules/pam.nix
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
@@ -27,8 +27,8 @@
     users."arne" = {
       imports = [
         ./home.nix
-        ../../modules/hypr
-        ../../modules/java.nix
+        ../../homeModules/hypr
+        ../../homeModules/java.nix
       ];
     };
   };
