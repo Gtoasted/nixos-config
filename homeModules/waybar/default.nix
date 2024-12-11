@@ -5,6 +5,8 @@
     killall
   ];
 
+  stylix.targets.waybar.enable = false;
+
   home.file = {
     ".config/waybar/colors.css".source = ./config/colors.css;
     ".config/waybar/style.css".source = ./config/style.css;

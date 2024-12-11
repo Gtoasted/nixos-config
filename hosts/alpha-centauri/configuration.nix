@@ -9,6 +9,8 @@
 
     ../../nixosModules/greetd.nix
     ../../nixosModules/pam.nix
+
+    ../../nixosModules/stylix.nix
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.

@@ -32,8 +32,8 @@
         gaps_in = 2;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgba(522258ff)";
-        "col.inactive_border" = "rgba(8C30612e)";
+        # "col.active_border" = "rgba(522258ff)";
+        # "col.inactive_border" = "rgba(8C30612e)";
         layout = "dwindle";
         allow_tearing = "false";
       };
@@ -51,7 +51,7 @@
             enabled = true;
             range = 4;
             render_power = 3;
-            color = "rgba(1a1a1aee)";
+            # color = "rgba(1a1a1aee)";
           };
       };
 
@@ -83,13 +83,13 @@
       };
       
       group = {
-        "col.border_active" = "rgba(522258ff)";
-        "col.border_inactive" = "rgba(8C30612e)";
+        # "col.border_active" = "rgba(522258ff)";
+        # "col.border_inactive" = "rgba(8C30612e)";
 
         groupbar = {
           height = 20;
-          "col.active" = "rgba(522258ff)";
-          "col.inactive" = "rgba(8C3061c0)";
+          # "col.active" = "rgba(522258ff)";
+          # "col.inactive" = "rgba(8C3061c0)";
         };
       };
 
