@@ -5,7 +5,8 @@
     ./hypridle.nix
     ./hyprshot.nix
     ./dunst.nix
-    ../waybar
+    # ../waybar
+    ./ags.nix
     ../rofi
   ];
 }
