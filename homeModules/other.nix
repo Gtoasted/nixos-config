@@ -46,6 +46,7 @@
       window-title-basename = true;
     };
   };
+  stylix.targets.zathura.enable = false;
 
   xdg = {
     desktopEntries.zathura = {
