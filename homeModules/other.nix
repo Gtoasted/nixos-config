@@ -1,7 +1,14 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [
+  home.packages = let 
+    libbluray = pkgs.libbluray.override {
+      withAACS = true;
+      withBDplus = true;
+    };
+    vlc = pkgs.vlc.override { inherit libbluray; };
+  in with pkgs; [
     # Media
     vlc
+    makemkv
     inkscape
     gimp
     # Documents

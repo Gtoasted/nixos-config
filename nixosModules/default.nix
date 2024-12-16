@@ -14,6 +14,7 @@
       device = "nodev";
     };
   };
+  boot.kernelModules = [ "sg" ];
 
   users.users.arne = {
     isNormalUser = true;
