@@ -8,7 +8,6 @@
     ../../nixosModules/virtualisation.nix
 
     ../../nixosModules/greetd.nix
-    ../../nixosModules/pam.nix
 
     ../../nixosModules/stylix.nix
     ../../nixosModules/vlc.nix
