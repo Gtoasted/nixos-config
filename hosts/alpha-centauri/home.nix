@@ -4,6 +4,9 @@
   home.stateVersion = "23.11";
 
   nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.overlays = [
+    ( import ../../overlays.nix { } ).additions
+  ];
 
   imports = [
     ../../homeModules
