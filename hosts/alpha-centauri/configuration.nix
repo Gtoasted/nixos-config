@@ -19,19 +19,12 @@
     nr = "sudo nixos-rebuild switch --flake .#alpha-centauri --impure";
   };
 
-  nixpkgs.overlays = [
-    ( import ../../overlays.nix { } ).additions
-  ];
-
-  # Home Manager config
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users."arne" = {
-      imports = [
-        ./home.nix
-        ../../homeModules/hypr
-        ../../homeModules/java.nix
-      ];
-    };
+    sharedModules = [
+      {
+        home.stateVersion = "23.11"; # Do not change
+      }
+    ];
   };
 }

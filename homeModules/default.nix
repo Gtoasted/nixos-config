@@ -6,8 +6,16 @@
     ./firefox.nix
 
     ./notex.nix
-    # ./style.nix
 
     ./other.nix
   ];
+
+  nixpkgs = {
+    config.allowUnfreePredicate = _: true;
+    overlays = [
+      ( import ../overlays.nix { } ).additions
+    ];
+  };
+
+  programs.home-manager.enable = true;
 }

@@ -1,15 +1,14 @@
 { ... }: {
   imports = [
     ./system.nix
+    ./users.nix
   ];
 
-  users.users.arne = {
-    isNormalUser = true;
-    description = "Arne von Laguna";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
-  };
-
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    ( import ../overlays.nix { } ).additions
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Do not change
