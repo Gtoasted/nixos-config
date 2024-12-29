@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./neovim
+    # ./neovim
     ./git.nix
 
     ./firefox.nix
@@ -18,4 +18,7 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.nixvim = import ./nixvim // { enable = true; };
+  stylix.targets.nixvim.enable = false;
 }

@@ -14,6 +14,7 @@
   home-manager = {
     users."arne" = {
       imports = [
+      inputs.nixvim.homeManagerModules.nixvim
         ../homeModules
         ../homeModules/hypr
         ../homeModules/java.nix
