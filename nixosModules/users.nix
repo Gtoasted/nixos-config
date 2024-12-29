@@ -7,6 +7,7 @@
       "wheel"
       "scanner"
       "lp"
+      "libvirtd" 
     ];
   };
 

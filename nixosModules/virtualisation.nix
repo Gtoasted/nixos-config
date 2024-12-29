@@ -14,8 +14,5 @@
       };
     };
   };
-
-  users.users.arne.extraGroups = [ "libvirtd" ];
-
   programs.virt-manager.enable = true;
 }
