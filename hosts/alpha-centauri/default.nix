@@ -1,8 +1,7 @@
-{ pkgs, inputs, ... }: {
+{ inputs, ... }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ../../nixosModules/default.nix
+    ../../nixosModules
     ../../nixosModules/laptop.nix
 
     ../../nixosModules/virtualisation.nix
@@ -20,12 +19,12 @@
     nr = "sudo nixos-rebuild switch --flake .#alpha-centauri --impure";
   };
 
+  # Do not change these
+  system.stateVersion = "23.11";
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    sharedModules = [
-      {
-        home.stateVersion = "23.11"; # Do not change
-      }
-    ];
+    sharedModules = [ {
+			home.stateVersion = "23.11"; # Do not change
+		} ];
   };
 }

@@ -32,16 +32,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/alpha-centauri/configuration.nix
-          inputs.sops-nix.nixosModules.sops
-          inputs.stylix.nixosModules.stylix
-        ];
+        modules = [ ./hosts/alpha-centauri ];
       };
     };
   };
