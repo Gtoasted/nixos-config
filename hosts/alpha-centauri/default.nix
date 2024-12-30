@@ -8,10 +8,10 @@
 		laptop.enable = true;
 	};
 
-  networking.hostName = "alpha-centauri"; # Define your hostname.
+  networking.hostName = "alpha-centauri";
 
   programs.bash.shellAliases = {
-    nr = "sudo nixos-rebuild switch --flake .#alpha-centauri --impure";
+    nr = "sudo nixos-rebuild switch --flake ~/.config/nixos#alpha-centauri";
   };
 
   # Do not change these
