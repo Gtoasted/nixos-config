@@ -1,9 +1,15 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    hyprshot
-  ];
+{ config, lib, pkgs, ... }: {
+	options.gtoasted.hyprshot = {
+		enable = lib.mkEnableOption "Enable Hyprshot.";
+	};
 
-  home.sessionVariables = {
-    HYPRSHOT_DIR = "Pictures/Screenshots";
-  };
+	config = lib.mkIf config.gtoasted.hyprshot.enable {
+		home.packages = with pkgs; [
+			hyprshot
+		];
+
+		home.sessionVariables = {
+			HYPRSHOT_DIR = "Pictures/Screenshots";
+		};
+	};
 }

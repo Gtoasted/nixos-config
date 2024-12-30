@@ -1,69 +1,75 @@
-{ ... }: {
-  stylix.targets.dunst.enable = false;
+{ config, lib, ... }: {
+	options.gtoasted.dunst = {
+		enable = lib.mkEnableOption "Enable dunst, the notification daemon.";
+	};
 
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        follow = "mouse";
-        indicate_hidden = "yes";
-        offset = "10x10";
-        notification_height = 0;
+	config = lib.mkIf config.gtoasted.dunst.enable {
+		stylix.targets.dunst.enable = false;
 
-        separator_height = 2;
+		services.dunst = {
+			enable = true;
+			settings = {
+				global = {
+					follow = "mouse";
+					indicate_hidden = "yes";
+					offset = "10x10";
+					notification_height = 0;
 
-        padding = 8;
-        horizontal_padding = 8;
-        text_icon_padding = 0;
-        frame_width = 2;
+					separator_height = 2;
 
-        frame_color = "#f5c2e7";
-        separator_color = "frame";
+					padding = 8;
+					horizontal_padding = 8;
+					text_icon_padding = 0;
+					frame_width = 2;
 
-        sort = true;
-        idle_threshold = 120;
-        font = "monospace 10";
-        line_height = 0;
-        markup = "full";
-        alignment = "left";
-        vertical_alignment = "center";
-        show_age_threshold = 60;
-        word_wrap = true;
-        stack_duplicates = true;
-        hide_duplicate_count = false;
+					frame_color = "#f5c2e7";
+					separator_color = "frame";
 
-        show_indicators = true;
+					sort = true;
+					idle_threshold = 120;
+					font = "monospace 10";
+					line_height = 0;
+					markup = "full";
+					alignment = "left";
+					vertical_alignment = "center";
+					show_age_threshold = 60;
+					word_wrap = true;
+					stack_duplicates = true;
+					hide_duplicate_count = false;
 
-        min_icon_size = 0;
-        max_icon_size = 64;
+					show_indicators = true;
 
-        # icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/actions/:/usr/share/icons/Papirus-Dark/16x16/animations/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/categories/:/usr/share/icons/Papirus-Dark/16x16/emblems/:/usr/share/icons/Papirus-Dark/16x16/emotes/:/usr/share/icons/Papirus-Dark/16x16/devices/mimetypes:/usr/share/icons/Papirus-Dark/16x16/panel/:/usr/share/icons/Papirus-Dark/16x16/places/
+					min_icon_size = 0;
+					max_icon_size = 64;
 
-        dmenu = "rofi -p dunst:";
-        browser = "firefox --new-tab";
+					# icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/actions/:/usr/share/icons/Papirus-Dark/16x16/animations/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/categories/:/usr/share/icons/Papirus-Dark/16x16/emblems/:/usr/share/icons/Papirus-Dark/16x16/emotes/:/usr/share/icons/Papirus-Dark/16x16/devices/mimetypes:/usr/share/icons/Papirus-Dark/16x16/panel/:/usr/share/icons/Papirus-Dark/16x16/places/
 
-        title = "Dunst";
-        class = "Dunst";
+					dmenu = "rofi -p dunst:";
+					browser = "firefox --new-tab";
 
-        corner_radius = 10;
-        timeout = 5;
-      };
+					title = "Dunst";
+					class = "Dunst";
 
-      urgency_low = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
-      };
+					corner_radius = 10;
+					timeout = 5;
+				};
 
-      urgency_normal = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
-      };
+				urgency_low = {
+					background = "#1E1E2E";
+					foreground = "#CDD6F4";
+				};
 
-      urgency_critical = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
-        frame_color = "#FAB387";
-      };
-    };
-  };
+				urgency_normal = {
+					background = "#1E1E2E";
+					foreground = "#CDD6F4";
+				};
+
+				urgency_critical = {
+					background = "#1E1E2E";
+					foreground = "#CDD6F4";
+					frame_color = "#FAB387";
+				};
+			};
+		};
+	};
 }

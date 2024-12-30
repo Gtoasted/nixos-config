@@ -1,22 +1,9 @@
-{
-  imports = [
-    ./plugins
-    ./keymaps.nix
-  ];
+{ config, lib, ...}: {
+	options.gtoasted.neovim = {
+		enable = lib.mkEnableOption "Enable neovim.";
+	};
 
-  colorschemes.catppuccin.enable = true;
-
-  opts = {
-    shiftwidth = 2;
-    tabstop = 2;
-		softtabstop = 2;
-    smartindent = true;
-    autoindent = true;
-
-		number = true;
-		relativenumber = true;
-		numberwidth = 2;
-  };
-
-	clipboard.providers.wl-copy.enable = true;
+	config = lib.mkIf config.gtoasted.neovim.enable {
+		programs.nixvim = import ./init.nix // { enable = true; };
+	};
 }

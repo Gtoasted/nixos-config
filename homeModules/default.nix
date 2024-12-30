@@ -1,14 +1,22 @@
-{ ... }: {
+{ lib, inputs, ... }: {
   imports = [
-    # ./neovim
-    ./git.nix
-
-    ./firefox.nix
-
-    ./notex.nix
-
-    ./other.nix
+		inputs.nixvim.homeManagerModules.nixvim
+		./hypr
+		./nixvim
+		./firefox.nix
+		./git.nix
+		./java.nix
+		./notex.nix
+		./other.nix
   ];
+
+	gtoasted = {
+		# hypr.enable = lib.mkDefault true;
+		neovim.enable = lib.mkDefault true;
+		firefox.enable = lib.mkDefault true;
+		git.enable = lib.mkDefault true;
+		other.enable = lib.mkDefault true;
+	};
 
   nixpkgs = {
     config.allowUnfreePredicate = _: true;
@@ -19,6 +27,5 @@
 
   programs.home-manager.enable = true;
 
-  programs.nixvim = import ./nixvim // { enable = true; };
   stylix.targets.nixvim.enable = false;
 }

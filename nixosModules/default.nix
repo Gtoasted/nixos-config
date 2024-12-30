@@ -3,6 +3,7 @@
     inputs.home-manager.nixosModules.home-manager
 		inputs.sops-nix.nixosModules.sops
 		inputs.stylix.nixosModules.stylix
+		../users
 		./greetd.nix
 		./kde.nix
 		./laptop.nix
