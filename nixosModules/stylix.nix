@@ -7,7 +7,7 @@
 		stylix = {
 			enable = true;
 
-			image = ../assets/vaporwave.jpg;
+			image = ../assets/wave.jpg;
 			imageScalingMode = "center";
 
 			cursor = {
