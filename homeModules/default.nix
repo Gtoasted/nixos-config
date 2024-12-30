@@ -11,7 +11,7 @@
   ];
 
 	gtoasted = {
-		# hypr.enable = lib.mkDefault true;
+		hypr.enable = lib.mkDefault true;
 		neovim.enable = lib.mkDefault true;
 		firefox.enable = lib.mkDefault true;
 		git.enable = lib.mkDefault true;
