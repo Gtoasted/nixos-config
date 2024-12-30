@@ -19,6 +19,11 @@
 		stylix.enable = lib.mkDefault true;
 	};
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    sharedModules = [ ../homeModules ];
+  };
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [
     ( import ../overlays.nix { } ).additions

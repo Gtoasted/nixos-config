@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../nixosModules
@@ -17,7 +17,6 @@
   # Do not change these
   system.stateVersion = "23.11";
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
     sharedModules = [ {
 			home.stateVersion = "23.11"; # Do not change
 		} ];

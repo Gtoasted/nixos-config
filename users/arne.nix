@@ -18,7 +18,6 @@
 
 		home-manager = {
 			users."arne" = {
-				imports = [ ../homeModules ];
 				home.username = "arne";
 				home.homeDirectory = "/home/arne";
 			};
