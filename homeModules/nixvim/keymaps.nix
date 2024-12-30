@@ -11,7 +11,7 @@
 		{key = "<Leader>n"; action = "<cmd> set nu! <CR>"; mode = "n";}
 		{key = "<Leader>rn"; action = "<cmd> set rnu! <CR>"; mode = "n";}
     # Buffer Navigation
-    {key = "<Leader>x"; action = "<cmd>bp<CR><cmd>bd#<CR>"; mode = "n";}
+    {key = "<Leader>x"; action = "<cmd>Bdelete<CR>"; mode = "n";}
     {key = "<Tab>"; action = "<cmd>bn<CR>"; mode = "n";}
     {key = "<S-Tab>"; action = "<cmd>bp<CR>"; mode = "n";}
     # nvim-tree
@@ -20,6 +20,6 @@
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_current)"; mode = "n";}
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_visual)"; mode = "v";}
 		# Other
-		{key = "<Esc>"; action = "<Cmd>noh>CR>"; mode = "n";} # Clear highlights
+		{key = "<Esc>"; action = "<cmd>noh>CR>"; mode = "n";} # Clear highlights
   ];
 }
