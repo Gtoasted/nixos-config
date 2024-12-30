@@ -12,6 +12,10 @@
 		softtabstop = 2;
     smartindent = true;
     autoindent = true;
+
+		number = true;
+		relativenumber = true;
+		numberwidth = 2;
   };
 
 	clipboard.providers.wl-copy.enable = true;

@@ -7,6 +7,9 @@
     {key = "<C-j>"; action = "<C-w>j"; mode = "n";}
     {key = "<C-k>"; action = "<C-w>k"; mode = "n";}
     {key = "<C-l>"; action = "<C-w>l"; mode = "n";}
+    # Line numbers
+		{key = "<Leader>n"; action = "<cmd> set nu! <CR>"; mode = "n";}
+		{key = "<Leader>rn"; action = "<cmd> set rnu! <CR>"; mode = "n";}
     # Buffer Navigation
     {key = "<Leader>x"; action = "<cmd>bp<CR><cmd>bd#<CR>"; mode = "n";}
     {key = "<Tab>"; action = "<cmd>bn<CR>"; mode = "n";}
