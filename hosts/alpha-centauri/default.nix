@@ -2,16 +2,12 @@
   imports = [
     ./hardware-configuration.nix
     ../../nixosModules
-    ../../nixosModules/laptop.nix
-
-    ../../nixosModules/virtualisation.nix
-
-    ../../nixosModules/greetd.nix
-
-    ../../nixosModules/stylix.nix
-    ../../nixosModules/vlc.nix
 		../../users
   ];
+
+	gtoasted = {
+		laptop.enable = true;
+	};
 
   networking.hostName = "alpha-centauri"; # Define your hostname.
 

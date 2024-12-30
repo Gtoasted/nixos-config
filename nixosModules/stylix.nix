@@ -1,25 +1,31 @@
-{ pkgs, stylix, ... }: {
-  stylix = {
-    enable = true;
+{ config, lib, pkgs, ... }: {
+	options.gtoasted.stylix = {
+		enable = lib.mkEnableOption "Enable styling with stylix.";
+	};
 
-    image = ../assets/vaporwave.jpg;
-    imageScalingMode = "center";
+	config = lib.mkIf config.gtoasted.stylix.enable {
+		stylix = {
+			enable = true;
 
-    cursor = {
-      package = pkgs.catppuccin-cursors.mochaLight;
-      name = "Catppuccin-Mocha-Light-Cursors";
-      size = 16;
-    };
+			image = ../assets/vaporwave.jpg;
+			imageScalingMode = "center";
 
-    fonts = {
-      monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono";
-      };
-    };
+			cursor = {
+				package = pkgs.catppuccin-cursors.mochaLight;
+				name = "Catppuccin-Mocha-Light-Cursors";
+				size = 16;
+			};
 
-    targets = {
-      grub.enable = false;
-    };
-  };
+			fonts = {
+				monospace = {
+					package = pkgs.nerd-fonts.jetbrains-mono;
+					name = "JetBrainsMono";
+				};
+			};
+
+			targets = {
+				grub.enable = false;
+			};
+		};
+	};
 }

@@ -1,10 +1,22 @@
-{ inputs, ... }: {
+{ lib, inputs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
 		inputs.sops-nix.nixosModules.sops
 		inputs.stylix.nixosModules.stylix
-    ./system.nix
+		./greetd.nix
+		./kde.nix
+		./laptop.nix
+		./samba.nix
+		./stylix.nix
+		./system.nix
+		./virtualisation.nix
   ];
+
+	gtoasted = {
+		system.enable = lib.mkDefault true;
+		greetd.enable = lib.mkDefault true;
+		stylix.enable = lib.mkDefault true;
+	};
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [

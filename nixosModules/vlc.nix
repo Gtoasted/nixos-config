@@ -1,4 +1,5 @@
 { pkgs, ...}: {
+	# TODO: Configure vlc and makemkv so I can play blu-rays
   environment.systemPackages = let 
     # libbluray = pkgs.libbluray.override {
     #   withAACS = true;
