@@ -11,6 +11,7 @@
 
     ../../nixosModules/stylix.nix
     ../../nixosModules/vlc.nix
+		../../users
   ];
 
   networking.hostName = "alpha-centauri"; # Define your hostname.

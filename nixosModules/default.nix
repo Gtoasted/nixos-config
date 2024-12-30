@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
     ./system.nix
-    ./users.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
