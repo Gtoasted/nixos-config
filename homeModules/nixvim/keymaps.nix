@@ -19,5 +19,7 @@
 		# comment
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_current)"; mode = "n";}
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_visual)"; mode = "v";}
+		# Other
+		{key = "<Esc>"; action = "<Cmd>noh>CR>"; mode = "n";} # Clear highlights
   ];
 }
