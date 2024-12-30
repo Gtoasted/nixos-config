@@ -20,6 +20,6 @@
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_current)"; mode = "n";}
 		{key = "<Leader>/"; action = "<Plug>(comment_toggle_linewise_visual)"; mode = "v";}
 		# Other
-		{key = "<Esc>"; action = "<cmd>noh>CR>"; mode = "n";} # Clear highlights
+		{key = "<Esc>"; action = "<cmd>noh<CR>"; mode = "n";} # Clear highlights
   ];
 }
