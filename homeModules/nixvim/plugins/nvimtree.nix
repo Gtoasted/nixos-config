@@ -9,10 +9,7 @@
 
     view = {
       side = "right";
-      width = {
-				min = 30;
-				max = -1;
-			};
+      width = 30;
       preserveWindowProportions = true;
     };
   };
