@@ -22,10 +22,13 @@
 				ensure_installed = [
 					"nix"
 					"lua"
-					"latex"
 				];
 
-				highlight.enable = true;
+				highlight = {
+					enable = true;
+					# For some reason, tex highlighting breaks some snippets
+					disable = "function(lang) return lang == 'latex' end";
+				};
 				indent.enable = true;
 			};
 		};
