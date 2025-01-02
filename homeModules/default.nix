@@ -11,6 +11,7 @@
 		./other.nix
 		./sops.nix
 		./ssh.nix
+		./syncthing.nix
   ];
 
 	gtoasted = {
@@ -21,6 +22,7 @@
 		other.enable = lib.mkDefault true;
 		sops.enable = lib.mkDefault true;
 		ssh.enable = lib.mkDefault true;
+		syncthing.enable = lib.mkDefault true;
 	};
 
   nixpkgs = {
