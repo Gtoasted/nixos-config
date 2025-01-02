@@ -1,8 +1,10 @@
-{
+{ ... }: {
 	imports = [
 		./plugins
 		./keymaps.nix
 	];
+
+	enable = true;
 
 	colorschemes.catppuccin.enable = true;
 

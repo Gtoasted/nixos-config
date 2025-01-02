@@ -50,7 +50,6 @@
 
     web-devicons.enable = true;
     indent-blankline.enable = true;
-		vimtex.enable = true;
 		nvim-autopairs.enable = true;
 		comment.enable = true;
 		bufdelete.enable = true;
