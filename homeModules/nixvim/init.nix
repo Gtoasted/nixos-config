@@ -4,8 +4,6 @@
 		./keymaps.nix
 	];
 
-	enable = true;
-
 	colorschemes.catppuccin.enable = true;
 
 	opts = {

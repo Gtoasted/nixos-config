@@ -4,7 +4,7 @@
 	};
 
 	config = lib.mkIf config.gtoasted.neovim.enable {
-		programs.nixvim = import ./init.nix;
+		programs.nixvim = import ./enable.nix;
 		stylix.targets.nixvim.enable = false;
 	};
 }
