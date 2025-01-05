@@ -115,7 +115,7 @@
 					"$mainMod, C, killactive, "
 					"$mainMod, V, togglefloating, "
 					"$mainMod, P, pseudo,"
-					"$mainMod, J, togglesplit,"
+					"$mainMod, Ö, togglesplit,"
 
 					"$mainMod, Q, exec, $terminal"
 					"$mainMod, E, exec, $fileManager"
@@ -123,15 +123,20 @@
 					"$mainMod, B, exec, firefox"
 					"$mainMod, F, fullscreen"
 
-					"$mainMod, left, movefocus, l"
-					"$mainMod, right, movefocus, r"
-					"$mainMod, up, movefocus, u"
-					"$mainMod, down, movefocus, d"
+					"$mainMod, h, movefocus, l"
+					"$mainMod, l, movefocus, r"
+					"$mainMod, k, movefocus, u"
+					"$mainMod, j, movefocus, d"
 
-					"$mainMod SHIFT, left, movewindow, l"
-					"$mainMod SHIFT, right, movewindow, r"
-					"$mainMod SHIFT, up, movewindow, u"
-					"$mainMod SHIFT, down, movewindow, d "
+					"$mainMod SHIFT, h, movewindow, l"
+					"$mainMod SHIFT, l, movewindow, r"
+					"$mainMod SHIFT, k, movewindow, u"
+					"$mainMod SHIFT, j, movewindow, d "
+
+					"$mainMod Control_L, h, movewindoworgroup, l"
+					"$mainMod Control_L, l, movewindoworgroup, r"
+					"$mainMod Control_L, k, movewindoworgroup, u"
+					"$mainMod Control_l, j, movewindoworgroup, d "
 
 					"$mainMod, 1, workspace, 1"
 					"$mainMod, 2, workspace, 2"
@@ -166,11 +171,6 @@
 					"$mainMod Shift, TAB, changegroupactive, b"
 					"$mainMod , d, movegroupwindow"
 					"$mainMod , a, movegroupwindow, b"
-
-					"$mainMod Control_L, left, movewindoworgroup, l"
-					"$mainMod Control_L, right, movewindoworgroup, r"
-					"$mainMod Control_L, up, movewindoworgroup, u"
-					"$mainMod Control_l, down, movewindoworgroup, d "
 
 					", XF86AudioMute, exec, amixer sset 'Master' togglemute # F1"
 					", XF86AudioLowerVolume, exec, amixer sset 'Master' 5%- # F2"
