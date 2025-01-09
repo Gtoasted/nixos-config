@@ -17,7 +17,8 @@
 
 	gtoasted = {
 		system.enable = lib.mkDefault true;
-		greetd.enable = lib.mkDefault true;
+		# greetd.enable = lib.mkDefault true;
+		sddm.enable = lib.mkDefault true;
 		hyprland.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
 	};
