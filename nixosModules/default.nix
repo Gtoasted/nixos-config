@@ -5,9 +5,11 @@
 		inputs.stylix.nixosModules.stylix
 		../users
 		./greetd.nix
+		./hyprland.nix
 		./kde.nix
 		./laptop.nix
 		./samba.nix
+		./sddm.nix
 		./stylix.nix
 		./system.nix
 		./virtualisation.nix
@@ -16,6 +18,7 @@
 	gtoasted = {
 		system.enable = lib.mkDefault true;
 		greetd.enable = lib.mkDefault true;
+		hyprland.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
 	};
 
