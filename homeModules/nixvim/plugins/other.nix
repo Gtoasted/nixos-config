@@ -53,7 +53,7 @@
 
 		nvim-autopairs = {
 			enable = true;
-			disabled_filetype = [
+			settings.disabled_filetype = [
 				"tex"
 			];
 		};
