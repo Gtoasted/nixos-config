@@ -25,11 +25,9 @@
 		syncthing.enable = lib.mkDefault true;
 	};
 
-  nixpkgs = {
-    config.allowUnfreePredicate = _: true;
-    overlays = [
-      ( import ../overlays.nix { } ).additions
-    ];
+  nixpkgs.config = {
+    allowUnfreePredicate = _: true;
+		allowUnfree = true;
   };
 
   programs.home-manager.enable = true;
