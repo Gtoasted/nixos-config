@@ -6,9 +6,11 @@
 		./nixvim
 		./firefox.nix
 		./git.nix
+		./gtk.nix
 		./java.nix
 		./notex.nix
 		./other.nix
+		./qt.nix
 		./sops.nix
 		./ssh.nix
 		./syncthing.nix
