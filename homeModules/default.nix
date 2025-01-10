@@ -21,6 +21,7 @@
 		neovim.enable = lib.mkDefault true;
 		firefox.enable = lib.mkDefault true;
 		git.enable = lib.mkDefault true;
+		notex.enable = lib.mkDefault true;
 		other.enable = lib.mkDefault true;
 		sops.enable = lib.mkDefault true;
 		ssh.enable = lib.mkDefault true;
