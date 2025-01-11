@@ -68,7 +68,7 @@
 
 		# Battey settings
 		services.tlp = {
-			enable = true;
+			enable = !config.services.power-profiles-daemon.enable;
 			settings = {
 				CPU_SCALING_GOVERNOR_ON_AC = "performance";
 				CPU_SCALING_GOVERNOR_ON_BAT = "powersave";

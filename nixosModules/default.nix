@@ -20,6 +20,7 @@
 		# greetd.enable = lib.mkDefault true;
 		sddm.enable = lib.mkDefault true;
 		hyprland.enable = lib.mkDefault true;
+		kde.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
 	};
 

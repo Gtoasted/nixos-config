@@ -8,7 +8,7 @@
 			enable = true;
 			wayland.enable = true;
 			extraPackages = [ pkgs.sddm-sugar-dark ];
-			theme = "sugar-dark";
+			# theme = "sugar-dark";
 		};
 	};
 }
