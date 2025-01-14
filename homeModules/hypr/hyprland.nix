@@ -181,7 +181,7 @@
 					", Print, exec, hyprshot -m region"
 
 					", XF86PowerOff, exec, systemctl suspend"
-					"$mainMod SHIFT, L, exec, loginctl lock-session"
+					"$mainMod Control_L SHIFT, L, exec, loginctl lock-session"
 					"$mainMod, M, exec, pkill .nwg-displays-w || nwg-displays"
 					# "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 				];
