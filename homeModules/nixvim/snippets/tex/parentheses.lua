@@ -16,26 +16,26 @@ local function math()
 end
 
 return {
-  s({trig="()", snippetType="autosnippet", dscr="Parentheses", condition=math},
-    fmta("\\qty( <> )",
+  s({trig="q()", snippetType="autosnippet", dscr="Parentheses", condition=math},
+    fmta("\\qty(<>)",
     {i(1)}
     )
   ),
 
-  s({trig="[]", snippetType="autosnippet", dscr="Brackets", condition=math},
-    fmta("\\qty[ <> ]",
+  s({trig="q[]", snippetType="autosnippet", dscr="Brackets", condition=math},
+    fmta("\\qty[<>]",
+    {i(1)}
+    )
+  ),
+
+  s({trig="q{}", snippetType="autosnippet", dscr="Braces for sets", condition=math},
+    fmta([[\qty{<>}]],
     {i(1)}
     )
   ),
 
   s({trig="<>", snippetType="autosnippet", dscr="Left and right angle", condition=math},
     fmta("\\langle <> \\rangle",
-    {i(1)}
-    )
-  ),
-
-  s({trig=" set", snippetType="autosnippet", dscr="Braces for sets", condition=math},
-    fmta([[ \qty{<>}]],
     {i(1)}
     )
   ),
