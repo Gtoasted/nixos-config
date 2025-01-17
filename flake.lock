@@ -66,6 +66,26 @@
         "type": "github"
       }
     },
+    "betterfox": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736524287,
+        "narHash": "sha256-V7nZSvgH98ZoeE+wtyXSABv6z7syrERdNsE26gXRO/Q=",
+        "owner": "HeitorAugustoLN",
+        "repo": "betterfox-nix",
+        "rev": "703d400a087c700d3cc0aa0fe8c079d5bf5840f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HeitorAugustoLN",
+        "repo": "betterfox-nix",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -545,6 +565,7 @@
     },
     "root": {
       "inputs": {
+        "betterfox": "betterfox",
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",

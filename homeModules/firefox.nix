@@ -1,4 +1,8 @@
 { config, lib, inputs, ... }: {
+	imports = [
+		inputs.betterfox.homeManagerModules.betterfox
+	];
+
 	options.gtoasted.firefox = {
 		enable = lib.mkEnableOption "Enable firefox.";
 	};
@@ -6,6 +10,7 @@
 	config = lib.mkIf config.gtoasted.firefox.enable {
 		programs.firefox = {
 			enable = true;
+			betterfox.enable = true;
 			policies = {
 				"DisableFirefoxStudies" = true;
 				"DisableTelemetry" = true;

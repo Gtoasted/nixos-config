@@ -30,6 +30,11 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+		betterfox = {
+			url = "github:HeitorAugustoLN/betterfox-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
   };
 
   outputs = { nixpkgs, ... }@inputs: {
