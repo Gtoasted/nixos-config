@@ -8,6 +8,7 @@
 			enable = true;
 
 			image = ../assets/wave.jpg;
+			polarity = "dark";
 			imageScalingMode = "center";
 
 			cursor = {
