@@ -11,7 +11,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return {
-	s({trig="module", snippetType="snippet", dscr="Template for making a nix module.", condition=math},
+	s({trig="module", snippetType="snippet", dscr="Template for making a nix module."},
 	  fmta([[
 		{ config, lib, ...}: {
 			options.gtoasted.neovim.<> = {
