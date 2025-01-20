@@ -12,11 +12,14 @@
 			enable = true;
 			betterfox.enable = true;
 			policies = {
-				"DisableFirefoxStudies" = true;
-				"DisableTelemetry" = true;
-				"DisablePocket" = true;
-				"Extensions" = {
-					"Uninstall" = [
+				DisableFormHistory = true;
+				DontCheckDefaultBrowser = true;
+				DisableFirefoxStudies = true;
+				DisableTelemetry = true;
+				DisablePocket = true;
+				OfferToSaveLogins = false;
+				Extensions = {
+					Uninstall = [
 						"google@search.mozilla.org"
 						"bing@search.mozilla.org"
 						"amazondotcom@search.mozilla.org"
@@ -27,6 +30,11 @@
 			};
 
 			profiles.arne = {
+				betterfox = {
+					enable = true;
+					enableAllSections = true;
+				};
+
 				search = {
 					default = "DuckDuckGo";
 					force = true;
@@ -52,6 +60,8 @@
 
 				settings = {
 					"app.update.auto" = false;
+					"extensions.autoDisableScopes" = false;
+					"browser.translations.automaticallyPopup" = false;
 					"browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
 					"browser.newtabpage.activity-stream.showSponsored" = false;
 				};
@@ -68,7 +78,7 @@
 					enhanced-h264ify
 					github-file-icons
 					keepassxc-browser
-					# multi-account-containers
+					user-agent-string-switcher
 					# libredirect
 				];
 			};
