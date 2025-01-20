@@ -4,4 +4,5 @@
 	];
 
 	enable = true;
+	defaultEditor = true;
 }
