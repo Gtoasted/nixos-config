@@ -14,11 +14,11 @@ return {
 	s({trig="module", snippetType="snippet", dscr="Template for making a nix module."},
 	  fmta([[
 		{ config, lib, ...}: {
-			options.gtoasted.neovim.<> = {
+			options.gtoasted.<> = {
 				enable = lib.mkEnableOption "Enable <>";
 			};
 
-			config = lib.mkIf config.gtoasted.neovim.<>.enable {
+			config = lib.mkIf config.gtoasted.<>.enable {
 				<>
 			};
 		}
