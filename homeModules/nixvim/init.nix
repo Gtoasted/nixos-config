@@ -8,8 +8,9 @@
 
 	opts = {
 		shiftwidth = 2;
-		tabstop = 2;
-		softtabstop = 2;
+		tabstop = 0;
+		softtabstop = 0;
+    expandtab = true;
 		smartindent = true;
 		autoindent = true;
 
