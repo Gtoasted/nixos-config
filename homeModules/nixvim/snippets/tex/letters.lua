@@ -21,10 +21,12 @@ local letters = {
   CC = [[\C]],
 
   HH = [[\mathcal{H}]],
+	NN = [[\mathcal{N}]],
   hbar = [[\hbar]],
 
   aa = [[\alpha]],
   bb = [[\beta]],
+	ee = [[\varepsilon]],
 
   epsilon = [[\varepsilon]],
   vepsilon = [[\epsilon]],
@@ -35,8 +37,8 @@ local letters = {
   Phi = [[\Phi]],
 }
 local greek = {
-  -- "alpha",
-  -- "beta",
+  "alpha",
+  "beta",
   "gamma",
   "delta",
   -- "epsilon",
@@ -65,14 +67,14 @@ for k,v in pairs(letters) do
   )
 end
 
-for k,v in pairs(greek) do
+for _,v in pairs(greek) do
   table.insert(cfg,
     s({trig=v, snippetType="autosnippet", dscr="", condition=math},
       {t("\\" .. v)}
     )
   )
 
-  capital = v:gsub("^%l", string.upper)
+  local capital = v:gsub("^%l", string.upper)
 
   table.insert(cfg,
     s({trig=capital, snippetType="autosnippet", dscr="", condition=math},
