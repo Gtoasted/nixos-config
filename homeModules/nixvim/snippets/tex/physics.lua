@@ -33,14 +33,27 @@ for k,v in pairs(modifiers) do
       {f(function(_, snip) return string.format(v, snip.captures[1]) end)}
     )
   )
-  --
-  -- table.insert(cfg,
-  --   s({trig=[[(\.[^\])%.]]..k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
-  --     {f(function (_, snip)
-  --       return string.format(v, snip.captures[1])
-  --     end)}
-  --   )
-  -- )
+end
+
+-- Automatically turn into function
+
+local auto_function = {
+	"vec",
+	"dot",
+	"ddot",
+	"hat",
+	"overline",
+	"tilde"
+}
+
+for _,v in pairs(auto_function) do
+	table.insert(cfg,
+		s({trig=v, snippetType="autosnippet", dscr="", condition=math},
+		  fmta([[\]] .. v .. [[{<>}]],
+		  {i(1)}
+		  )
+		)
+	)
 end
 
 -- More physics snippets
