@@ -1,6 +1,6 @@
 { config, lib, ...}: {
 	options.gtoasted.neovim.plugins.ltex-extra = {
-		enable = lib.mkEnableOption "Enable the ltex neovim plugin.";
+		enable = lib.mkEnableOption "Enable the ltex-extra neovim plugin.";
 	};
 
 	config = lib.mkIf config.gtoasted.neovim.plugins.ltex-extra.enable {
@@ -11,6 +11,7 @@
 				load_langs = [
 					"de-DE"
 				];
+        path = ".ltex";
 			};
 		};
 	};

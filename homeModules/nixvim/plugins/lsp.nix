@@ -26,6 +26,20 @@
 				};
 				texlab.enable = true;
 			};
+      keymaps = {
+        diagnostic = {
+          gj = "goto_next";
+          gk = "goto_prev";
+        };
+        lspBuf = {
+          K = "hover";
+          gD = "references";
+          gd = "definition";
+          gi = "implementation";
+          gt = "type_definition";
+          ca = "code_action";
+        };
+      };
 		};
     autoCmd = [
       {
