@@ -17,9 +17,7 @@ end
 return {
   -- Differentiation
   s({trig="dd", snippetType="autosnippet", dscr="Differential d", condition=math},
-    fmta([[\dd{<>}]],
-    {i(1)}
-    )
+    {t([[\dd]])}
   ),
 
   s({trig="dA", snippetType="autosnippet", dscr="Area differential", condition=math},
@@ -31,7 +29,7 @@ return {
   ),
 
   s({trig="dl", snippetType="autosnippet", dscr="Partial differential", condition=math},
-    {t("\\partial")}
+    {t([[\partial]])}
   ),
 
   s({trig="pd1", snippetType="autosnippet", dscr="Partial derivative", condition=math},
@@ -41,7 +39,7 @@ return {
   ),
 
   s({trig="pdn", snippetType="autosnippet", dscr="Partial derivate, nth degree", conditon=math},
-    fmta("pdv[<>]{<>}{<>}<>",
+    fmta([[\pdv[<>]{<>}{<>}<>]],
     {i(1), i(2), i(3), i(0)}
     )
   ),
