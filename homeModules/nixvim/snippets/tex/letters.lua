@@ -28,6 +28,8 @@ local letters = {
   bb = [[\beta]],
 	ee = [[\varepsilon]],
 
+  ii = [[\infty]],
+
   epsilon = [[\varepsilon]],
   vepsilon = [[\epsilon]],
   vtheta = [[\vartheta]],
