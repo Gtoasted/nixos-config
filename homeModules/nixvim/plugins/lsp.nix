@@ -25,7 +25,7 @@
 				  };
 				};
 				texlab.enable = true;
-        typst_lsp.enable = true;
+        tinymist.enable = true;
 			};
       keymaps = {
         diagnostic = {
