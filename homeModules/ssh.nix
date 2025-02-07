@@ -19,5 +19,8 @@
 				path = ".ssh/id_ed25519.pub";
 			};
 		};
+
+    programs.ssh.enable = true;
+    services.ssh-agent.enable = true;
 	};
 }
