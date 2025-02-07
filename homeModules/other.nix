@@ -9,6 +9,7 @@
 			# Media
 			inkscape
 			gimp
+      spotify
 			# Documents
 			libreoffice-qt
 			texliveFull
