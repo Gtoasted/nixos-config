@@ -23,7 +23,6 @@
 			# Tools
 			nwg-displays
 			pavucontrol
-			wpa_supplicant_gui 
 			wl-clipboard
 			zip
 			unzip
