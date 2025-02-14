@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./cmp.nix
+    ./floaterm.nix
     ./lsp.nix
     ./ltex-extra.nix
     ./nvim-tree.nix
@@ -12,6 +13,7 @@
 
 	gtoasted.neovim.plugins = {
 		cmp.enable = true;
+    floaterm.enable = true;
 		lsp.enable = true;
     ltex-extra.enable = true;
 		nvim-tree.enable = true;
