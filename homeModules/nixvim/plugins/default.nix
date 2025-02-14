@@ -6,6 +6,7 @@
     ./nvim-tree.nix
 		./vimtex.nix
     ./typst-vim.nix
+    ./typescript-tools.nix
     ./other.nix
   ];
 
@@ -16,5 +17,6 @@
 		nvim-tree.enable = true;
 		vimtex.enable = true;
     typst-vim.enable = true;
+    typescript-tools.enable = true;
 	};
 }
