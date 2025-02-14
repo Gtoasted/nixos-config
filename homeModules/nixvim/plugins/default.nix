@@ -17,6 +17,6 @@
 		nvim-tree.enable = true;
 		vimtex.enable = true;
     typst-vim.enable = true;
-    typescript-tools.enable = true;
+    typescript-tools.enable = false;
 	};
 }
