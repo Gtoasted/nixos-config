@@ -22,6 +22,8 @@
 				ensure_installed = [
 					"nix"
 					"lua"
+          "javascript"
+          "typescript"
 				];
 
 				highlight = {
