@@ -4,7 +4,7 @@
 		inputs.sops-nix.nixosModules.sops
 		inputs.stylix.nixosModules.stylix
     inputs.nix-easyroam.nixosModules.nix-easyroam
-		../users
+		./users
 		./greetd.nix
 		./hyprland.nix
 		./kde.nix
@@ -27,7 +27,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    sharedModules = [ ../homeModules ];
+    sharedModules = [ ./home ];
   };
 
   nixpkgs.config.allowUnfree = true;

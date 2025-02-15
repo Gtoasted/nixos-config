@@ -7,14 +7,14 @@
 		sops.secrets = {
 			ssh_secret = {
 				format = "binary";
-				sopsFile = ../secrets/id_ed25519;
+				sopsFile = ../../secrets/id_ed25519;
 				mode = "0700";
 				path = ".ssh/id_ed25519";
 			};
 
 			ssh_public = {
 				format = "binary";
-				sopsFile = ../secrets/id_ed25519.pub;
+				sopsFile = ../../secrets/id_ed25519.pub;
 				mode = "0700";
 				path = ".ssh/id_ed25519.pub";
 			};

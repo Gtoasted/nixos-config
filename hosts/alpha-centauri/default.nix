@@ -1,7 +1,7 @@
 { ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../nixosModules
+    ../../modules
   ];
 
 	gtoasted = {
@@ -18,7 +18,7 @@
   system.stateVersion = "23.11";
   home-manager = {
     sharedModules = [ {
-			home.stateVersion = "23.11"; # Do not change
+			home.stateVersion = "23.11";
 		} ];
   };
 }
