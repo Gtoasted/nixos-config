@@ -20,6 +20,17 @@
 			users."arne" = {
 				home.username = "arne";
 				home.homeDirectory = "/home/arne";
+        gtoasted = {
+          hypr.enable = true;
+          neovim.enable = true;
+          firefox.enable = true;
+          git.enable = true;
+          notex.enable = true;
+          other.enable = true;
+          sops.enable = true;
+          ssh.enable = true;
+          syncthing.enable = true;
+        };
 			};
 		};
 	};
