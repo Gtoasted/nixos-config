@@ -49,7 +49,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { home-manager, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
     in {
@@ -61,6 +61,14 @@
             jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins."${system}";
           };
         modules = [ ./hosts/alpha-centauri ];
+      };
+    };
+
+    homeConfigurations = {
+      arne = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./hosts/sol-earth/home.nix ];
       };
     };
   };
