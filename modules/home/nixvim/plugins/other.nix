@@ -29,7 +29,7 @@
 				highlight = {
 					enable = true;
 					# For some reason, tex highlighting breaks some snippets
-					disable = "function(lang) return lang == 'latex' end";
+					disable = "function(lang) return lang == 'latex' or lang == 'typst' end";
 				};
 				indent.enable = true;
 			};
