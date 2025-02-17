@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./auto-save.nix
     ./cmp.nix
     ./floaterm.nix
     ./lsp.nix
@@ -12,6 +13,7 @@
   ];
 
 	gtoasted.neovim.plugins = {
+    auto-save.enable = true;
 		cmp.enable = true;
     floaterm.enable = true;
 		lsp.enable = true;
