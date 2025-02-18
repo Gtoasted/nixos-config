@@ -43,21 +43,29 @@ end
 local letter_snippets = make_letter_snippets({
   EE = "∃",
   AA = "∀",
+
   ["=>"] = "⇒",
   ["<=>"] = "⇔",
   ["->"] = "→",
+
   int = "integral",
+  ["**"] = "dot",
+  xx = "times",
+
   -- Greek letters
   Alpha = "Α",
   alpha = "α",
+  aa = "α",
   Beta = "Β",
   beta = "β",
+  bb = "β",
   Gamma = "Γ",
   gamma = "γ",
   Delta = "Δ",
   delta = "δ",
   Epsilon = "Ε",
   epsilon = "ε",
+  ee = "ε",
   vepsilon = "ϵ",
   Zeta = "Ζ",
   zeta = "ζ",
@@ -145,9 +153,15 @@ local other = {
     )
   ),
 
-  s({trig="int1", snippetType="autosnippet", dscr="1-dimensional integral."},
+  s({trig="int1", snippetType="autosnippet", dscr="1-dimensional integral.", condition=math},
     fmta("integral_(<>)^(<>))",
     {i(1), i(2)}
+    )
+  ),
+
+  s({trig="<>", snippetType="autosnippet", dscr="Left and right angel", condition=math},
+    fmta("angle.l <> angle.r",
+    {i(1)}
     )
   ),
 }
