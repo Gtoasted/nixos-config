@@ -14,6 +14,7 @@
 		./stylix.nix
 		./system.nix
 		./virtualisation.nix
+    ./wireguard.nix
   ];
 
 	gtoasted = {
@@ -23,6 +24,7 @@
 		hyprland.enable = lib.mkDefault true;
 		kde.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
+    wireguard.enable = lib.mkDefault true;
 	};
 
   home-manager = {
