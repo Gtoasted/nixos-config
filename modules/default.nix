@@ -25,7 +25,7 @@
     samba.enable = lib.mkDefault true;
 		kde.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
-    wireguard.enable = lib.mkDefault true;
+    wireguard.enable = lib.mkDefault false;
 	};
 
   home-manager = {
