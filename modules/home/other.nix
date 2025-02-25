@@ -33,7 +33,7 @@
 			thunderbird
 			# Misc
 			kitty
-			dolphin
+			kdePackages.dolphin
 			jetbrains-toolbox
 			prismlauncher
 		];
