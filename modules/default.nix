@@ -5,7 +5,6 @@
 		inputs.stylix.nixosModules.stylix
     inputs.nix-easyroam.nixosModules.nix-easyroam
 		./users
-		./greetd.nix
 		./hyprland.nix
 		./kde.nix
 		./laptop.nix
@@ -19,7 +18,6 @@
 
 	gtoasted = {
 		system.enable = lib.mkDefault true;
-		# greetd.enable = lib.mkDefault true;
 		sddm.enable = lib.mkDefault true;
 		hyprland.enable = lib.mkDefault true;
     samba.enable = lib.mkDefault true;
