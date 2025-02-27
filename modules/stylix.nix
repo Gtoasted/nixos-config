@@ -7,8 +7,8 @@
 		stylix = {
 			enable = true;
 
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 			image = ../assets/wave.jpg;
-			polarity = "dark";
 			imageScalingMode = "center";
 
 			cursor = {
