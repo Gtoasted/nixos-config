@@ -1,4 +1,4 @@
-{ lib, inputs, ... }: {
+{ lib, inputs, specialArgs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
 		inputs.sops-nix.nixosModules.sops
@@ -27,9 +27,14 @@
 	};
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      # inherit specialArgs;
+      inherit inputs;
+    };
     sharedModules = [ ./home ];
   };
+
+  services.gvfs.enable = true; # here temporarily, required for developing my ags bar
 
   nixpkgs.config.allowUnfree = true;
 
