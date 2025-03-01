@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, jetbrains-plugins, ... }: {
 	# TODO: Split into multiple modules
 	options.gtoasted.other = {
 		enable = lib.mkEnableOption "Enable a bunch of modules.";
@@ -33,8 +33,11 @@
 			thunderbird
 			# Misc
 			kitty
+      jetbrains.idea-ultimate
+      ( jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
+        jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
+      ] )
 			kdePackages.dolphin
-			jetbrains-toolbox
 			prismlauncher
 		];
 

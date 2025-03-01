@@ -27,10 +27,7 @@
 	};
 
   home-manager = {
-    extraSpecialArgs = {
-      # inherit specialArgs;
-      inherit inputs;
-    };
+    extraSpecialArgs = specialArgs;
     sharedModules = [ ./home ];
   };
 

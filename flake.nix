@@ -40,13 +40,21 @@
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+    in {
     nixosConfigurations = {
       alpha-centauri = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        system = system;
+        specialArgs = {
+            inherit inputs;
+            jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins."${system}";
+          };
         modules = [ ./hosts/alpha-centauri ];
       };
     };
