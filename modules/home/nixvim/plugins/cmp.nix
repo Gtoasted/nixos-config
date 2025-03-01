@@ -8,6 +8,10 @@
 			enable = true;
 
 			settings = {
+        snippet.expand =''
+          function(args)
+            require("luasnip").lsp_expand(args.body)
+          end'';
 				completion = {
 					completeopt = "menu,menuone";
 					keyword_length = 3;
