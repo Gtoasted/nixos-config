@@ -44,10 +44,6 @@ local letter_snippets = make_letter_snippets({
   EE = "∃",
   AA = "∀",
 
-  ["=>"] = "⇒",
-  ["<=>"] = "⇔",
-  ["->"] = "→",
-
   int = "integral",
   ["**"] = "dot",
   xx = "times",
