@@ -13,6 +13,7 @@
 		./qt.nix
 		./sops.nix
 		./ssh.nix
+    ./stylix.nix
 		./syncthing.nix
   ];
 
