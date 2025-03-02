@@ -111,6 +111,25 @@ local letter_snippets = make_letter_snippets({
 }, math)
 
 local other = {
+  -- Parentheses
+  s({trig="(", snippetType="autosnippet", dscr="Automatic Parentheses."},
+    fmta("(<>)",
+    {i(1)}
+    )
+  ),
+
+  s({trig="[", snippetType="autosnippet", dscr="Automatic Brackets."},
+    fmta("[<>]",
+    {i(1)}
+    )
+  ),
+
+  s({trig="{", snippetType="autosnippet", dscr="Automatic curly Braces."},
+    fmta("{<>}",
+    {i(1)}
+    )
+  ),
+
   -- Math mode
   s({trig="mk", snippetType="autosnippet", dscr="Inline Math."},
     fmta("$<>$",
