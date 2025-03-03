@@ -26,6 +26,7 @@
 				};
 				texlab.enable = true;
         tinymist.enable = true;
+        ts_ls.enable = true;
 			};
       keymaps = {
         diagnostic = {
