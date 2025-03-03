@@ -33,10 +33,10 @@
 			thunderbird
 			# Misc
 			kitty
-      # jetbrains.idea-ultimate
-      ( jetbrains.plugins.addPlugins jetbrains.idea-community [
-        jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
-      ] )
+      # jetbrains.idea-community
+      # ( jetbrains.plugins.addPlugins jetbrains.idea-community [
+      #   jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
+      # ] )
 			kdePackages.dolphin
 			prismlauncher
 		];
