@@ -8,6 +8,7 @@
 		./git.nix
 		./gtk.nix
 		./java.nix
+    ./librewolf.nix
 		./notex.nix
 		./other.nix
 		./qt.nix

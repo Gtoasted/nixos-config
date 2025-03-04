@@ -25,6 +25,7 @@
           neovim.enable = true;
           firefox.enable = true;
           git.enable = true;
+          librewolf.enable = true;
           notex.enable = true;
           other.enable = true;
           sops.enable = true;
