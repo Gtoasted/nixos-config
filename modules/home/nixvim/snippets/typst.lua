@@ -45,6 +45,8 @@ local letter_snippets = make_letter_snippets({
   AA = "∀",
 
   int = "integral",
+  integrali = "integral_oo^oo",
+  integralr = "integral_(RR^3)",
   ["**"] = "dot",
   xx = "times",
 
@@ -131,12 +133,6 @@ local autopairs = make_autopair_snippets({
 })
 
 local other = {
-  -- s({trig="()", snippetType="autosnippet", dscr=""},
-  --   fmta("()<>",
-  --   {i(1)}
-  --   )
-  -- ),
-
   -- Math mode
   s({trig="mk", snippetType="autosnippet", dscr="Inline Math."},
     fmta("$<>$",
@@ -167,20 +163,10 @@ local other = {
     )
   ),
 
+  -- Operators
+
   s({trig="lim", snippetType="autosnippet", dscr="Limit", condition=math},
     fmta("lim_(<> → <>)",
-    {i(1), i(2)}
-    )
-  ),
-
-  s({trig="sum1", snippetType="autosnippet", dscr="Sum with arguments", condition=math},
-    fmta("sum_(<>)^(<>))",
-    {i(1), i(2)}
-    )
-  ),
-
-  s({trig="int1", snippetType="autosnippet", dscr="1-dimensional integral.", condition=math},
-    fmta("integral_(<>)^(<>))",
     {i(1), i(2)}
     )
   ),
@@ -189,6 +175,10 @@ local other = {
     fmta("angle.l <> angle.r",
     {i(1)}
     )
+  ),
+
+  s({trig="dd", snippetType="autosnippet", dscr="Differential d."},
+    {t("dif")}
   ),
 }
 
