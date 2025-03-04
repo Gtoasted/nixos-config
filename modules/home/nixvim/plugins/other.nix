@@ -57,7 +57,7 @@
 			enable = true;
 			settings.disable_filetype = [
 				"tex"
-        "typst"
+        # "typst"
 			];
 		};
 

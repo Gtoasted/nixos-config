@@ -13,6 +13,19 @@ local function math()
   return vim.api.nvim_eval("typst#in_math()") == 1
 end
 
+local function merge_tables(...)
+  local output = {}
+  local inputs = {...}
+
+  for _, input in pairs(inputs) do
+    for _, entry in pairs(input) do
+      table.insert(output, entry)
+    end
+  end
+
+  return output
+end
+
 local function make_letter_snippets(input, condition)
   local output = {}
 
@@ -22,19 +35,6 @@ local function make_letter_snippets(input, condition)
         {t(v)}
       )
     )
-  end
-
-  return output
-end
-
-local function merge_tables(...)
-  local output = {}
-  local inputs = {...}
-
-  for _, input in pairs(inputs) do
-    for _, entry in pairs(input) do
-      table.insert(output, entry)
-    end
   end
 
   return output
@@ -106,25 +106,36 @@ local letter_snippets = make_letter_snippets({
   omega = "ω",
 }, math)
 
+-- VERY hacky way to be able to tab out of parentheses
+local function make_autopair_snippets(input)
+  local output = {}
+
+  for _, v in pairs(input) do
+    table.insert(output,
+      s({trig=v, snippetType="autosnippet", dscr=""},
+        fmta(v .. "<>",
+        {i(1)}
+        )
+      )
+    )
+  end
+
+  return output
+end
+
+local autopairs = make_autopair_snippets({
+  "()",
+  "[]",
+  "{}",
+  "\"\"",
+})
+
 local other = {
-  -- Parentheses
-  s({trig="(", snippetType="autosnippet", dscr="Automatic Parentheses."},
-    fmta("(<>)",
-    {i(1)}
-    )
-  ),
-
-  s({trig="[", snippetType="autosnippet", dscr="Automatic Brackets."},
-    fmta("[<>]",
-    {i(1)}
-    )
-  ),
-
-  s({trig="{", snippetType="autosnippet", dscr="Automatic curly Braces."},
-    fmta("{<>}",
-    {i(1)}
-    )
-  ),
+  -- s({trig="()", snippetType="autosnippet", dscr=""},
+  --   fmta("()<>",
+  --   {i(1)}
+  --   )
+  -- ),
 
   -- Math mode
   s({trig="mk", snippetType="autosnippet", dscr="Inline Math."},
@@ -140,7 +151,7 @@ local other = {
   ),
 
   -- Sub- and Superscript
-  s({trig="(.*)__", regTrig='true', snippetType="autosnippet", dscr="Automatically add braces around subscripts", condition=math},
+  s({trig="(.*)__", regTrig='true', snippetType="autosnippet", dscr="Automatically add parentheses around subscripts", condition=math},
     fmta("<>_(<>)",{
         f(function(_, snip) return snip.captures[1] end),
         i(1)
@@ -148,7 +159,7 @@ local other = {
     )
   ),
 
-  s({trig="(.*)^^", regTrig='true', snippetType="autosnippet", dscr="Automatically add braces around subscripts", condition=math},
+  s({trig="(.*)^^", regTrig='true', snippetType="autosnippet", dscr="Automatically add parentheses around subscripts", condition=math},
     fmta("<>^(<>)",{
         f(function(_, snip) return snip.captures[1] end),
         i(1)
@@ -181,4 +192,4 @@ local other = {
   ),
 }
 
-return merge_tables(letter_snippets, other)
+return merge_tables(letter_snippets, autopairs, other)
