@@ -6,15 +6,14 @@
 		./nixvim
 		./firefox.nix
 		./git.nix
-		./gtk.nix
 		./java.nix
     ./librewolf.nix
 		./notex.nix
 		./other.nix
 		./qt.nix
+    ./rice.nix
 		./sops.nix
 		./ssh.nix
-    ./stylix.nix
 		./syncthing.nix
   ];
 

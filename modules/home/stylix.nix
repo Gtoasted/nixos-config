@@ -4,13 +4,5 @@
   };
 
   config = lib.mkIf config.gtoasted.stylix.enable {
-    stylix = {
-      enable = true;
-      iconTheme = {
-        package = pkgs.kora-icon-theme;
-        dark = "kora";
-        light = "kora-light";
-      };
-    };
   };
 }

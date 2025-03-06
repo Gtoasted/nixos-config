@@ -28,9 +28,15 @@
           librewolf.enable = true;
           notex.enable = true;
           other.enable = true;
+          rice = {
+            enable = true;
+            stylix = true;
+            home = false;
+            gtk = true;
+          };
           sops.enable = true;
           ssh.enable = true;
-          stylix.enable = true;
+          # stylix.enable = true;
           syncthing.enable = true;
         };
 			};
