@@ -4,11 +4,11 @@
 		inputs.sops-nix.homeManagerModules.sops
 		./hypr
 		./nixvim
+		./notex
 		./firefox.nix
 		./git.nix
 		./java.nix
     ./librewolf.nix
-		./notex.nix
 		./other.nix
 		./qt.nix
     ./rice.nix
