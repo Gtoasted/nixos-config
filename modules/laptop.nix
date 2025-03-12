@@ -41,6 +41,7 @@
 				"Vodafone-5AE1".pskRaw = "ext:vodafone5ae1";
 				"Gastzugang Marienhof".pskRaw = "ext:gastzugangmarienhof";
 				PilogLisa.pskRaw = "ext:piloglisa";
+        "HHUD-Y".pskRaw = "ext:hhud-y";
 			};
 		};
 
