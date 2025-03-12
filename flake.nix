@@ -42,6 +42,11 @@
     };
 
     nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
+
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs:

@@ -2,6 +2,7 @@
   imports = [
 		inputs.nixvim.homeManagerModules.nixvim
 		inputs.sops-nix.homeManagerModules.sops
+    ./ags
 		./hypr
 		./nixvim
 		./notex

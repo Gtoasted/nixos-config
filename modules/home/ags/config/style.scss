@@ -1,0 +1,65 @@
+@use "sass:color";
+@use 'sass:string';
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+// Catppuccin Mocha
+$fg-color: #cdd6f4; // Text
+$bg-color: #1e1e2e; // Base
+$border-color: #11111b; // Mantle
+$active: #89b4fa; // Blue
+$text-dark: #11111b; // Crust
+
+$corner-radius: 7px;
+
+$spacing: 4px;
+
+window {
+  background: transparent;
+}
+
+.bar {
+  background: transparent;
+  color: $fg-color;
+  font-size: 15px;
+
+  >centerbox {
+    background: color.adjust($bg-color, $alpha:-0.25);
+    padding: 0.5 * $spacing;
+    box>box {
+      font-weight: bold;
+      background: $bg-color;
+      border-radius: $corner-radius;
+      margin: 0.5 * $spacing;
+      padding: 1px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+
+  button {
+    margin: 0px;
+    padding: 0px;
+  }
+
+}
+
+.Quickmenu {
+  background: transparent;
+  color: $fg-color;
+  font-size: 15px;
+
+  >box {
+    padding: 10px;
+    background: $bg-color;
+    border-color: $border-color;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+}
+
+.connection {
+  padding: 10px;
+  background-color: $active;
+  color: $text-dark;
+  border-radius: 10px;
+}

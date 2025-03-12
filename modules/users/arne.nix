@@ -21,6 +21,7 @@
 				home.username = "arne";
 				home.homeDirectory = "/home/arne";
         gtoasted = {
+          ags.enable = true;
           hypr.enable = true;
           neovim.enable = true;
           firefox.enable = true;

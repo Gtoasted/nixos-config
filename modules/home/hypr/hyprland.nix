@@ -15,7 +15,7 @@
 			xwayland.enable = true;
 			systemd.enable = true;
 			settings = {
-				exec-once = "waybar & hypridle & syncthing";
+				exec-once = "ags run & hypridle & syncthing";
 				"$terminal" = "kitty";
 				"$fileManager" = "dolphin";
 				"$menu" = "rofi -show drun";
