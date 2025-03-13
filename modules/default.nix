@@ -10,6 +10,7 @@
 		./laptop.nix
 		./samba.nix
 		./sddm.nix
+    ./settings.nix
 		./stylix.nix
 		./system.nix
 		./virtualisation.nix
