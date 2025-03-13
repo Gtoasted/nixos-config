@@ -16,6 +16,14 @@
 			];
 		};
 
+    gtoasted.settings = {
+      autostart = [
+        "ags run"
+        "hypridle"
+        "syncthing"
+      ];
+    };
+
 		home-manager = {
 			users."arne" = {
 				home.username = "arne";
@@ -23,11 +31,6 @@
         gtoasted = {
           ags.enable = true;
           hypr.enable = true;
-          hyprland.autostart = [
-            "ags run"
-            "hypridle"
-            "syncthing"
-          ];
           neovim.enable = true;
           firefox.enable = true;
           git.enable = true;
