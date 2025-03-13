@@ -1,9 +1,19 @@
 { config, lib, pkgs, ... }: {
-	options.gtoasted.hyprland = {
-		enable = lib.mkEnableOption "Enable Hyprland, the windows manager.";
+	options.gtoasted.hyprland = with lib; {
+		enable = mkEnableOption "Enable Hyprland, the windows manager.";
+    autostart = mkOption {
+      default = [ ];
+      example = [ "syncthing" ];
+      type = types.listOf types.str;
+      description = ''
+        List of commands to be automatically executet on startup.
+      '';
+    };
 	};
 
-	config = lib.mkIf config.gtoasted.hyprland.enable {
+	config = let
+    cfg = config.gtoasted.hyprland;
+  in lib.mkIf cfg.enable {
 		home.packages = with pkgs; [
 			xdg-desktop-portal-hyprland
 			cliphist
@@ -15,7 +25,7 @@
 			xwayland.enable = true;
 			systemd.enable = true;
 			settings = {
-				exec-once = "ags run & hypridle & syncthing";
+        exec-once = lib.concatStringsSep "&" cfg.autostart;
 				"$terminal" = "kitty";
 				"$fileManager" = "dolphin";
 				"$menu" = "rofi -show drun";
