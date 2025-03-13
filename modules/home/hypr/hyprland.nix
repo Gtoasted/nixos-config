@@ -6,7 +6,7 @@
       example = [ "syncthing" ];
       type = types.listOf types.str;
       description = ''
-        List of commands to be automatically executet on startup.
+        List of commands to be automatically executed on startup.
       '';
     };
     terminal = mkOption {
