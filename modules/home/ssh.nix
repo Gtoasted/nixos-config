@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ pkgs, config, lib, ... }: {
 	options.gtoasted.ssh = {
 		enable = lib.mkEnableOption "Enable ssh client.";
 	};
@@ -20,7 +20,16 @@
 			};
 		};
 
-    programs.ssh.enable = true;
     services.ssh-agent.enable = true;
+
+    home.packages = [ pkgs.cloudflared ];
+
+    programs.ssh = {
+      enable = true;
+      matchBlocks.arcalis = {
+        proxyCommand = "cloudflared access ssh --hostname ssh-arcalis.gtoasted.de";
+        user = "arne";
+      };
+    };
 	};
 }
