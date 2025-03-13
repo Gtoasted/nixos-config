@@ -37,10 +37,10 @@ export default function bar(gdkmonitor: Gdk.Monitor) {
       </box>
       <box hexpand halign={Gtk.Align.END} >
         <InhibitWidget />
-        <Audio />
         <BrightnessLevel />
         <BatteryLevel />
         <WifiStrength short/>
+        <Audio />
         <SysTray />
         <Time format="%A, %d. %B %Y"/>
         <Time format="%H:%M"/>
