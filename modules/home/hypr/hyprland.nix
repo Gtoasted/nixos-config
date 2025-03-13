@@ -9,6 +9,21 @@
         List of commands to be automatically executet on startup.
       '';
     };
+    terminal = mkOption {
+      type = types.str;
+      default = lib.getExe pkgs.kitty;
+      description = "The terminal to use.";
+    };
+    browser = mkOption {
+      type = types.str;
+      default = lib.getExe programs.firefox.package;
+      description = "The browser to use.";
+    };
+    fileManager = mkOption {
+      type = types.str;
+      default = lib.getExe pkgs.dolphin;
+      description = "The file manager to use.";
+    };
 	};
 
 	config = let
@@ -26,8 +41,6 @@
 			systemd.enable = true;
 			settings = {
         exec-once = lib.concatStringsSep "&" cfg.autostart;
-				"$terminal" = "kitty";
-				"$fileManager" = "dolphin";
 				"$menu" = "rofi -show drun";
 
 				env = [
@@ -127,10 +140,10 @@
 					"$mainMod, P, pseudo,"
 					"$mainMod, Ö, togglesplit,"
 
-					"$mainMod, Q, exec, $terminal"
-					"$mainMod, E, exec, $fileManager"
+					"$mainMod, Q, exec, ${cfg.terminal}"
+					"$mainMod, E, exec, ${cfg.fileManager}"
 					"$mainMod, R, exec, $menu"
-					"$mainMod, B, exec, firefox"
+					"$mainMod, B, exec, ${cfg.browser}"
 					"$mainMod, F, fullscreen"
 
 					"$mainMod, h, movefocus, l"
