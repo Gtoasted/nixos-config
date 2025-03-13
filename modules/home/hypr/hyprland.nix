@@ -28,6 +28,11 @@
       default = lib.getExe pkgs.kdePackages.dolphin;
       description = "The file manager to use.";
     };
+    launcher = mkOption {
+      type = types.str;
+      default = "rofi -show drun";
+      description = "The launcher to use.";
+    };
 	};
 
 	config = let
@@ -45,7 +50,6 @@
 			systemd.enable = true;
 			settings = {
         exec-once = lib.concatStringsSep "&" cfg.autostart;
-				"$menu" = "rofi -show drun";
 
 				env = [
 					"XCURSOR_SIZE,24"

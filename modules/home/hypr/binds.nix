@@ -4,56 +4,39 @@
       cfg = config.gtoasted.hyprland;
     in
       lib.mkIf cfg.enable {
-        wayland.windowManager.hyprland.settings = {
-          "$mainMod" = "SUPER";
-          bind = [
+        wayland.windowManager.hyprland.settings = let
+          mainMod = "SUPER";
+        in {
+          "$mainMod" = mainMod;
+          bind = let
+            moveBinds = {
+              l = "h";
+              d = "j";
+              u = "k";
+              r = "l";
+            };
+            workspaceBinds = builtins.listToAttrs
+              (builtins.map (x: {
+                name = toString x;
+                value = toString x;
+              }) [
+              1 2 3 4 5 6 7 8 9
+            ]) // { "10" = "0"; };
+          in [
+            # New binds
+            # Application Shortcuts
+            "${mainMod}, return, exec, ${cfg.terminal}"
+            "${mainMod}, b, exec, ${cfg.browser}"
+            "${mainMod}, e, exec, ${cfg.fileManager}"
+            "${mainMod}, r, exec, ${cfg.launcher}"
+
+            # Old binds
             "$mainMod, C, killactive, "
             "$mainMod, V, togglefloating, "
             "$mainMod, P, pseudo,"
             "$mainMod, Ö, togglesplit,"
 
-            "$mainMod, Q, exec, ${cfg.terminal}"
-            "$mainMod, E, exec, ${cfg.fileManager}"
-            "$mainMod, R, exec, $menu"
-            "$mainMod, B, exec, ${cfg.browser}"
             "$mainMod, F, fullscreen"
-
-            "$mainMod, h, movefocus, l"
-            "$mainMod, l, movefocus, r"
-            "$mainMod, k, movefocus, u"
-            "$mainMod, j, movefocus, d"
-
-            "$mainMod SHIFT, h, movewindow, l"
-            "$mainMod SHIFT, l, movewindow, r"
-            "$mainMod SHIFT, k, movewindow, u"
-            "$mainMod SHIFT, j, movewindow, d "
-
-            "$mainMod Control_L, h, movewindoworgroup, l"
-            "$mainMod Control_L, l, movewindoworgroup, r"
-            "$mainMod Control_L, k, movewindoworgroup, u"
-            "$mainMod Control_l, j, movewindoworgroup, d "
-
-            "$mainMod, 1, workspace, 1"
-            "$mainMod, 2, workspace, 2"
-            "$mainMod, 3, workspace, 3"
-            "$mainMod, 4, workspace, 4"
-            "$mainMod, 5, workspace, 5"
-            "$mainMod, 6, workspace, 6"
-            "$mainMod, 7, workspace, 7"
-            "$mainMod, 8, workspace, 8"
-            "$mainMod, 9, workspace, 9"
-            "$mainMod, 0, workspace, 10"
-
-            "$mainMod SHIFT, 1, movetoworkspace, 1"
-            "$mainMod SHIFT, 2, movetoworkspace, 2"
-            "$mainMod SHIFT, 3, movetoworkspace, 3"
-            "$mainMod SHIFT, 4, movetoworkspace, 4"
-            "$mainMod SHIFT, 5, movetoworkspace, 5"
-            "$mainMod SHIFT, 6, movetoworkspace, 6"
-            "$mainMod SHIFT, 7, movetoworkspace, 7"
-            "$mainMod SHIFT, 8, movetoworkspace, 8"
-            "$mainMod SHIFT, 9, movetoworkspace, 9"
-            "$mainMod SHIFT, 0, movetoworkspace, 10"
 
             "$mainMod, S, togglespecialworkspace, magic"
             "$mainMod SHIFT, S, movetoworkspace, special:magic"
@@ -79,7 +62,13 @@
             "$mainMod Control_L SHIFT, L, exec, loginctl lock-session"
             "$mainMod, M, exec, pkill .nwg-displays-w || nwg-displays"
             # "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-          ];
+          ]
+            ++ lib.mapAttrsToList (direction: key: "${mainMod}, ${key}, movefocus, ${direction}") moveBinds
+            ++ lib.mapAttrsToList (direction: key: "${mainMod} shift, ${key}, movewindow, ${direction}") moveBinds
+            ++ lib.mapAttrsToList (direction: key: "${mainMod} control_l, ${key}, movewindow, ${direction}") moveBinds
+            ++ lib.mapAttrsToList (workspace: key: "${mainMod}, ${key}, workspace, ${workspace}") workspaceBinds
+            ++ lib.mapAttrsToList (workspace: key: "${mainMod} shift, ${key}, movetoworkspace, ${workspace}") workspaceBinds
+            ;
 
           bindm = [
             "$mainMod, mouse:272, movewindow"
