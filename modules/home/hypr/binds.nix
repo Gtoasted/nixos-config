@@ -25,42 +25,37 @@
           in [
             # New binds
             # Application Shortcuts
-            "${mainMod}, return, exec, ${cfg.terminal}"
+            "${mainMod}, space, exec, ${cfg.terminal}"
             "${mainMod}, b, exec, ${cfg.browser}"
             "${mainMod}, e, exec, ${cfg.fileManager}"
             "${mainMod}, r, exec, ${cfg.launcher}"
 
-            # Old binds
-            "$mainMod, C, killactive, "
-            "$mainMod, V, togglefloating, "
-            "$mainMod, P, pseudo,"
-            "$mainMod, Ö, togglesplit,"
+            # Window Management
+            "${mainMod}, c, killactive, "
+            "${mainMod}, v, togglefloating, "
+            "${mainMod}, p, pseudo, "
+            "${mainMod}, w, togglesplit, "
+            "${mainMod}, f, fullscreen, "
 
-            "$mainMod, F, fullscreen"
+            # Groups
+            "${mainMod}, t, togglegroup"
+            "${mainMod}, tab, changegroupactive, f"
+            "${mainMod} shift, tab, changegroupactive, b"
+            "${mainMod}, d, movegroupwindow"
+            "${mainMod}, a, movegroupwindow, b"
 
-            "$mainMod, S, togglespecialworkspace, magic"
-            "$mainMod SHIFT, S, movetoworkspace, special:magic"
-
-            "$mainMod, mouse_down, workspace, e+1"
-            "$mainMod, mouse_up, workspace, e-1"
-
-            "$mainMod, T, togglegroup"
-            "$mainMod, TAB, changegroupactive, f"
-            "$mainMod Shift, TAB, changegroupactive, b"
-            "$mainMod , d, movegroupwindow"
-            "$mainMod , a, movegroupwindow, b"
-
+            # Media Buttons
             ", XF86AudioMute, exec, amixer sset 'Master' togglemute # F1"
             ", XF86AudioLowerVolume, exec, amixer sset 'Master' 5%- # F2"
             ", XF86AudioRaiseVolume, exec, amixer sset 'Master' 5%+ # F3"
             ", XF86MonBrightnessDown, exec, brightnessctl set 5%- # F4"
             ", XF86MonBrightnessUp, exec, brightnessctl set +5% # F5"
-
-            ", Print, exec, hyprshot -m region"
-
             ", XF86PowerOff, exec, systemctl suspend"
-            "$mainMod Control_L SHIFT, L, exec, loginctl lock-session"
-            "$mainMod, M, exec, pkill .nwg-displays-w || nwg-displays"
+
+            # Other
+            ", print, exec, hyprshot -m region"
+            "${mainMod} control_l shift, l, exec, loginctl lock-session"
+            "${mainMod}, M, exec, pkill .nwg-displays-w || nwg-displays"
             # "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           ]
             ++ lib.mapAttrsToList (direction: key: "${mainMod}, ${key}, movefocus, ${direction}") moveBinds
