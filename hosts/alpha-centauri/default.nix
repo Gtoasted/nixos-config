@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, lib, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -10,9 +10,7 @@
 
   networking.hostName = "alpha-centauri";
 
-  programs.bash.shellAliases = {
-    nr = "sudo nixos-rebuild switch --flake ~/.config/nixos#alpha-centauri";
-  };
+  programs.nh.flake = lib.mkIf config.gtoasted.nh.enable "/home/arne/.config/nixos#alpha-centauri";
 
   # Do not change these
   system.stateVersion = "23.11";

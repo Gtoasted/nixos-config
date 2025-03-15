@@ -8,6 +8,7 @@
 		./hyprland.nix
 		./kde.nix
 		./laptop.nix
+    ./nh.nix
 		./samba.nix
 		./sddm.nix
     ./settings.nix
@@ -21,6 +22,7 @@
 		system.enable = lib.mkDefault true;
 		sddm.enable = lib.mkDefault true;
 		hyprland.enable = lib.mkDefault true;
+    nh.enable = lib.mkDefault true;
     samba.enable = lib.mkDefault true;
 		kde.enable = lib.mkDefault true;
 		stylix.enable = lib.mkDefault true;
