@@ -10,6 +10,7 @@
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 			image = ../assets/wave.jpg;
 			imageScalingMode = "center";
+      polarity = "dark";
 
 			cursor = {
 				package = pkgs.catppuccin-cursors.mochaLight;

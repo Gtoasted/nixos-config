@@ -19,7 +19,7 @@
       };
       targets.qt = lib.mkIf cfg.qt {
         enable = true;
-        platform = "adwaita-dark";
+        platform = "gnome";
       };
     };
 
