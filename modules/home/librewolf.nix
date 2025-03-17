@@ -6,6 +6,9 @@
   config = lib.mkIf config.gtoasted.librewolf.enable {
     programs.librewolf = {
       enable = true;
+      settings = {
+        "identity.fxaccounts.enabled" = true;
+      };
     };
   };
 }
