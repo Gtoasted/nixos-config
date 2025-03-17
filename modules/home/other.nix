@@ -5,7 +5,15 @@
 	};
 
 	config = lib.mkIf config.gtoasted.other.enable {
-		home.packages = with pkgs; [
+		home.packages = let
+      plg = jetbrains-plugins.idea-ultimate."2024.3.3"; 
+      intellij = ( pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.idea-ultimate [
+          plg.IdeaVIM
+          plg."com.intellij.spring"
+          plg."com.intellij.spring.boot"
+          plg."com.intellij.spring.boot.initializr"
+      ] );
+    in with pkgs; [
 			# Media
 			inkscape
 			gimp
@@ -33,10 +41,7 @@
 			thunderbird
 			# Misc
 			kitty
-      # jetbrains.idea-community
-      ( jetbrains.plugins.addPlugins jetbrains.idea-community [
-        jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
-      ] )
+      intellij
 			kdePackages.dolphin
 			prismlauncher
 		];

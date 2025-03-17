@@ -34,6 +34,7 @@
           neovim.enable = true;
           firefox.enable = true;
           git.enable = true;
+          java.enable = true;
           librewolf.enable = true;
           notex.enable = true;
           other.enable = true;
