@@ -24,7 +24,7 @@
 		hyprland.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
     samba.enable = lib.mkDefault true;
-		kde.enable = lib.mkDefault true;
+		kde.enable = lib.mkDefault false;
 		stylix.enable = lib.mkDefault true;
     wireguard.enable = lib.mkDefault false;
 	};
