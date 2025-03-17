@@ -32,7 +32,7 @@
           ags.enable = true;
           hypr.enable = true;
           neovim.enable = true;
-          firefox.enable = true;
+          firefox.enable = false;
           git.enable = true;
           java.enable = true;
           librewolf.enable = true;
