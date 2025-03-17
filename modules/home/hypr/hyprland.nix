@@ -20,7 +20,7 @@
     };
     browser = mkOption {
       type = types.str;
-      default = lib.getExe pkgs.firefox;
+      default = lib.getExe pkgs.librewolf;
       description = "The browser to use.";
     };
     fileManager = mkOption {
