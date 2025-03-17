@@ -1,6 +1,6 @@
 { config, lib, ... }: {
 	options.gtoasted.git = {
-		enable = lib.mkEnableOption "";
+		enable = lib.mkEnableOption "Enable git.";
 	}; 
 
 	config = lib.mkIf config.gtoasted.git.enable {
