@@ -25,7 +25,7 @@
     };
     fileManager = mkOption {
       type = types.str;
-      default = lib.getExe pkgs.kdePackages.dolphin;
+      default = lib.getExe' pkgs.kdePackages.dolphin "dolphin";
       description = "The file manager to use.";
     };
     launcher = mkOption {
