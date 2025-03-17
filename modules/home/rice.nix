@@ -21,6 +21,9 @@
         enable = true;
         platform = "gnome";
       };
+      targets.librewolf.profileNames = [
+        "default"
+      ];
     };
 
 		home.pointerCursor = lib.mkIf cfg.home {
