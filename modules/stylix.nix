@@ -24,9 +24,7 @@
 				};
 			};
 
-			targets = {
-				grub.enable = false;
-			};
+      targets.grub.enable = false;
 		};
 	};
 }

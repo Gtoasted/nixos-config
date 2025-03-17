@@ -1,9 +1,10 @@
 { config, lib, pkgs, ...}: {
-  options.gtoasted.rice = {
-    enable = lib.mkEnableOption "Enable autoricing.";
-    stylix = lib.mkEnableOption "Enable Stylix for home manager.";
-    home = lib.mkEnableOption "Enable home.pointerCursor config.";
-		gtk = lib.mkEnableOption "Enable gtk.";
+  options.gtoasted.rice = with lib; {
+    enable = mkEnableOption "Enable autoricing.";
+    stylix = mkEnableOption "Enable Stylix for home manager.";
+    home = mkEnableOption "Enable home.pointerCursor config.";
+		gtk = mkEnableOption "Enable gtk.";
+    qt = mkEnableOption "Enable qt.";
   };
 
   config = let cfg = config.gtoasted.rice; in lib.mkIf cfg.enable {
@@ -15,6 +16,10 @@
         package = pkgs.kora-icon-theme;
         dark = "kora";
         light = "kora-light";
+      };
+      targets.qt = lib.mkIf cfg.qt {
+        enable = true;
+        platform = lib.mkIf cfg.qt "adwaita-dark";
       };
     };
 

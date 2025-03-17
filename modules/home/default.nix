@@ -11,7 +11,6 @@
 		./java.nix
     ./librewolf.nix
 		./other.nix
-		./qt.nix
     ./rice.nix
 		./sops.nix
 		./ssh.nix
