@@ -34,9 +34,9 @@
 			# Misc
 			kitty
       # jetbrains.idea-community
-      # ( jetbrains.plugins.addPlugins jetbrains.idea-community [
-      #   jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
-      # ] )
+      ( jetbrains.plugins.addPlugins jetbrains.idea-community [
+        jetbrains-plugins.idea-ultimate."2024.3.3".IdeaVIM
+      ] )
 			kdePackages.dolphin
 			prismlauncher
 		];
