@@ -42,6 +42,7 @@
             stylix = true;
             home = false;
             gtk = true;
+            qt = true;
           };
           sops.enable = true;
           ssh.enable = true;
