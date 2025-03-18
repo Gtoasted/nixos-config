@@ -42,6 +42,7 @@
 				"Gastzugang Marienhof".pskRaw = "ext:gastzugangmarienhof";
 				PilogLisa.pskRaw = "ext:piloglisa";
         "HHUD-Y".pskRaw = "ext:hhud-y";
+        "AAD-WLAN".pskRaw = "ext:aad-wlan";
 			};
 		};
 
