@@ -8,10 +8,11 @@
 		home.packages = let
       plg = jetbrains-plugins.idea-ultimate."2024.3.3"; 
       intellij = ( pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.idea-ultimate [
-          # plg.IdeaVIM
-          plg."com.intellij.spring"
-          plg."com.intellij.spring.boot"
-          plg."com.intellij.spring.boot.initializr"
+        # plg.IdeaVIM
+        plg."com.intellij.spring"
+        plg."com.intellij.spring.boot"
+        plg."com.intellij.spring.boot.initializr"
+        plg."org.jetbrains.plugins.spotbugs"
       ] );
     in with pkgs; [
 			# Media
