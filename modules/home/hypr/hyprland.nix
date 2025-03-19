@@ -51,6 +51,11 @@
 			settings = {
         exec-once = lib.concatStringsSep "&" cfg.autostart;
 
+        debug = {
+          disable_logs = false;
+          disable_time = false;
+        };
+
 				env = [
 					"XCURSOR_SIZE,24"
 					"QT_QPA_PLATFORMTHEME,qt5ct"
