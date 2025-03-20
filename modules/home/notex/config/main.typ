@@ -3,8 +3,19 @@
 
 // Template for lecture notes
 #let lecture_notes(body) = {
-  set heading(numbering: "1.")
-  set text(font: "New Computer Modern")
+  set heading(
+    // numbering: "1."
+    numbering: (..nums) => nums
+      .pos()
+      .map(str)
+      .join(".") + h(0.75em)
+  )
+  set text(
+    font: "New Computer Modern",
+    size: 12pt,
+    tracking: -0.025em,
+    
+  )
   set page(margin: (
     top: 0.5cm,
     bottom: 2cm,
