@@ -17,16 +17,24 @@ const max_rssi = -50
 const min_rssi = -100
 const rssi_span = max_rssi-min_rssi
 
+function wpa_cli(command: string) {
+  return exec(`wpa_cli ${command}`)
+}
+
 function get_ssid() {
-   return exec("wpa_cli status")
+   return wpa_cli("status")
     .split("\n")[3]
     .substring(5)
 }
 
 function get_rssi() {
-  return parseFloat(exec("wpa_cli signal_poll")
+  return parseFloat(wpa_cli("signal_poll")
     .split("\n")[1]
     .substring(5))
+}
+
+function disconnected() {
+  return wpa_cli("status").split("\n")[1] == "wpa_state=DISCONNECTED"
 }
 
 @register({ GTypeName: "Wifi" })
@@ -54,6 +62,9 @@ class Wifi extends GObject.Object {
 
   @property(String)
   get icon() {
+    print(disconnected())
+    if (disconnected()) return "network-wireless-off"
+
     const p = discretize(this.percentage, [0, 20, 40, 60, 80, 100])
     return `network-wireless-${p}`
   }
