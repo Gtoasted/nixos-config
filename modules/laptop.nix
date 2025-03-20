@@ -27,6 +27,11 @@
       };
 		};
 
+    # Battery
+    services.upower = {
+      enable = true;
+    };
+
 		networking.wireless = {
 			enable = true;
 			userControlled.enable = true;
