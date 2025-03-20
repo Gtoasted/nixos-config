@@ -8,7 +8,7 @@ $border-color: #11111b; // Mantle
 $active: #89b4fa; // Blue
 $text-dark: #11111b; // Crust
 
-$corner-radius: 7px;
+$corner-radius: 14px;
 
 $spacing: 4px;
 
@@ -28,6 +28,11 @@ window {
       font-weight: bold;
       background: $bg-color;
       border-radius: $corner-radius;
+      /* border-radius: */
+      /*   2 * $corner-radius */
+      /*   $corner-radius */
+      /*   2 * $corner-radius */
+      /*   $corner-radius; */
       margin: 0.5 * $spacing;
       padding: 1px;
       padding-left: 6px;

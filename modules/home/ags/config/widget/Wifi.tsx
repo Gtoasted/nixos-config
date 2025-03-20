@@ -62,7 +62,6 @@ class Wifi extends GObject.Object {
 
   @property(String)
   get icon() {
-    print(disconnected())
     if (disconnected()) return "network-wireless-off"
 
     const p = discretize(this.percentage, [0, 20, 40, 60, 80, 100])
