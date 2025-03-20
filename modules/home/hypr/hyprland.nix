@@ -43,6 +43,10 @@
 			cliphist
 		];
 
+    home.sessionVariables = {
+      HYPRCURSOR_SIZE = config.stylix.cursor.size;
+    };
+
 		wayland.windowManager.hyprland = {
 			enable = true;
 			package = pkgs.hyprland;
@@ -55,11 +59,6 @@
           disable_logs = false;
           disable_time = false;
         };
-
-				env = [
-					"XCURSOR_SIZE,24"
-					"QT_QPA_PLATFORMTHEME,qt5ct"
-				];
 
 				input = {
 						kb_layout = "de";

@@ -14,7 +14,7 @@
 
 			cursor = {
 				package = pkgs.catppuccin-cursors.mochaLight;
-				name = "Catppuccin-Mocha-Light-Cursors";
+				name = "catppuccin-mocha-light-cursors";
 				size = 16;
 			};
 
