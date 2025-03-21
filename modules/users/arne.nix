@@ -30,14 +30,16 @@
 				home.homeDirectory = "/home/arne";
         gtoasted = {
           ags.enable = true;
+          communication.enable = true;
+          documents.enable = true;
           hypr.enable = true;
           neovim.enable = true;
           firefox.enable = false;
+          fun.enable = true;
           git.enable = true;
-          java.enable = true;
+          jetbrains.enable = true;
           librewolf.enable = true;
           notex.enable = true;
-          other.enable = true;
           rice = {
             enable = true;
             stylix = true;
@@ -49,6 +51,8 @@
           ssh.enable = true;
           # stylix.enable = true;
           syncthing.enable = true;
+          terminal.enable = true;
+          tools.enable = true;
         };
 			};
 		};

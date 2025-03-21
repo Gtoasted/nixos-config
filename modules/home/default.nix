@@ -3,18 +3,22 @@
 		inputs.nixvim.homeManagerModules.nixvim
 		inputs.sops-nix.homeManagerModules.sops
     ./ags
+    ./communication.nix
+    ./documents.nix
 		./hypr
 		./nixvim
 		./notex
 		./firefox.nix
+    ./fun.nix
 		./git.nix
-		./java.nix
+    ./jetbrains.nix
     ./librewolf.nix
-		./other.nix
     ./rice.nix
 		./sops.nix
 		./ssh.nix
 		./syncthing.nix
+    ./terminal.nix
+    ./tools.nix
   ];
 
   nixpkgs.config = {
