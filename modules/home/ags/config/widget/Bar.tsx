@@ -8,6 +8,7 @@ import BatteryLevel from "./Battery.js"
 import BrightnessLevel from "./Brightness.js"
 import SysTray from "./Tray.js"
 import InhibitWidget from "./Inhibit.js"
+import FocusWidget from "./Focus.js"
 
 // TODO:
 // - Fix Tray
@@ -36,6 +37,7 @@ export default function bar(gdkmonitor: Gdk.Monitor) {
         <CurrentWindow />
       </box>
       <box hexpand halign={Gtk.Align.END} >
+        <FocusWidget />
         <InhibitWidget />
         <BrightnessLevel />
         <BatteryLevel />
