@@ -59,8 +59,8 @@
 			options = {
 				window-title-basename = true;
 			};
+      extraConfig = "set selection-clipboard clipboard";
 		};
-		stylix.targets.zathura.enable = false;
 
 		xdg = {
 			desktopEntries.zathura = {
