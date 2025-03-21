@@ -4,21 +4,19 @@
   };
 
   config = lib.mkIf config.gtoasted.terminal.enable {
-    programs.kitty = {
-      enable = true;
-    };
-
     home.packages = with pkgs; [
 			wl-clipboard
 			zip
 			unzip
     ];
 
-		programs.bash.enable = true;
-
-		programs.starship = {
-			enable = true;
-			enableBashIntegration = true;
-		};
+    programs = {
+      bash.enable = true;
+      kitty.enable = true;
+      starship = {
+        enable = true;
+        enableBashIntegration = true;
+      };
+    };
   };
 }
