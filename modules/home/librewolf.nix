@@ -8,6 +8,7 @@
       enable = true;
       settings = {
         "identity.fxaccounts.enabled" = true;
+        "webgl.disabled" = false;
       };
     };
   };
