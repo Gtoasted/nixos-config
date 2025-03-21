@@ -31,9 +31,9 @@ class Inhibit extends GObject.Object {
   @property(String)
   get icon() {
     if (this.running) {
-      return "redeyes"
+      return "view-reveal-symbolic"
     } else {
-      return "image-red-eye-symbolic"
+      return "view-conceal-symbolic"
     }
   }
 
