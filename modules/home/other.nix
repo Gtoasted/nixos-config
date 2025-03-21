@@ -41,7 +41,6 @@
 			signal-desktop
 			thunderbird
 			# Misc
-			kitty
       intellij
 			kdePackages.dolphin
 			prismlauncher
@@ -58,9 +57,13 @@
 			enable = true;
 			options = {
 				window-title-basename = true;
+        selection-clipboard = "clpboard";
 			};
-      extraConfig = "set selection-clipboard clipboard";
 		};
+
+    programs.kitty = {
+      enable = true;
+    };
 
 		xdg = {
 			desktopEntries.zathura = {
