@@ -8,7 +8,6 @@
 		./hypr
 		./nixvim
 		./notex
-		./firefox.nix
     ./fun.nix
 		./git.nix
     ./jetbrains.nix
