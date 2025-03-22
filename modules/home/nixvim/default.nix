@@ -8,7 +8,7 @@
       enable = true;
       defaultEditor = true;
     };
-		stylix.targets.nixvim.enable = true;
+		stylix.targets.nixvim.enable = false;
 		home.sessionVariables = {
 			EDITOR = "nvim";
 		};
