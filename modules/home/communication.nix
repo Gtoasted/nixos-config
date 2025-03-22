@@ -9,6 +9,7 @@
 			element-desktop
 			signal-desktop
 			thunderbird
+      cinny-desktop
     ];
   };
 }
