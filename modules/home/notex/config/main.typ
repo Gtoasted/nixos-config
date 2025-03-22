@@ -1,8 +1,8 @@
 #import "@preview/ctheorems:1.1.3": *
-#import "@preview/physica:0.9.4": *
+#import "@preview/physica:0.9.5": *
 
 // Template for lecture notes
-#let lecture_notes(body) = {
+#let general(body) = {
   set heading(
     // numbering: "1."
     numbering: (..nums) => nums
@@ -34,6 +34,17 @@
     level: 2,
     text(red)[Vorlesung #number #h(1fr) #date.display("[day].[month].[year]")] )
 }
+
+// Header for exercises
+#let exercise(index , semester, author, lecture, lecturer) = [
+  Heinrich-Heine-Universität #h(1fr) _Abgabe von:_ \
+  #semester #h(1fr) #author \
+  #lecture \
+  #lecturer
+  #v(1em)
+  #text(size: 3em)[Übungsblatt #index] \
+  #line(length: 100%)
+]
 
 #let thmbase(
   title,
