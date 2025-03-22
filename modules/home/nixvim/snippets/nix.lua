@@ -14,7 +14,7 @@ return {
 	s({trig="module", snippetType="snippet", dscr="Template for making a nix module."},
 	  fmta([[
 		{ config, lib, ...}: {
-			options.<>= {
+			options.<> = {
 				enable = lib.mkEnableOption "Enable <>";
 			};
 
