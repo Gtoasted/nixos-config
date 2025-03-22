@@ -19,7 +19,7 @@
       };
       targets.qt = lib.mkIf cfg.qt {
         enable = true;
-        platform = "gnome";
+        platform = "adwaita";
       };
       targets.librewolf.profileNames = [
         "default"
