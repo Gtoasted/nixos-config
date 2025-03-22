@@ -4,8 +4,11 @@
 	};
 
 	config = lib.mkIf config.gtoasted.neovim.enable {
-		programs.nixvim = import ./enable.nix;
-		stylix.targets.nixvim.enable = false;
+		programs.nixvim = (import ./init.nix { }) // {
+      enable = true;
+      defaultEditor = true;
+    };
+		stylix.targets.nixvim.enable = true;
 		home.sessionVariables = {
 			EDITOR = "nvim";
 		};
