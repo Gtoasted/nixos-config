@@ -135,7 +135,7 @@ local autopairs = make_autopair_snippets({
 local other = {
   -- Math mode
   s({trig="mk", snippetType="autosnippet", dscr="Inline Math."},
-    fmta("$<>$",
+    fmta("$<> $",
     {i(1)}
     )
   ),

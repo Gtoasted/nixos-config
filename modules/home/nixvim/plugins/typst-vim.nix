@@ -7,6 +7,10 @@
     plugins.typst-vim = {
       enable = true;
       keymaps.watch = "<Leader>tw";
+      settings = {
+        conceal = 1;
+        auto_open_quickfix = 0;
+      };
     };
   };
 }
