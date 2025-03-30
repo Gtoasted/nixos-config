@@ -8,7 +8,7 @@
 			enable = true;
 
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-			image = ../assets/galaxy.png;
+			image = ./home/hypr/config/galaxy.png;
 			imageScalingMode = "center";
       polarity = "dark";
 
