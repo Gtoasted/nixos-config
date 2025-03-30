@@ -1,36 +1,32 @@
 { config, lib, ...}: {
-  options.gtoasted.wireguard = {
-    enable = lib.mkEnableOption "Enable wireguard client.";
+  options.gtoasted.wireguard = with lib; {
+    enable = mkEnableOption "Enable wireguard client.";
+    secrets = {
+      private = mkOption {
+        example = "/run/secrets/wifi";
+        type = types.str;
+        description = "Path to the private key for wireguard.";
+      };
+      preshared = mkOption {
+        type = types.str;
+        description = "Path to the preshared key for wireguard";
+      };
+    };
   };
 
   config = lib.mkIf config.gtoasted.wireguard.enable {
-		sops.secrets = {
-			wireguard_private = {
-				format = "binary";
-				sopsFile = ../secrets/wireguard_private;
-			};
-
-      wireguard_preshared = {
-        format = "binary";
-        sopsFile = ../secrets/wireguard_preshared;
-      };
-		};
 
     networking.wireguard.interfaces.wg0 =
       let
-        secrets = config.sops.secrets;
+        secrets = config.gtoasted.wireguard.secrets;
       in {
         ips = [ "192.168.178.204/24" ];
-        privateKeyFile = secrets.wireguard_private.path;
-        # dns = [
-        #   "192.168.178.1"
-        #   "fritz.box"
-        # ];
+        privateKeyFile = secrets.private;
 
         peers = [
           {
             publicKey = "OYr2l1UtPx81nvCi2fZJ5P/tiHcs/pJQwy5dLfB4KyQ=";
-            presharedKeyFile = secrets.wireguard_preshared.path;
+            presharedKeyFile = secrets.preshared;
             allowedIPs = [
               "192.168.178.0/24"
               "0.0.0.0/0"

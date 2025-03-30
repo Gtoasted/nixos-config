@@ -1,9 +1,20 @@
 { config, lib, pkgs, ... }: {
-	options.gtoasted.laptop = {
-		enable = lib.mkEnableOption "Enable a set of laptop-specific config, including brightness, bluetooth, wifi and battery.";
+	options.gtoasted.laptop = with lib; {
+		enable = mkEnableOption "Enable a set of laptop-specific config, including brightness, bluetooth, wifi and battery.";
+    secrets = {
+      wifi = mkOption {
+        example = "/run/secrets/wifi";
+        type = types.str;
+        description = "Path to wpa-supplicant secrets file.";
+      };
+      easyroam = mkOption {
+        type = types.str;
+        description = "Path to pkcs file for easyroam setup.";
+      };
+    };
 	};
 
-	config = lib.mkIf config.gtoasted.laptop.enable {
+	config = let cfg = config.gtoasted.laptop; in lib.mkIf cfg.enable {
 		# Brightness
 		environment.systemPackages = with pkgs; [
 			brightnessctl
@@ -14,29 +25,17 @@
 		hardware.bluetooth.powerOnBoot = true;
 		services.blueman.enable = true;
 
-		# Wifi
-		sops.secrets = {
-			wifi = {
-				format = "binary";
-				sopsFile = ../secrets/wifi;
-			};
-
-      easyroam = {
-        format = "binary";
-        sopsFile = ../secrets/easyroam;
-      };
-		};
-
     # Battery
     services.upower = {
       enable = true;
     };
 
+		# Wifi
 		networking.wireless = {
 			enable = true;
 			userControlled.enable = true;
       fallbackToWPA2 = false;
-			secretsFile = config.sops.secrets.wifi.path;
+      secretsFile = cfg.secrets.wifi;
 			networks = {
 				Sagittarius.pskRaw = "ext:sagittarius";
 				Gommemode.pskRaw = "ext:gommemode";
@@ -53,7 +52,7 @@
 
     services.easyroam = {
       enable = true;
-      pkcsFile = "${config.sops.secrets.easyroam.path}";
+      pkcsFile = cfg.secrets.easyroam;
       wpa-supplicant.enable = true;
     };
 
