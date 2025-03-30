@@ -70,12 +70,6 @@
 		# ssh
 		services.openssh.enable = true;
 
-		# sops
-		environment.systemPackages = [
-			pkgs.sops
-		];
-		sops.age.keyFile = "/home/arne/.config/sops/age/keys.txt";
-
 		# Printing & Scanning
 		services.printing.enable = true;
 		# Network printing

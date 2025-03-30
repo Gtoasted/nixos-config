@@ -16,10 +16,12 @@
 		./system.nix
 		./virtualisation.nix
     ./wireguard.nix
+    ../secrets
   ];
 
 	gtoasted = {
 		system.enable = lib.mkDefault true;
+    sops.enable = lib.mkDefault true;
 		sddm.enable = lib.mkDefault true;
 		hyprland.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
