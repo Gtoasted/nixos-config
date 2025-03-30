@@ -39,6 +39,7 @@
           git.enable = true;
           jetbrains.enable = true;
           librewolf.enable = true;
+          mullvad-browser.enable = true;
           notex.enable = true;
           rice = {
             enable = true;

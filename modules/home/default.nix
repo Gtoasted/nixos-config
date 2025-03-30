@@ -12,6 +12,7 @@
 		./git.nix
     ./jetbrains.nix
     ./librewolf.nix
+    ./mullvad-browser.nix
     ./rice.nix
 		./sops.nix
 		./ssh.nix
