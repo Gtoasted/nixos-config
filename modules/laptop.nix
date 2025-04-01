@@ -15,6 +15,9 @@
 	};
 
 	config = let cfg = config.gtoasted.laptop; in lib.mkIf cfg.enable {
+    # Screen Rotation
+    hardware.sensor.iio.enable = true;
+
 		# Brightness
 		environment.systemPackages = with pkgs; [
 			brightnessctl

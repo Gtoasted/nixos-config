@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
   imports = [
     ./binds.nix
   ];
@@ -41,6 +41,7 @@
 		home.packages = with pkgs; [
 			xdg-desktop-portal-hyprland
 			cliphist
+      iio-hyprland jq
 		];
 
     home.sessionVariables = {
@@ -53,7 +54,7 @@
 			xwayland.enable = true;
 			systemd.enable = true;
 			settings = {
-        exec-once = lib.concatStringsSep "&" cfg.autostart;
+        exec-once = lib.concatStringsSep "&" (cfg.autostart ++ [ "iio-hyprland" ]);
 
         debug = {
           disable_logs = false;
