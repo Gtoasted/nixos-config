@@ -65,8 +65,11 @@
 						kb_layout = "de";
 						kb_variant = "nodeadkeys";
 						follow_mouse = 1;
-						touchpad.natural_scroll = "yes";
 						sensitivity = 0;
+            touchpad = {
+              natural_scroll = true;
+              disable_while_typing = false; # Needs to be false if iio-hyprland is installed, or it will randomly block the touchpad.
+            };
 				};
 
 				general = {
