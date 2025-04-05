@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ config, lib, pkgs, ... }: {
   imports = [
     ./binds.nix
   ];
@@ -50,10 +50,21 @@
 
 		wayland.windowManager.hyprland = {
 			enable = true;
-			package = pkgs.hyprland;
+      package = pkgs.hyprland;
 			xwayland.enable = true;
 			systemd.enable = true;
+      plugins = [
+        pkgs.hyprlandPlugins.hyprgrass
+      ];
+
 			settings = {
+        plugin.touch_gestures = {
+          sensitivity = 4.0;
+          workspace_swipe_fingers = 4;
+          workspace_swipe_edge = "d";
+          long_press_delay = 400; # ms
+        };
+
         exec-once = lib.concatStringsSep "&" (cfg.autostart ++ [ "iio-hyprland" ]);
 
         debug = {
@@ -122,8 +133,9 @@
 				};
 
 				gestures = {
-						workspace_swipe = true;
-						workspace_swipe_fingers = 4;
+          workspace_swipe = true;
+          workspace_swipe_fingers = 4;
+          workspace_swipe_cancel_ratio = 0.1;
 				};
 				
 				group = {
