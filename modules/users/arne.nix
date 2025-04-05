@@ -54,7 +54,6 @@
           syncthing.enable = true;
           terminal.enable = true;
           tools.enable = true;
-          zen.enable = true;
         };
 			};
 		};

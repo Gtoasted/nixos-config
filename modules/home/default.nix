@@ -20,7 +20,6 @@
 		./syncthing.nix
     ./terminal.nix
     ./tools.nix
-    ./zen.nix
   ];
 
   nixpkgs.config = {

@@ -13,7 +13,6 @@
     nix-easyroam.url = "github:0x5a4/nix-easyroam";
     nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
     ags.url = "github:aylur/ags";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     # Follows
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +21,6 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     nix-easyroam.inputs.nixpkgs.follows = "nixpkgs";
     ags.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { flake-utils, home-manager, nixpkgs, nixvim, ... }@inputs:
@@ -44,7 +42,6 @@
           specialArgs = {
             inherit inputs;
             jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
-            zen = inputs.zen-browser.packages.${system}.specific;
           };
           modules = [ ./hosts/alpha-centauri ];
         };
