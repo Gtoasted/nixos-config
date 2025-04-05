@@ -1,7 +1,9 @@
 keys:
   - &alpha-centauri age146wwvsgwvfkyr5jm9pc55jrm6v3chkm3cgj00c7u5p6wvnmngc0sak7mfe
+  - &sol age19na4r66zn8sg577a3cv5efyvewh759xp0gnwseflm9qfpq5m24aq9n6rn0
 creation_rules:
   - path_regex: secrets/.*
     key_groups:
       - age:
         - *alpha-centauri
+        - *sol
