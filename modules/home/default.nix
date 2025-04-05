@@ -5,6 +5,7 @@
     ./ags
     ./communication.nix
     ./documents.nix
+    ./firefox.nix
 		./hypr
 		./nixvim
 		./notex

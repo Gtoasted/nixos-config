@@ -8,16 +8,19 @@
 	};
 
 	config = lib.mkIf config.gtoasted.firefox.enable {
+    stylix.targets.firefox.profileNames = [ "arne" ];
 		programs.firefox = {
 			enable = true;
 			betterfox.enable = true;
 			policies = {
+        CaptivePortal = false;
 				DisableFormHistory = true;
 				DontCheckDefaultBrowser = true;
 				DisableFirefoxStudies = true;
 				DisableTelemetry = true;
 				DisablePocket = true;
 				OfferToSaveLogins = false;
+        HttpsOnlyMode = "enabled";
 				Extensions = {
 					Uninstall = [
 						"google@search.mozilla.org"
@@ -30,30 +33,35 @@
 			};
 
 			profiles.arne = {
+        id = 0;
+
 				betterfox = {
 					enable = true;
 					enableAllSections = true;
 				};
 
 				search = {
-					default = "DuckDuckGo";
+					default = "ddg";
 					force = true;
 					engines = let
 						define = alias: url: iconURL: {
 							urls = [{template = "https://${url}";}];
-							iconUpdateURL = "https://${iconURL}";
+							icon = "https://${iconURL}";
 							updateInterval = 24 * 60 * 60 * 1000;
 							definedAliases = ["@${alias}"];
 						};
+            nixosIcon = "nixos.wiki/favico.png";
 					in {
-						"Youtube" = define "yt" "https://invidious.nerdvpn.de/search?q={searchTerms}" "www.youtube.com/favicon.ico";
-						"Nix Packages" = define "nixpkg" "search.nixos.org/packages?query={searchTerms}" "nixos.wiki/favicon.png";
-						"Nix Options" = define "nixopt" "search.nixos.org/options?query={searchTerms}" "nixos.wiki/favicon.png";
-						"Nix Wiki" = define "nixwiki" "nixos.wiki/index.php?search={searchTerms}" "nixos.wiki/favicon.png";
-						"Google".metaData.hidden = true;
-						"Bing".metaData.hidden = true;
+            "Nix Packages" = define "nixpkg" "search.nixos.org/packages?channel=unstable&query={searchTerms}" nixosIcon;
+            "Nix Options" = define "nixopt" "search.nixos.org/options?channel=unstable&query={searchTerms}" nixosIcon;
+            "Home Manager Options" = define "home" "home-manager-options.extranix.com/?query={searchTerms}&release=master" nixosIcon;
+            "Noogle" = define "noogle" "noogle.dev/q?term={searchTerms}" nixosIcon;
+            "NüschtOS" = define "nüscht" "search.xn--nschtos-n2a.de/?query={searchTerms}" nixosIcon;
+
+						"google".metaData.hidden = true;
+						"bing".metaData.hidden = true;
 						"Amazon.de".metaData.hidden = true;
-						"eBay".metaData.hidden = true;
+						"ebay".metaData.hidden = true;
 						"Twitter".metaData.hidden = true;
 					};
 				};
@@ -65,22 +73,6 @@
 					"browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
 					"browser.newtabpage.activity-stream.showSponsored" = false;
 				};
-
-				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-					ublock-origin
-					darkreader
-					decentraleyes
-					i-dont-care-about-cookies
-					privacy-possum
-					clearurls
-					don-t-fuck-with-paste
-					enhanced-github
-					enhanced-h264ify
-					github-file-icons
-					keepassxc-browser
-					user-agent-string-switcher
-					# libredirect
-				];
 			};
 		};
 	};

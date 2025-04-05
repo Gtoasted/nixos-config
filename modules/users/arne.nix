@@ -34,7 +34,7 @@
           documents.enable = true;
           hypr.enable = true;
           neovim.enable = true;
-          # firefox.enable = false;
+          firefox.enable = true;
           fun.enable = true;
           git.enable = true;
           jetbrains.enable = true;

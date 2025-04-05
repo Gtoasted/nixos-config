@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
     flake-utils.url = "github:numtide/flake-utils";
     systems.url = "github:nix-systems/x86_64-linux";
     sops-nix.url = "github:Mic92/sops-nix";
