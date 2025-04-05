@@ -8,6 +8,7 @@
   };
 
   config = lib.mkIf config.gtoasted.ags.enable {
+    gtoasted.settings.autostart = [ "ags run" ];
     programs.ags = {
       enable = true;
       configDir = ./config;

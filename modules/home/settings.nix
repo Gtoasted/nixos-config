@@ -13,10 +13,6 @@
   config = let
     cfg = config.gtoasted.settings;
   in {
-    home-manager.sharedModules = [{
-      gtoasted = {
-        hyprland.autostart = cfg.autostart;
-      };
-    }];
+    gtoasted.hyprland.autostart = cfg.autostart;
   };
 }

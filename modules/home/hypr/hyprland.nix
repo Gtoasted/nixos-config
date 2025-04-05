@@ -39,7 +39,6 @@
     cfg = config.gtoasted.hyprland;
   in lib.mkIf cfg.enable {
 		home.packages = with pkgs; [
-			xdg-desktop-portal-hyprland
 			cliphist
       iio-hyprland jq
 		];
@@ -50,7 +49,6 @@
 
 		wayland.windowManager.hyprland = {
 			enable = true;
-      package = pkgs.hyprland;
 			xwayland.enable = true;
 			systemd.enable = true;
       plugins = [
@@ -58,39 +56,22 @@
       ];
 
 			settings = {
-        plugin.touch_gestures = {
-          sensitivity = 4.0;
-          workspace_swipe_fingers = 4;
-          workspace_swipe_edge = "d";
-          long_press_delay = 400; # ms
-        };
-
-        exec-once = lib.concatStringsSep "&" (cfg.autostart ++ [ "iio-hyprland" ]);
-
-        debug = {
-          disable_logs = false;
-          disable_time = false;
-        };
-
-				input = {
-						kb_layout = "de";
-						kb_variant = "nodeadkeys";
-						follow_mouse = 1;
-						sensitivity = 0;
-            touchpad = {
-              natural_scroll = true;
-              disable_while_typing = false; # Needs to be false if iio-hyprland is installed, or it will randomly block the touchpad.
-            };
-				};
-
+        # style
 				general = {
 					gaps_in = 2;
 					gaps_out = 5;
 					border_size = 1;
-					# "col.active_border" = "rgba(522258ff)";
-					# "col.inactive_border" = "rgba(8C30612e)";
 					layout = "dwindle";
 					allow_tearing = "false";
+				};
+
+				dwindle = {
+          pseudotile = "yes";
+          preserve_split = "yes";
+				};
+
+				master = {
+          new_status = "master";
 				};
 
 				decoration = {
@@ -106,7 +87,6 @@
 							enabled = true;
 							range = 4;
 							render_power = 3;
-							# color = "rgba(1a1a1aee)";
 						};
 				};
 
@@ -123,13 +103,38 @@
 					];
 				};
 
-				dwindle = {
-						pseudotile = "yes";
-						preserve_split = "yes";
+				windowrulev2 = [
+					"suppressevent maximize, class:.*"
+					"float, class:(nwg-displays)"
+					"float, initialTitle:(rofi - drun)"
+				];
+
+        group.groupbar.height = 20;
+				misc.force_default_wallpaper = -1;
+
+        # input
+        plugin.touch_gestures = {
+          sensitivity = 4.0;
+          workspace_swipe_fingers = 4;
+          workspace_swipe_edge = "d";
+          long_press_delay = 400; # ms
+        };
+
+				device = {
+          name = "epic-mouse-v1";
+          sensitivity = -0.5;
 				};
 
-				master = {
-						new_status = "master";
+				input = {
+          kb_layout = "de";
+          kb_variant = "nodeadkeys";
+          follow_mouse = 1;
+          sensitivity = 0;
+          touchpad = {
+            natural_scroll = true;
+            # Needs to be false if iio-hyprland is installed, or it will randomly block the touchpad.
+            disable_while_typing = false;
+          };
 				};
 
 				gestures = {
@@ -137,31 +142,16 @@
           workspace_swipe_fingers = 4;
           workspace_swipe_cancel_ratio = 0.1;
 				};
-				
-				group = {
-					# "col.border_active" = "rgba(522258ff)";
-					# "col.border_inactive" = "rgba(8C30612e)";
 
-					groupbar = {
-						height = 20;
-						# "col.active" = "rgba(522258ff)";
-						# "col.inactive" = "rgba(8C3061c0)";
-					};
-				};
+        debug = {
+          disable_logs = false;
+          disable_time = false;
+        };
 
-				misc.force_default_wallpaper = -1;
-
-				device = {
-						name = "epic-mouse-v1";
-						sensitivity = -0.5;
-				};
-				windowrulev2 = [
-					"suppressevent maximize, class:.*"
-					"float, class:(nwg-displays)"
-					"float, initialTitle:(rofi - drun)"
-				];
+        exec-once = lib.concatStringsSep "&" (cfg.autostart ++ [ "iio-hyprland" ]);
 			};
 			
+      # Required for nwg-displays
 			extraConfig = ''
 				source = ~/.config/hypr/monitors.conf
 				source = ~/.config/hypr/workspaces.conf

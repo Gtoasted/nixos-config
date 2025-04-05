@@ -1,9 +1,10 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
 	options.gtoasted.hypridle = {
 		enable = lib.mkEnableOption "Enable Hypridle.";
 	};
 
 	config = lib.mkIf config.gtoasted.hypridle.enable {
+    gtoasted.settings.autostart = [ "hypridle" ];
 		services.hypridle = {
 			enable = true;
 			settings = {

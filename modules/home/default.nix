@@ -15,6 +15,7 @@
     ./librewolf.nix
     ./mullvad-browser.nix
     ./rice.nix
+    ./settings.nix
 		./sops.nix
 		./ssh.nix
 		./syncthing.nix

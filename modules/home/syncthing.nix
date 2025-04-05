@@ -4,6 +4,7 @@
 	};
 
 	config = lib.mkIf config.gtoasted.syncthing.enable {
+    gtoasted.settings.autostart = [ "syncthing" ];
 		services.syncthing = {
 			enable = true;
 			settings = {

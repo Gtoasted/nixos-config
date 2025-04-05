@@ -16,14 +16,6 @@
 			];
 		};
 
-    gtoasted.settings = {
-      autostart = [
-        "ags run"
-        "hypridle"
-        "syncthing"
-      ];
-    };
-
 		home-manager = {
 			users."arne" = {
 				home.username = "arne";
