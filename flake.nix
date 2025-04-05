@@ -45,6 +45,14 @@
           };
           modules = [ ./hosts/alpha-centauri ];
         };
+				sol = nixpkgs.lib.nixosSystem {
+					system = system;
+					specialArgs = {
+						inherit inputs;
+            jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
+					};
+					modules = [ ./hosts/sol ];
+				};
       };
 
       homeConfigurations = {
