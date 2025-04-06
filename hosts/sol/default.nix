@@ -5,6 +5,7 @@
   ];
 
 	gtoasted.kde.enable = true;
+  gtoasted.steam.enable = true;
 
   networking.hostName = "sol";
 
