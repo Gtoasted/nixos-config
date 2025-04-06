@@ -40,7 +40,7 @@
             gtk = true;
             qt = true;
           };
-          sops.enable = true;
+          sops.enable = false;
           ssh.enable = true;
           # stylix.enable = true;
           syncthing.enable = true;

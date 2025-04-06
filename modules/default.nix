@@ -1,20 +1,9 @@
-{ lib, inputs, specialArgs, ... }: {
-  imports = [
+{ extraLib, lib, inputs, ... }: {
+  imports = (extraLib.getAllChildren ./.) ++ [
     inputs.home-manager.nixosModules.home-manager
 		inputs.sops-nix.nixosModules.sops
 		inputs.stylix.nixosModules.stylix
     inputs.nix-easyroam.nixosModules.nix-easyroam
-		./users
-		./hyprland.nix
-		./kde.nix
-		./laptop.nix
-    ./nh.nix
-		./samba.nix
-		./sddm.nix
-		./stylix.nix
-		./system.nix
-		./virtualisation.nix
-    ./wireguard.nix
     ../secrets
   ];
 
@@ -30,14 +19,5 @@
     wireguard.enable = lib.mkDefault false;
 	};
 
-  home-manager = {
-    extraSpecialArgs = specialArgs;
-    sharedModules = [ ./home ];
-  };
-
-  services.gvfs.enable = true; # here temporarily, required for developing my ags bar
-
   nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

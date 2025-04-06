@@ -35,6 +35,7 @@
         extraSpecialArgs = { };
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
+      extraLib = nixpkgs.lib.extend ( final: prev: import ./lib { lib = prev; } );
     in {
       nixosConfigurations = {
         alpha-centauri = nixpkgs.lib.nixosSystem {
@@ -48,7 +49,7 @@
 				sol = nixpkgs.lib.nixosSystem {
 					system = system;
 					specialArgs = {
-						inherit inputs;
+						inherit inputs extraLib;
             jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
 					};
 					modules = [ ./hosts/sol ];
@@ -66,4 +67,12 @@
       checks.default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
       packages.default = nvim;
     });
+
+  nixConfig = {
+    experimental-features = [
+      "flakes"
+      "nix-command"
+      "pipe-operators"
+    ];
+  };
 }

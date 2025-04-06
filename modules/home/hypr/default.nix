@@ -1,13 +1,15 @@
-{ config, lib, ... }: {
-	imports = [
-		./hyprland.nix
-		./hyprlock.nix
-		./hypridle.nix
-		./hyprshot.nix
-		./dunst.nix
-		../waybar
-		../rofi
-	];
+{ config, lib, extraLib, ... }: {
+	 imports = [
+	 	./hyprland.nix
+	 	./hyprlock.nix
+	 	./hypridle.nix
+	 	./hyprshot.nix
+	 	./dunst.nix
+	 	../waybar
+	 	../rofi
+	 ];
+
+  #imports = (extraLib.getAllChildren ./.);
 
 	options.gtoasted.hypr = {
 		enable = lib.mkEnableOption "Enable the Hypr Ecosystem and some additional modules";
