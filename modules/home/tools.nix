@@ -8,6 +8,7 @@
 			nwg-displays
 			pavucontrol
 			kdePackages.dolphin
+      keepassxc
     ];
   };
 }
