@@ -41,7 +41,7 @@
         alpha-centauri = nixpkgs.lib.nixosSystem {
           system = system;
           specialArgs = {
-            inherit inputs;
+            inherit inputs extraLib;
             jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
           };
           modules = [ ./hosts/alpha-centauri ];

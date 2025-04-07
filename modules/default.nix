@@ -18,6 +18,12 @@
 		stylix.enable = lib.mkDefault true;
     wireguard.enable = lib.mkDefault false;
 	};
+  
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+    "pipe-operators"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 }

@@ -1,12 +1,12 @@
 { lib, ... }:
-rec {
-  hasDefaultNix =
-    path:
-    (
-      builtins.readDir path
-      |> lib.filterAttrs (n: v: v == "regular" && n == "default.nix")
-    )
-    != [ ];
+{
+  # hasDefaultNix =
+  #   path:
+  #   (
+  #     builtins.readDir path
+  #     |> lib.filterAttrs (n: v: v == "regular" && n == "default.nix")
+  #   )
+  #   != [ ];
   getAllChildren =
     path:
     builtins.readDir path
