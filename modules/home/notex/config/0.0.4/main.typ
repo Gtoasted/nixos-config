@@ -54,7 +54,7 @@
   identifier: "theorem",
   numbered: true
 ) = thmenv(
-  identifier,
+  if numbered { identifier } else { "none" },
   "heading",
   1,
   (name, number, body, ..args) => [
