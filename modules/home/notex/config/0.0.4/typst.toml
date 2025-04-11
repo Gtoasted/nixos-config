@@ -1,0 +1,4 @@
+[package]
+name = "notyp"
+version = "0.0.4"
+entrypoint =  "main.typ"
