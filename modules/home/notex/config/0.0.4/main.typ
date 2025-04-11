@@ -56,7 +56,7 @@
 ) = thmenv(
   identifier,
   "heading",
-  none,
+  1,
   (name, number, body, ..args) => [
     #box(
       fill: fill_color,
