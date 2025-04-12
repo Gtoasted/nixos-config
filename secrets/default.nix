@@ -10,27 +10,27 @@
 		sops.secrets = {
 			wifi = {
 				format = "binary";
-				sopsFile = ../secrets/wifi;
+				sopsFile = ./wifi;
 			};
 
       easyroam = {
         format = "binary";
-        sopsFile = ../secrets/easyroam;
+        sopsFile = ./easyroam;
       };
 
 			wireguard_private = {
 				format = "binary";
-				sopsFile = ../secrets/wireguard_private;
+				sopsFile = ./wireguard_private;
 			};
 
       wireguard_preshared = {
         format = "binary";
-        sopsFile = ../secrets/wireguard_preshared;
+        sopsFile = ./wireguard_preshared;
       };
 
       hidrive = {
         format = "binary";
-        sopsFile = ../secrets/hidrive;
+        sopsFile = ./hidrive;
       };
 		};
 
