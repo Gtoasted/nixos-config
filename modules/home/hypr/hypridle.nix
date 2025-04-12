@@ -4,7 +4,7 @@
 	};
 
 	config = lib.mkIf config.gtoasted.hypridle.enable {
-    gtoasted.settings.autostart = [ "hypridle" ];
+    gtoasted.hyprland.autostart = [ "hypridle" ];
 		services.hypridle = {
 			enable = true;
 			settings = {

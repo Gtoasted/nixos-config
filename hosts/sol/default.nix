@@ -5,6 +5,7 @@
   ];
 
 	gtoasted.kde.enable = true;
+  gtoasted.hyprland.enable = false;
   gtoasted.steam.enable = true;
 
   networking.hostName = "sol";
@@ -14,6 +15,7 @@
   home-manager = {
     sharedModules = [ {
 			home.stateVersion = "24.11";
+      gtoasted.hypr.enable = lib.mkForce false;
 		} ];
   };
 }
