@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
 	options.gtoasted.samba = with lib; {
 		enable = mkEnableOption "Enable samba.";
     mounts = mkOption {
@@ -43,10 +43,6 @@
 	};
 
 	config = let cfg = config.gtoasted.samba; in lib.mkIf cfg.enable {
-		environment.systemPackages = with pkgs; [
-			cifs-utils
-		];
-
     fileSystems = lib.mapAttrs' (name: mount: 
       lib.nameValuePair mount.path {
         device = mount.device;
