@@ -13,7 +13,7 @@
 
 		services.displayManager.sddm = {
 			enable = true;
-      package = pkgs.kdePackages.sddm;
+      package = lib.mkForce pkgs.kdePackages.sddm;
 			wayland.enable = true;
       theme = "sddm-astronaut-theme";
 		};
