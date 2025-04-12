@@ -1,37 +1,70 @@
 { config, lib, pkgs, ... }: {
-  # TODO: Modularise
 	options.gtoasted.samba = with lib; {
 		enable = mkEnableOption "Enable samba.";
-    # drives = mkOption {
-    #   type = types.attrsOf types.attrsOf types.str;
-    #   default = { };
-    #   example = {
-    #     hidrive = {
-    #       path = "/mnt/HiDrive";
-    #       device = "//smb.hidrive.strato.com/root/users/g96arne";
-    #       credentials = "/run/secrets/samba";
-    #     };
-    #   };
-    #   description = "Set of sets of path (local) and device (remote) to be mounted.";
-    # };
+    mounts = mkOption {
+      default = { };
+      type = types.attrsOf (types.submodule ({ name, ... }: {
+        options = {
+          enable = mkOption {
+            type = types.bool;
+            default = true;
+          };
+          path = mkOption {
+            type = types.str;
+            example = "/mnt/samba";
+            default = name;
+            description = "Local path to mount the share.";
+          };
+          device = mkOption {
+            type = types.str;
+            example = "//host/remote_path";
+            description = "Remote device.";
+          };
+          credentialsFile = mkOption {
+            type = types.str;
+            example = "/run/secrets/samba";
+            description = ''
+              File with credentials for the share. Must look like
+              username=xxx
+              password=yyy
+            '';
+          };
+          user = mkOption {
+            type = types.str;
+            description = "The user to mount the share as";
+          };
+          group = mkOption {
+            type = types.str;
+            description = "The group to mount the share as";
+          };
+        };
+      }));
+    };
 	};
 
-	config = lib.mkIf config.gtoasted.samba.enable {
+	config = let cfg = config.gtoasted.samba; in lib.mkIf cfg.enable {
 		environment.systemPackages = with pkgs; [
 			cifs-utils
 		];
 
-		sops.secrets.samba = {
-			format = "binary";
-			sopsFile = ../secrets/samba;
-		};
-
-		fileSystems."/mnt/movies" = {
-			device = "//arcalis/movies";
-			fsType = "cifs";
-			options = let
-				automount_opts = "vers=3.0,x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-			in ["${automount_opts},credentials=${config.sops.secrets.samba.path},uid=arne,gid=users"];
-		};
+    fileSystems = lib.mapAttrs' (name: mount: 
+      lib.nameValuePair mount.path {
+        device = mount.device;
+        fsType = "cifs";
+        options = with mount; [
+          "vers=3.0"
+          "noauto"
+          "_netdev"
+          "x-systemd.automount"
+          "x-systemd.idle-timeout=60"
+          "x-systemd.device-timeout=5s"
+          "x-systemd.mount-timeout=5s"
+          "credentials=${credentialsFile}"
+          "suid"
+          "uid=${user}"
+          "gid=${group}"
+        ];
+      }
+    ) cfg.mounts;
 	};
 }

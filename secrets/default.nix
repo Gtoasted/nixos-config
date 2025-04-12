@@ -27,6 +27,11 @@
         format = "binary";
         sopsFile = ../secrets/wireguard_preshared;
       };
+
+      hidrive = {
+        format = "binary";
+        sopsFile = ../secrets/hidrive;
+      };
 		};
 
     gtoasted = with config.sops.secrets; {
