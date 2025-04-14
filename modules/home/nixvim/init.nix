@@ -19,6 +19,11 @@
 		numberwidth = 2;
 	};
 
+  globals = {
+    matchparen_timeout = 2;
+    matchparen_insert_timeout = 2;
+  };
+
 	clipboard = {
 		register = "unnamedplus";
 		providers.wl-copy.enable = true;
