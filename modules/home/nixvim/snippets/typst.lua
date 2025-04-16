@@ -40,6 +40,31 @@ local function make_letter_snippets(input, condition)
   return output
 end
 
+local function make_modifier_snippets(input)
+  local output = {}
+
+  for k,v in pairs(input) do
+    table.insert(output,
+      s({trig=[[(.)%.]] .. k, regTrig=true, snippetType="autosnippet", dscr="", condition=math},
+        {f(function(_, snip) return string.format(v, snip.captures[1]) end)}
+      )
+    )
+  end
+
+  return output
+end
+
+local modifiers = make_modifier_snippets({
+  v = [[\vec{%s}]],
+  ["1d"] = [[\dot{%s}]],
+  ["2d"] = [[\ddot{%s}]],
+  dv = [[\dot{\vec{%s}}]],
+  h = [[\hat{%s}]],
+  o = [[\overline{%s}]],
+  t = [[\tilde{%s}]],
+})
+
+
 local letter_snippets = make_letter_snippets({
   EE = "∃",
   AA = "∀",
@@ -49,6 +74,10 @@ local letter_snippets = make_letter_snippets({
   integralr = "integral_(RR^3)",
   ["**"] = "dot",
   xx = "times",
+  ["+-"] = "±",
+  ["-+"] = "∓",
+  nabla = "va(∇)",
+  hamilton = "hat(cal(H))",
 
   -- Greek letters
   Alpha = "Α",
@@ -109,28 +138,28 @@ local letter_snippets = make_letter_snippets({
 }, math)
 
 -- VERY hacky way to be able to tab out of parentheses
-local function make_autopair_snippets(input)
-  local output = {}
-
-  for _, v in pairs(input) do
-    table.insert(output,
-      s({trig=v, snippetType="autosnippet", dscr=""},
-        fmta(v .. "<>",
-        {i(1)}
-        )
-      )
-    )
-  end
-
-  return output
-end
-
-local autopairs = make_autopair_snippets({
-  "()",
-  "[]",
-  "{}",
-  "\"\"",
-})
+-- local function make_autopair_snippets(input)
+--   local output = {}
+--
+--   for _, v in pairs(input) do
+--     table.insert(output,
+--       s({trig=v, snippetType="autosnippet", dscr=""},
+--         fmta(v .. "<>",
+--         {i(1)}
+--         )
+--       )
+--     )
+--   end
+--
+--   return output
+-- end
+--
+-- local autopairs = make_autopair_snippets({
+--   "()",
+--   "[]",
+--   "{}",
+--   "\"\"",
+-- })
 
 local other = {
   -- Math mode
@@ -182,4 +211,4 @@ local other = {
   ),
 }
 
-return merge_tables(letter_snippets, autopairs, other)
+return merge_tables(letter_snippets, modifiers, other)
