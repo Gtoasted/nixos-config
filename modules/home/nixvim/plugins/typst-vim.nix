@@ -8,7 +8,7 @@
       enable = true;
       keymaps.watch = "<Leader>tw";
       settings = {
-        conceal = 1;
+        conceal = 0;
         auto_open_quickfix = 0;
       };
     };
