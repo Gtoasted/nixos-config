@@ -17,6 +17,7 @@
 		kde.enable = lib.mkDefault false;
 		stylix.enable = lib.mkDefault true;
     wireguard.enable = lib.mkDefault false;
+    graphics.enable = lib.mkDefault true;
 	};
   
   nix.settings.experimental-features = [

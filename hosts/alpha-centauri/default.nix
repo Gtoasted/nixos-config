@@ -6,6 +6,7 @@
 
 	gtoasted = {
 		laptop.enable = true;
+    graphics.intel = true;
 	};
 
   networking.hostName = "alpha-centauri";

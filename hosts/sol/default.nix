@@ -16,7 +16,8 @@
       group = "users";
     };
   };
-  gtoasted.nvidia.enable = true;
+  gtoasted.nvidia.enable = false;
+  gtoasted.graphics.nvidia = true;
 
   networking.hostName = "sol";
 
