@@ -19,18 +19,13 @@
   in {
     gtoasted.hyprland.autostart = cfg.autostart;
     xdg.mimeApps.defaultApplications = let
-      browser = pkgs.makeDesktopItem rec {
-        name = "browser";
-        desktopName = name;
-        exec = browser;
-        terminal = false;
-      };
+      browser = "firefox";
     in {
-      "text/html" = browser.name;
-      "x-scheme-handler/http" = browser.name;
-      "x-scheme-handler/https" = browser.name;
-      "x-scheme-handler/about" = browser.name;
-      "x-scheme-handler/unknown" = browser.name;
+      "text/html" = browser;
+      "x-scheme-handler/http" = browser;
+      "x-scheme-handler/https" = browser;
+      "x-scheme-handler/about" = browser;
+      "x-scheme-handler/unknown" = browser;
     };
   };
 }
