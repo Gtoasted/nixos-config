@@ -55,13 +55,13 @@ local function make_modifier_snippets(input)
 end
 
 local modifiers = make_modifier_snippets({
-  v = [[\vec{%s}]],
-  ["1d"] = [[\dot{%s}]],
-  ["2d"] = [[\ddot{%s}]],
-  dv = [[\dot{\vec{%s}}]],
-  h = [[\hat{%s}]],
-  o = [[\overline{%s}]],
-  t = [[\tilde{%s}]],
+  v = [[va(%s)]],
+  ["1d"] = [[dot8%s)]],
+  -- ["2d"] = [[\ddot{%s}]],
+  dv = [[dot(vec(%s))]],
+  h = [[hat(%s)]],
+  o = [[overline(%s)]],
+  t = [[tilde(%s)]],
 })
 
 
