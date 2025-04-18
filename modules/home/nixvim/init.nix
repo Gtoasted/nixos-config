@@ -28,4 +28,8 @@
 		register = "unnamedplus";
 		providers.wl-copy.enable = true;
 	};
+
+  diagnostics = {
+    virtual_text = true;
+  };
 }
