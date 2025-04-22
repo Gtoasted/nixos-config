@@ -1,5 +1,6 @@
-{ config, lib, ...}: {
-  options.gtoasted.librewolf= {
+{ config, lib, ... }:
+{
+  options.gtoasted.librewolf = {
     enable = lib.mkEnableOption "Enable librewolf.";
   };
 

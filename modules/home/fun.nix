@@ -1,5 +1,11 @@
-{ config, lib, pkgs, ...}: {
-  options.gtoasted.fun= {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  options.gtoasted.fun = {
     enable = lib.mkEnableOption "Enable fun modules";
   };
 

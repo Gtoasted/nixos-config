@@ -1,25 +1,26 @@
-{ config, lib, ... }: {
-	options.gtoasted.users.arne = {
-		enable = lib.mkEnableOption "Enable user arne.";
-	};
+{ config, lib, ... }:
+{
+  options.gtoasted.users.arne = {
+    enable = lib.mkEnableOption "Enable user arne.";
+  };
 
-	config = lib.mkIf config.gtoasted.users.arne.enable {
-		users.users.arne = {
-			isNormalUser = true;
-			description = "Arne von Laguna";
-			extraGroups = [
-				"networkmanager"
-				"wheel"
-				"scanner"
-				"lp"
-				"libvirtd" 
-			];
-		};
+  config = lib.mkIf config.gtoasted.users.arne.enable {
+    users.users.arne = {
+      isNormalUser = true;
+      description = "Arne von Laguna";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "scanner"
+        "lp"
+        "libvirtd"
+      ];
+    };
 
-		home-manager = {
-			users."arne" = {
-				home.username = "arne";
-				home.homeDirectory = "/home/arne";
+    home-manager = {
+      users."arne" = {
+        home.username = "arne";
+        home.homeDirectory = "/home/arne";
         gtoasted = {
           ags.enable = true;
           communication.enable = true;
@@ -47,8 +48,7 @@
           terminal.enable = true;
           tools.enable = true;
         };
-			};
-		};
-	};
+      };
+    };
+  };
 }
-

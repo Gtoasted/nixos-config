@@ -1,5 +1,6 @@
-{ config, lib, ...}: {
-  options.gtoasted.nh= {
+{ config, lib, ... }:
+{
+  options.gtoasted.nh = {
     enable = lib.mkEnableOption "Enable nh, the nix helper.";
   };
 

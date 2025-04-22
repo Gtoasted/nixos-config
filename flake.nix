@@ -23,7 +23,14 @@
     ags.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { flake-utils, home-manager, nixpkgs, nixvim, ... }@inputs:
+  outputs =
+    {
+      flake-utils,
+      home-manager,
+      nixpkgs,
+      nixvim,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -35,8 +42,9 @@
         extraSpecialArgs = { };
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
-      extraLib = nixpkgs.lib.extend ( final: prev: import ./lib { lib = prev; } );
-    in {
+      extraLib = nixpkgs.lib.extend (final: prev: import ./lib { lib = prev; });
+    in
+    {
       nixosConfigurations = {
         alpha-centauri = nixpkgs.lib.nixosSystem {
           system = system;
@@ -46,14 +54,14 @@
           };
           modules = [ ./hosts/alpha-centauri ];
         };
-				sol = nixpkgs.lib.nixosSystem {
-					system = system;
-					specialArgs = {
-						inherit inputs extraLib;
+        sol = nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = {
+            inherit inputs extraLib;
             jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
-					};
-					modules = [ ./hosts/sol ];
-				};
+          };
+          modules = [ ./hosts/sol ];
+        };
       };
 
       homeConfigurations = {
@@ -63,7 +71,8 @@
           modules = [ ./hosts/sol-earth/home.nix ];
         };
       };
-    } // flake-utils.lib.eachDefaultSystem (system: {
+    }
+    // flake-utils.lib.eachDefaultSystem (system: {
       checks.default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
       packages.default = nvim;
     });

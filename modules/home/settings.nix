@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   options.gtoasted.settings = with lib; {
     autostart = mkOption {
       default = [ ];
@@ -14,18 +20,22 @@
     };
   };
 
-  config = let
-    cfg = config.gtoasted.settings;
-  in {
-    gtoasted.hyprland.autostart = cfg.autostart;
-    xdg.mimeApps.defaultApplications = let
-      browser = "firefox";
-    in {
-      "text/html" = browser;
-      "x-scheme-handler/http" = browser;
-      "x-scheme-handler/https" = browser;
-      "x-scheme-handler/about" = browser;
-      "x-scheme-handler/unknown" = browser;
+  config =
+    let
+      cfg = config.gtoasted.settings;
+    in
+    {
+      gtoasted.hyprland.autostart = cfg.autostart;
+      xdg.mimeApps.defaultApplications =
+        let
+          browser = "firefox";
+        in
+        {
+          "text/html" = browser;
+          "x-scheme-handler/http" = browser;
+          "x-scheme-handler/https" = browser;
+          "x-scheme-handler/about" = browser;
+          "x-scheme-handler/unknown" = browser;
+        };
     };
-  };
 }

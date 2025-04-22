@@ -1,43 +1,49 @@
-{ config, lib, pkgs, ...}: {
-  options.gtoasted.documents= {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  options.gtoasted.documents = {
     enable = lib.mkEnableOption "Enable programs for editing and viewing documents.";
   };
 
   config = lib.mkIf config.gtoasted.documents.enable {
     home.packages = with pkgs; [
-			libreoffice-qt
-			texliveFull
-			xournalpp
-			pdfpc
-			obsidian
+      libreoffice-qt
+      texliveFull
+      xournalpp
+      pdfpc
+      obsidian
 
-			inkscape
-			gimp
+      inkscape
+      gimp
 
-			hunspell
-			hunspellDicts.de_DE
-			hunspellDicts.en_US
+      hunspell
+      hunspellDicts.de_DE
+      hunspellDicts.en_US
     ];
 
-		programs.zathura = {
-			enable = true;
-			options = {
-				window-title-basename = true;
+    programs.zathura = {
+      enable = true;
+      options = {
+        window-title-basename = true;
         selection-clipboard = "clipboard";
-			};
-		};
+      };
+    };
 
-		xdg = {
-			desktopEntries.zathura = {
-				name = "Zathura";
-				exec = "${pkgs.zathura}/bin/zathura";
-			};
-			mimeApps = {
-				enable = true;
-				defaultApplications = {
-					"application/pdf" = "zathura.desktop";
-				};
-			};
-		};
+    xdg = {
+      desktopEntries.zathura = {
+        name = "Zathura";
+        exec = "${pkgs.zathura}/bin/zathura";
+      };
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = "zathura.desktop";
+        };
+      };
+    };
   };
 }

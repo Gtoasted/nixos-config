@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   options.gtoasted.neovim.plugins.floaterm = {
     enable = lib.mkEnableOption "Enable floaterm";
   };

@@ -1,9 +1,15 @@
-{ config, lib, pkgs, ... }: {
-	options.gtoasted.sddm = {
-		enable = lib.mkEnableOption "Enable sddm.";
-	};
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  options.gtoasted.sddm = {
+    enable = lib.mkEnableOption "Enable sddm.";
+  };
 
-	config = lib.mkIf config.gtoasted.sddm.enable {
+  config = lib.mkIf config.gtoasted.sddm.enable {
     environment.systemPackages = with pkgs; [
       kdePackages.qtmultimedia
       (sddm-astronaut.override {
@@ -11,11 +17,11 @@
       })
     ];
 
-		services.displayManager.sddm = {
-			enable = true;
+    services.displayManager.sddm = {
+      enable = true;
       package = lib.mkForce pkgs.kdePackages.sddm;
-			wayland.enable = true;
+      wayland.enable = true;
       theme = "sddm-astronaut-theme";
-		};
-	};
+    };
+  };
 }

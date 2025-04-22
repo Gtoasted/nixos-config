@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   options.gtoasted.wireguard = with lib; {
     enable = mkEnableOption "Enable wireguard client.";
     secrets = {
@@ -19,7 +20,8 @@
     networking.wireguard.interfaces.wg0 =
       let
         secrets = config.gtoasted.wireguard.secrets;
-      in {
+      in
+      {
         ips = [ "192.168.178.204/24" ];
         privateKeyFile = secrets.private;
 
@@ -35,6 +37,6 @@
             persistentKeepalive = 25;
           }
         ];
-    };
+      };
   };
 }
