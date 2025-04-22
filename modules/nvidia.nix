@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   options.gtoasted.nvidia = {
     enable = lib.mkEnableOption "Enable nvidia driver.";
   };

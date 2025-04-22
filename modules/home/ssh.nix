@@ -1,9 +1,15 @@
-{ pkgs, config, lib, ... }: {
-	options.gtoasted.ssh = {
-		enable = lib.mkEnableOption "Enable ssh client.";
-	};
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
+  options.gtoasted.ssh = {
+    enable = lib.mkEnableOption "Enable ssh client.";
+  };
 
-	config = lib.mkIf config.gtoasted.ssh.enable {
+  config = lib.mkIf config.gtoasted.ssh.enable {
     services.ssh-agent.enable = true;
 
     programs.ssh = {
@@ -13,5 +19,5 @@
         user = "arne";
       };
     };
-	};
+  };
 }

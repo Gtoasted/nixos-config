@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   options.gtoasted.neovim.plugins.typst-vim = {
     enable = lib.mkEnableOption "Enable typst.vim";
   };

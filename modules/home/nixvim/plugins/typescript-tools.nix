@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   options.gtoasted.neovim.plugins.typescript-tools = {
     enable = lib.mkEnableOption "Enable typescript-tools.";
   };

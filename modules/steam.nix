@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   options.gtoasted.steam = {
     enable = lib.mkEnableOption "Enable steam.";
   };

@@ -1,7 +1,13 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ../../modules/home
-		inputs.stylix.homeManagerModules.stylix
+    inputs.stylix.homeManagerModules.stylix
   ];
 
   home.username = "arne";

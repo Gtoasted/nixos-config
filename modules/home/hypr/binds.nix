@@ -1,4 +1,5 @@
-{ config, lib, ...}: {
+{ config, lib, ... }:
+{
   config =
     let
       cfg = config.gtoasted.hyprland;
@@ -8,19 +9,35 @@
         u = "k";
         r = "l";
       };
-      workspaceBinds = builtins.listToAttrs
-        (builtins.map (x: {
-          name = toString x;
-          value = toString x;
-        }) [
-        1 2 3 4 5 6 7 8 9
-      ]) // { "10" = "0"; };
+      workspaceBinds =
+        builtins.listToAttrs (
+          builtins.map
+            (x: {
+              name = toString x;
+              value = toString x;
+            })
+            [
+              1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+            ]
+        )
+        // {
+          "10" = "0";
+        };
       mainMod = "SUPER";
     in
-      lib.mkIf cfg.enable {
-        wayland.windowManager.hyprland.settings = {
-          "$mainMod" = mainMod;
-          bind = [
+    lib.mkIf cfg.enable {
+      wayland.windowManager.hyprland.settings = {
+        "$mainMod" = mainMod;
+        bind =
+          [
             # New binds
             # Application Shortcuts
             "${mainMod}, space, exec, ${cfg.terminal}"
@@ -56,28 +73,35 @@
             "${mainMod}, M, exec, pkill .nwg-displays-w || nwg-displays"
             # "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           ]
-            ++ lib.mapAttrsToList (direction: key: "${mainMod}, ${key}, movefocus, ${direction}") moveBinds
-            ++ lib.mapAttrsToList (direction: key: "${mainMod} shift, ${key}, movewindow, ${direction}") moveBinds
-            ++ lib.mapAttrsToList (direction: key: "${mainMod} control_l, ${key}, movewindoworgroup, ${direction}") moveBinds
-            ++ lib.mapAttrsToList (workspace: key: "${mainMod}, ${key}, workspace, ${workspace}") workspaceBinds
-            ++ lib.mapAttrsToList (workspace: key: "${mainMod} shift, ${key}, movetoworkspace, ${workspace}") workspaceBinds
-          ;
+          ++ lib.mapAttrsToList (direction: key: "${mainMod}, ${key}, movefocus, ${direction}") moveBinds
+          ++ lib.mapAttrsToList (
+            direction: key: "${mainMod} shift, ${key}, movewindow, ${direction}"
+          ) moveBinds
+          ++ lib.mapAttrsToList (
+            direction: key: "${mainMod} control_l, ${key}, movewindoworgroup, ${direction}"
+          ) moveBinds
+          ++ lib.mapAttrsToList (workspace: key: "${mainMod}, ${key}, workspace, ${workspace}") workspaceBinds
+          ++ lib.mapAttrsToList (
+            workspace: key: "${mainMod} shift, ${key}, movetoworkspace, ${workspace}"
+          ) workspaceBinds;
 
-          bindm = [
-            "${mainMod}, mouse:272, movewindow"
-            "${mainMod}, surface:3, movewindow"
-            "${mainMod}, mouse:273, resizewindow"
+        bindm = [
+          "${mainMod}, mouse:272, movewindow"
+          "${mainMod}, surface:3, movewindow"
+          "${mainMod}, mouse:273, resizewindow"
+        ];
+
+        plugin.touch_gestures = {
+          hyprgrass-bindm = [
+            ", longpress:3, movewindow"
           ];
-
-          plugin.touch_gestures = {
-            hyprgrass-bindm = [
-              ", longpress:3, movewindow"
-            ];
-            hyprgrass-bind = [ ]
-              ++ lib.mapAttrsToList (direction: key: ", swipe:3:${direction}, movewindow, ${direction}") moveBinds
-            ;
-          };
-
+          hyprgrass-bind =
+            [ ]
+            ++ lib.mapAttrsToList (
+              direction: key: ", swipe:3:${direction}, movewindow, ${direction}"
+            ) moveBinds;
         };
-  };
+
+      };
+    };
 }

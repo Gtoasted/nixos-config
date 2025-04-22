@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   options.gtoasted.mullvad-browser = {
     enable = lib.mkEnableOption "Enable mullvad browser.";
   };

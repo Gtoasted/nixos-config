@@ -1,9 +1,10 @@
-{ lib, ... }: {
-	imports = [
-		./arne.nix
-	];
+{ lib, ... }:
+{
+  imports = [
+    ./arne.nix
+  ];
 
-	gtoasted.users = {
-		arne.enable = lib.mkDefault true;
-	};
+  gtoasted.users = {
+    arne.enable = lib.mkDefault true;
+  };
 }
