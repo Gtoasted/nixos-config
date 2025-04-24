@@ -20,6 +20,8 @@
   gtoasted.nvidia.enable = false;
   gtoasted.graphics.nvidia = true;
 
+  boot.kernelModules = [ "ax88179_178a" ]; # helpful for my ethernet to usb c adapter
+
   networking.hostName = "sol";
 
   # Do not change these
