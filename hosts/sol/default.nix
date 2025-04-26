@@ -19,6 +19,7 @@
   };
   gtoasted.nvidia.enable = false;
   gtoasted.graphics.nvidia = true;
+  gtoasted.fcast.enable = true;
 
   boot.kernelModules = [ "ax88179_178a" ]; # helpful for my ethernet to usb c adapter
 
