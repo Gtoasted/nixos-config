@@ -62,38 +62,16 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      extraConfig.pipewire-pulse."92-low-latency" = {
-        "context.properties" = [
-          {
-            name = "libpipewire-module-protocol-pulse";
-            args = { };
-          }
-        ];
-        "pulse.properties" = {
-          "pulse.min.req" = "32/48000";
-          "pulse.default.req" = "32/48000";
-          "pulse.max.req" = "32/48000";
-          "pulse.min.quantum" = "32/48000";
-          "pulse.max.quantum" = "32/48000";
-        };
-        "stream.properties" = {
-          "node.latency" = "32/48000";
-          "resample.quality" = 1;
-        };
-      };
+      jack.enable = true;
     };
 
-    # Graphics
-    # programs.dconf.enable = true;
-    # hardware.graphics = {
-    # 	enable = true;
-    # 	enable32Bit = true; # driSupport32Bit in 24.05
-    # 	extraPackages = with pkgs; [
-    # 		vpl-gpu-rt
-    # 		intel-compute-runtime
-    # 	];
-    # };
-    # services.xserver.enable = true;
+    environment.systemPackages = with pkgs; [
+      qjackctl
+      lsp-plugins
+      libjack2
+      jack2
+      jack_capture
+    ];
 
     # ssh
     services.openssh.enable = true;
