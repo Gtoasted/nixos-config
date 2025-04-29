@@ -24,7 +24,7 @@
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-e>" = "cmp.mapping.abort()";
           "<CR>" = "cmp.mapping.confirm({select=true})";
-          "<Tab>" = ''
+          "<Tab>" = /*lua*/ ''
             cmp.mapping(function(fallback)
             						if require("luasnip").expand_or_jumpable() then
             							vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
@@ -35,7 +35,7 @@
             					"i",
             					"s",
             					}),'';
-          "<S-Tab>" = ''
+          "<S-Tab>" = /*lua*/ ''
             cmp.mapping(function(fallback)
             						if cmp.visible() then
             							cmp.select_prev_item()

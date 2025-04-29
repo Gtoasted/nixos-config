@@ -26,6 +26,7 @@
           "lua"
           "javascript"
           "typescript"
+          "c"
         ];
 
         highlight = {
