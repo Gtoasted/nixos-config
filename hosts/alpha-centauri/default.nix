@@ -9,6 +9,7 @@
     laptop.enable = true;
     graphics.intel = true;
   };
+  programs.virt-manager.enable = true;
 
   networking.hostName = "alpha-centauri";
 
