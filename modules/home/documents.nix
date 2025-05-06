@@ -23,6 +23,8 @@
       hunspell
       hunspellDicts.de_DE
       hunspellDicts.en_US
+
+      vlc
     ];
 
     programs.zathura = {
