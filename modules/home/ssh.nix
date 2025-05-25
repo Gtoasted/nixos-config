@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   lib,
   ...
@@ -15,7 +14,8 @@
     programs.ssh = {
       enable = true;
       matchBlocks.arcalis = {
-        proxyCommand = "${lib.getExe pkgs.cloudflared} access ssh --hostname ssh-arcalis.gtoasted.de";
+        hostname = "gtoasted.de";
+        port = 55555;
         user = "arne";
       };
     };
