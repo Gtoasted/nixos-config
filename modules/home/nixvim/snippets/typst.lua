@@ -56,8 +56,7 @@ end
 
 local modifiers = make_modifier_snippets({
   v = [[va(%s)]],
-  ["1d"] = [[dot8%s)]],
-  -- ["2d"] = [[\ddot{%s}]],
+  ["1d"] = [[dot(%s)]],
   dv = [[dot(vec(%s))]],
   h = [[hat(%s)]],
   o = [[overline(%s)]],
@@ -69,8 +68,13 @@ local letter_snippets = make_letter_snippets({
   EE = "∃",
   AA = "∀",
 
+  cap = "∩",
+  bigcap = "⋂",
+  cup = "∪",
+  bigcup = "⋃",
+
   int = "integral",
-  integrali = "integral_oo^oo",
+  integrali = "integral_(-oo)^oo",
   integralr = "integral_(RR^3)",
   ["**"] = "dot",
   xx = "times",
@@ -85,7 +89,7 @@ local letter_snippets = make_letter_snippets({
   aa = "α",
   Beta = "Β",
   beta = "β",
-  bb = "β",
+  -- bb = "β", -- disabled due to blackboard function
   Gamma = "Γ",
   gamma = "γ",
   Delta = "Δ",
@@ -138,6 +142,7 @@ local letter_snippets = make_letter_snippets({
 }, math)
 
 -- VERY hacky way to be able to tab out of parentheses
+-- If it is commented out, that memes
 -- local function make_autopair_snippets(input)
 --   local output = {}
 --
