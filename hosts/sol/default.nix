@@ -5,24 +5,28 @@
     ../../modules
   ];
 
-  gtoasted.kde.enable = true;
-  gtoasted.hyprland.enable = false;
-  gtoasted.steam.enable = true;
-  gtoasted.samba = {
-    enable = true;
-    mounts."/mnt/HiDrive" = {
-      device = "//smb.hidrive.strato.com/root/users/g96arne";
-      credentialsFile = config.sops.secrets.hidrive.path;
-      user = "arne";
-      group = "users";
+  gtoasted = {
+    kde.enable = true;
+    hyprland.enable = false;
+    steam.enable = true;
+    samba = {
+      enable = true;
+      mounts."/mnt/HiDrive" = {
+        device = "//smb.hidrive.strato.com/root/users/g96arne";
+        credentialsFile = config.sops.secrets.hidrive.path;
+        user = "arne";
+        group = "users";
+      };
     };
+    nvidia.enable = false;
+    graphics.nvidia = true;
+    fcast.enable = true;
+    virtualisation.enable = true;
   };
-  gtoasted.nvidia.enable = false;
-  gtoasted.graphics.nvidia = true;
-  gtoasted.fcast.enable = true;
-  gtoasted.virtualisation.enable = true;
+
 
   boot.kernelModules = [ "ax88179_178a" ]; # helpful for my ethernet to usb c adapter
+  boot.supportedFilesystems.ntfs = true;
 
   networking.hostName = "sol";
 
