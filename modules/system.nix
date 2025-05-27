@@ -21,6 +21,9 @@
           device = "nodev";
         };
       };
+      supportedFilesystems = {
+        ext2 = true;
+      };
       kernelModules = [
         "sg" # Blu-ray support
         "snd_hda_intel" # Better mic hopefully
