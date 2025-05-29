@@ -57,6 +57,9 @@
     # External storage support
     services.devmon.enable = true;
 
+    # For wireguard
+    services.resolved.enable = true;
+
     # Sound
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
