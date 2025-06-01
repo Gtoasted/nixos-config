@@ -27,6 +27,7 @@
 
   boot.kernelModules = [ "ax88179_178a" ]; # helpful for my ethernet to usb c adapter
   boot.supportedFilesystems.ntfs = true;
+  programs.adb.enable = true;
 
   networking.hostName = "sol";
 
