@@ -109,7 +109,7 @@ set text(white, font: "FreeSans")
       #text(title_color, font: "TeX Gyre Heros")[*#title#if numbered [ #number]*#if name != none [ (#name)]*.*]
       #h(0.2em)
       #body
-      #h(1fr)
+      #h(1fr) #if title == "Beweis" {math.square.filled}
     ] #label("thm")
   ]
 )
