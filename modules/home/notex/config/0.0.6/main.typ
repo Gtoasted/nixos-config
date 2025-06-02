@@ -33,6 +33,7 @@
   )
   show: thmrules
   show: fix_proofs
+  show selector(<standalone>): body => {v(1.2em) + body}
   body
 }
 
@@ -154,6 +155,14 @@ set text(white, font: "FreeSans")
   thmred(
     "Beweis",
     fill_color: rgb("#FDFCFA"),
+    numbered: false,
+  )
+}
+
+#let blueproof = {
+  thmblue(
+    "Beweis",
+    fill_color: rgb("#FAFCFE"),
     numbered: false,
   )
 }
