@@ -16,21 +16,29 @@
       unzip
 
       uutils-coreutils-noprefix
-      ripgrep
-      fd
-      eza
       btop
     ];
 
     programs = {
       kitty.enable = true;
 
+      ripgrep.enable = true;
+      fd.enable = true;
+      eza = {
+        enable = true;
+        enableBashIntegration = true;
+        enableFishIntegration = true;
+        icons = "auto";
+        git = true;
+      };
+      btop.enable = true;
       fish = {
         enable = true;
         shellAbbrs = {
           ls = "eza";
           cd = "z";
           cat = "bat";
+          top = "btop";
         };
       };
       bash = {
