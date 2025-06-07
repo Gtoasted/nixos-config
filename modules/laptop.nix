@@ -61,6 +61,7 @@
           "HHUD-Y".pskRaw = "ext:hhud-y";
           "AAD-WLAN".pskRaw = "ext:aad-wlan";
           plenuminabox2.pskRaw = "ext:plenuminabox2";
+          "DoKomi Intern".pskRaw = "ext:dokomi-intern";
         };
       };
 
