@@ -22,9 +22,11 @@ function wpa_cli(command: string) {
 }
 
 function get_ssid() {
-   return wpa_cli("status")
-    .split("\n")[3]
-    .substring(5)
+  if (disconnected()) return "Disconnected"
+  if (scanning()) return "scanning..."
+  return wpa_cli("status")
+  .split("\n")[3]
+.substring(5)
 }
 
 function get_rssi() {
@@ -35,6 +37,10 @@ function get_rssi() {
 
 function disconnected() {
   return wpa_cli("status").split("\n")[1] == "wpa_state=DISCONNECTED"
+}
+
+function scanning() {
+  return wpa_cli("status").split("\n")[1] == "wpa_state=SCANNING"
 }
 
 @register({ GTypeName: "Wifi" })
@@ -63,6 +69,7 @@ class Wifi extends GObject.Object {
   @property(String)
   get icon() {
     if (disconnected()) return "network-wireless-off"
+    if (scanning()) return "network-wireless-acquiring"
 
     const p = discretize(this.percentage, [0, 20, 40, 60, 80, 100])
     return `network-wireless-${p}`
