@@ -11,7 +11,6 @@
     nixvim.url = "github:nix-community/nixvim";
     stylix.url = "github:danth/stylix";
     nix-easyroam.url = "github:0x5a4/nix-easyroam";
-    nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
     ags.url = "github:aylur/ags";
 
     # Follows
@@ -50,7 +49,6 @@
           system = system;
           specialArgs = {
             inherit inputs extraLib;
-            jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
           };
           modules = [ ./hosts/alpha-centauri ];
         };
@@ -58,7 +56,6 @@
           system = system;
           specialArgs = {
             inherit inputs extraLib;
-            jetbrains-plugins = inputs.nix-jetbrains-plugins.plugins.${system};
           };
           modules = [ ./hosts/sol ];
         };

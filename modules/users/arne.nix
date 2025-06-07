@@ -30,7 +30,6 @@
           firefox.enable = true;
           fun.enable = true;
           git.enable = true;
-          jetbrains.enable = true;
           librewolf.enable = true;
           mullvad-browser.enable = true;
           notex.enable = true;
@@ -43,7 +42,6 @@
           };
           sops.enable = false;
           ssh.enable = true;
-          # stylix.enable = true;
           syncthing.enable = true;
           terminal.enable = true;
           tools.enable = true;
