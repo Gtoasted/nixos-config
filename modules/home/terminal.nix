@@ -34,6 +34,9 @@
       btop.enable = true;
       fish = {
         enable = true;
+        interactiveShellInit = ''
+          set fish_greeting
+        '';
         shellAbbrs = {
           ls = "eza";
           cd = "z";
