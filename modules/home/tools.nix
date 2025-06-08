@@ -14,7 +14,26 @@
       nwg-displays
       pavucontrol
       kdePackages.dolphin
-      keepassxc
+      # keepassxc
     ];
+
+    programs = {
+      yazi = {
+        enable = true;
+        enableFishIntegration = true;
+      };
+      keepassxc = {
+        enable = true;
+        settings = {
+          Browser.Enabled = true;
+          SSHAgent.Enabled = true;
+          GUI = {
+            AdvancedSettings = true;
+            ApplicationTheme = "dark";
+            HidePasswords = true;
+          };
+        };
+      };
+    };
   };
 }
