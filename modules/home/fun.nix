@@ -12,6 +12,7 @@
   config = lib.mkIf config.gtoasted.fun.enable {
     home.packages = with pkgs; [
       spotify
+      jellyfin-media-player
       prismlauncher
     ];
   };
