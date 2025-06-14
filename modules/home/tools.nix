@@ -25,7 +25,10 @@
       keepassxc = {
         enable = true;
         settings = {
-          Browser.Enabled = true;
+          Browser = {
+            Enabled = true;
+            AlwaysAllowAccess = true;
+          };
           SSHAgent.Enabled = true;
           GUI = {
             AdvancedSettings = true;
