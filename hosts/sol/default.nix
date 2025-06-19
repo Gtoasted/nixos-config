@@ -40,11 +40,11 @@
   networking.hostName = "sol";
 
   # Do not change these
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
   home-manager = {
     sharedModules = [
       {
-        home.stateVersion = "24.11";
+        home.stateVersion = "25.05";
         gtoasted.hypr.enable = lib.mkForce false;
       }
     ];

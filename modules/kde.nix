@@ -5,6 +5,6 @@
   };
 
   config = lib.mkIf config.gtoasted.kde.enable {
-    services.xserver.desktopManager.plasma6.enable = true;
+    services.desktopManager.plasma6.enable = true;
   };
 }

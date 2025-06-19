@@ -30,7 +30,7 @@
     providers.wl-copy.enable = true;
   };
 
-  diagnostics = {
+  diagnostic.settings = {
     virtual_text = true;
   };
 }
