@@ -25,8 +25,16 @@
   };
 
 
-  boot.kernelModules = [ "ax88179_178a" ]; # helpful for my ethernet to usb c adapter
+  boot.kernelModules = [
+    "ax88179_178a" # helpful for my ethernet to usb c adapter
+    "vfio_pci"
+    "vfio"
+    "vfio_iommu_type1"
+  ];
   boot.supportedFilesystems.ntfs = true;
+  boot.kernelParams = [
+    "intel_iommu=on"
+  ];
   programs.adb.enable = true;
 
   networking.hostName = "sol";
