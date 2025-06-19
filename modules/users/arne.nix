@@ -42,7 +42,7 @@
           };
           sops.enable = false;
           ssh.enable = true;
-          syncthing.enable = true;
+          syncthing.enable = false;
           terminal.enable = true;
           tools.enable = true;
         };
