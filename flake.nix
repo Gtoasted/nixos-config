@@ -52,6 +52,13 @@
           };
           modules = [ ./hosts/alpha-centauri ];
         };
+        sol-mars = nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = {
+            inherit inputs extraLib;
+          };
+          modules = [ ./hosts/sol-mars ];
+        };
         sol = nixpkgs.lib.nixosSystem {
           system = system;
           specialArgs = {
