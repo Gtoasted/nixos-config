@@ -14,7 +14,6 @@
       nwg-displays
       pavucontrol
       kdePackages.dolphin
-      # keepassxc
     ];
 
     programs = {
@@ -34,6 +33,10 @@
             AdvancedSettings = true;
             ApplicationTheme = "dark";
             HidePasswords = true;
+            LaunchAtStartup = true;
+          };
+          FdoSecrets = {
+            Enabled = config.gtoasted.hyprland.enable;
           };
         };
       };
