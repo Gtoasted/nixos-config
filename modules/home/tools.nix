@@ -35,6 +35,9 @@
             HidePasswords = true;
             LaunchAtStartup = true;
           };
+          Security = {
+            IconDownloadFallback = true;
+          };
           FdoSecrets = {
             Enabled = config.gtoasted.hyprland.enable;
           };
