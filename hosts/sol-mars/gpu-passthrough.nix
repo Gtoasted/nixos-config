@@ -5,8 +5,10 @@
 
   config = lib.mkIf config.gtoasted.gpu-passthrough.enable {
     # Audio
+    security.rtkit.enable = true;
     services.pipewire.systemWide = true;
     users.users.arne.extraGroups = [ "pipewire" ];
+    users.users.root.extraGroups = [ "pipewire" ];
     users.users.qemu-libvirtd.extraGroups = [ "pipewire" ];
 
     # GPU Isolation

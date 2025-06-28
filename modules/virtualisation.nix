@@ -13,8 +13,22 @@
     virtualisation.libvirtd = {
       enable = true;
       qemu = {
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
+        # Required for streaming audio with jack
+        package = let
+          jackWrap = drv: pkgs.symlinkJoin {
+            name = "${drv.name}-jackwrapped";
+            paths = [ drv ];
+            buildInputs = [ pkgs.makeWrapper ];
+            postBuild = ''
+              ls "$out/bin"
+              for b in "$out/bin/"*; do
+                wrapProgram "$b" \
+                  --prefix LD_LIBRARY_PATH : "${pkgs.pipewire.jack}/lib"
+              done
+            '';
+        };
+        in (jackWrap pkgs.qemu_kvm);
+        runAsRoot = false;
         swtpm.enable = true;
         ovmf = {
           enable = true;
