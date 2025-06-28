@@ -61,26 +61,25 @@
     services.resolved.enable = true;
 
     # Sound
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
-      pulse.enable = true;
       jack.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
       qjackctl
-      lsp-plugins
-      libjack2
-      jack2
-      jack_capture
     ];
 
     # ssh
-    services.openssh.enable = true;
+    services.openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
+    };
 
     # Printing & Scanning
     services.printing.enable = true;
