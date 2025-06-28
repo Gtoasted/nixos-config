@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./gpu-passthrough.nix
     ../../modules
   ];
 
@@ -22,22 +23,19 @@
     graphics.nvidia = true;
     fcast.enable = true;
     virtualisation.enable = true;
+    gpu-passthrough.enable = true;
   };
 
+  boot = {
+    kernelModules = [
+      "ax88179_178a" # helpful for my ethernet to usb c adapter
+    ];
+    supportedFilesystems.ntfs = true;
+  };
 
-  boot.kernelModules = [
-    "ax88179_178a" # helpful for my ethernet to usb c adapter
-    "vfio_pci"
-    "vfio"
-    "vfio_iommu_type1"
-  ];
-  boot.supportedFilesystems.ntfs = true;
-  boot.kernelParams = [
-    "intel_iommu=on"
-  ];
   programs.adb.enable = true;
 
-  networking.hostName = "sol";
+  networking.hostName = "sol-mars";
 
   # Do not change these
   system.stateVersion = "25.05";
