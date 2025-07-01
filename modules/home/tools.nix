@@ -33,17 +33,24 @@
             AdvancedSettings = true;
             ApplicationTheme = "dark";
             HidePasswords = true;
-            LaunchAtStartup = true;
+            ShowTrayIcon = true;
+            MinimizeToTray = true;
+            MinimizeOnStartup = true;
+            MinimizeOnClose = true;
           };
           Security = {
             IconDownloadFallback = true;
           };
           FdoSecrets = {
             Enabled = config.gtoasted.hyprland.enable;
+            ConfirmAccessItem = false;
           };
         };
       };
     };
+
+    gtoasted.settings.autostart = lib.singleton
+      (lib.getExe config.programs.keepassxc.package);
 
     services.nextcloud-client = {
       enable = true;
