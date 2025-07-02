@@ -31,6 +31,7 @@
       "ax88179_178a" # helpful for my ethernet to usb c adapter
     ];
     supportedFilesystems.ntfs = true;
+    loader.grub.useOSProber = true;
   };
 
   programs.adb.enable = true;
