@@ -11,7 +11,13 @@
     hardware.gpgSmartcards.enable = true;
     programs.gnupg = {
       agent.enable = true;
-      dirmngr.enable = true;
     };
+    environment.systemPackages = with pkgs; [
+      yubioath-flutter
+      yubikey-personalization
+      yubikey-manager
+      libfido2
+      opensc
+    ];
   };
 }

@@ -33,6 +33,7 @@
           firefox.enable = true;
           fun.enable = true;
           git.enable = true;
+          gpg.enable = true;
           librewolf.enable = true;
           mullvad-browser.enable = true;
           notex.enable = true;
