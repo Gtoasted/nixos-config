@@ -24,7 +24,7 @@
     stylix.enable = lib.mkDefault true;
     wireguard.enable = lib.mkDefault false;
     graphics.enable = lib.mkDefault true;
-    gpg.enable = lib.mkDefault true;
+    yubikey.enable = lib.mkDefault true;
   };
 
   nix.settings.experimental-features = [
