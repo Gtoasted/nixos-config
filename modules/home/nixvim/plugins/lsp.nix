@@ -15,13 +15,10 @@
       servers = {
         lua_ls.enable = true;
         nixd.enable = true;
-        ltex = {
+        ltex_plus = {
           enable = true;
           package = pkgs.ltex-ls-plus;
-          cmd = [
-            "ltex-ls-plus"
-          ];
-          settings = {
+          settings.ltex = {
             enabled = [
               "latex"
               "typst"
@@ -50,19 +47,5 @@
         };
       };
     };
-    autoCmd = [
-      {
-        # Idk how to properly configure this in the lsp plugin above
-        command = "LspStart ltex";
-        event = [
-          "BufEnter"
-          "BufWinEnter"
-        ];
-        pattern = [
-          "*.typ"
-          "*.typst"
-        ];
-      }
-    ];
   };
 }
