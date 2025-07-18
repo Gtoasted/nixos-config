@@ -14,7 +14,6 @@
       nwg-displays
       pavucontrol
       kdePackages.dolphin
-      ausweisapp
     ];
 
     programs = {

@@ -14,6 +14,7 @@
   ];
 
   gtoasted = {
+    ausweisapp.enable = lib.mkDefault true;
     system.enable = lib.mkDefault true;
     sops.enable = lib.mkDefault true;
     sddm.enable = lib.mkDefault true;
