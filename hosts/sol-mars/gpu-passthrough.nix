@@ -23,6 +23,11 @@
         "intel_iommu=on"
         "pcie_acs_override=downstream"
       ];
+      extraModprobeConfig = ''
+        options kvm_intel nested=1
+        options kvm_intel emulate_invalid_guest_state=0
+        options kvm ignore_msrs=1
+      '';
     };
 
     # Rip GPU from linux on vm startup
