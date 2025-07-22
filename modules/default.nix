@@ -26,6 +26,7 @@
     wireguard.enable = lib.mkDefault false;
     graphics.enable = lib.mkDefault true;
     yubikey.enable = lib.mkDefault true;
+    tailscale.enable = lib.mkDefault true;
   };
 
   nix.settings.experimental-features = [
