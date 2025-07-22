@@ -94,6 +94,7 @@
 
     # Printing & Scanning
     services.printing.enable = true;
+
     # Network printing
     services.avahi = {
       enable = true;
@@ -102,6 +103,11 @@
     };
     # Network Scanning
     hardware.sane.enable = true;
+
+    services.mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn;
+    };
 
     # Authentication
     security.pam.services.hyprlock = {
