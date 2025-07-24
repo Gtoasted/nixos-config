@@ -27,6 +27,7 @@
           Browser = {
             Enabled = true;
             AlwaysAllowAccess = true;
+            UpdateBinaryPath = false;
           };
           SSHAgent.Enabled = true;
           GUI = {
