@@ -22,6 +22,9 @@
   };
 
   config = lib.mkIf config.gtoasted.hypr.enable {
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
     gtoasted = {
       hyprland.enable = lib.mkDefault true;
       hyprlock.enable = lib.mkDefault true;
